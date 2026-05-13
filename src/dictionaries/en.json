@@ -1,0 +1,1145 @@
+{
+  "categoryMap": {
+    "uncategorized": "Uncategorized",
+    "gorus-yazilari": "Opinion Pieces",
+    "yayinlar": "Publications",
+    "kuresel-politika-ve-uluslararasi-iliskiler": "Global Politics and International Relations",
+    "kamu-politikalari": "Public Policy",
+    "yonetim-tasarimi": "Management Design",
+    "ekonomi-ve-kalkinma": "Economy and Development",
+    "teknoloji-ve-inovasyon": "Technology and Innovation",
+    "goc": "Migration",
+    "tarih": "History",
+    "savunma-ve-guvenlik": "Defense and Security",
+    "kultur-ve-sanat": "Culture and Arts",
+    "kitap-incelemeleri": "Book Reviews",
+    "roportajlar": "Interviews",
+    "etkinlikler": "Events",
+    "dijital-perspektif": "Digital Perspective",
+    "podcastler": "Podcasts",
+    "videolar": "Videos",
+    "webinarlar": "Webinars",
+    "ceviri-makaleler": "Translated Articles",
+    "siyasi-anilar": "Political Memoirs",
+    "editorun-sectikleri": "Editor's Picks",
+    "duyurular": "Announcements",
+    "gecmis-etkinlikler": "Past Events",
+    "gelecek-etkinlikler": "Future Events",
+    "one-cikan": "Featured"
+  },
+  "navbar": {
+    "donate": "Donate Us",
+    "publications": {
+      "title": "Publications",
+      "items": {
+        "publication1": "Public Policy",
+        "publication2": "Management Design / Reform",
+        "publication3": "Global Politics and International Relations",
+        "publication4": "Economy and Development",
+        "publication5": "Technology and Innovation",
+        "publication6": "Migration",
+        "publication7": "Defense and Security",
+        "publication8": "History",
+        "publication9": "Culture and Arts",
+        "publication10": "Book Reviews",
+        "publication11": "Opinion Pieces",
+        "publication12": "Interviews"
+      }
+    },
+    "specialfiles": "Special Files",
+    "digital": "KAPDEM Digital",
+    "events": "Events",
+    "membership": "Membership",
+    "consulting": "Consulting",
+    "interviews": "Interviews",
+    "aboutus": {
+      "title": "About Us",
+      "items": {
+        "item1": "Core Team",
+        "authors": "Authors",
+        "item1Sub": "See Our Team",
+        "item2": "About Us",
+        "item2Sub": "Who We Are?",
+        "item3": "Contact Us",
+        "item3Sub": "Get in Touch"
+      }
+    },
+    "fastsearch": "Fast Search",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "homePage": "Home Page",
+    "sendPaper": "Send Paper"
+  },
+  "subscribeNewsletter": "Subscribe to Newsletter",
+  "events1": {
+    "heroTitle": "Shape the Future with Events",
+    "heroDescription": "Join KAPDEM's unique and visionary events, be part of social change. Inspiration, networking, and impact start here.",
+    "upcomingEvents": "Upcoming Event",
+    "pastEvents": "Past Event",
+    "totalEvents": "Total Events",
+    "discoverEvents": "Discover Events",
+    "upcomingTitle": "Upcoming Events",
+    "upcomingDescription": "Inspiring gatherings that will contribute to your career and vision. Future leaders come together here.",
+    "activeEvents": "Active Event",
+    "noUpcomingEvents": "No upcoming events found. New events will be added soon!",
+    "dateNotSpecified": "Date not specified",
+    "joinAndDetails": "Join & Details",
+    "pastTitle": "Past Events",
+    "pastDescription": "Browse KAPDEM's past events and discover what we've accomplished.",
+    "completedEvents": "Completed Event",
+    "noPastEvents": "No completed events yet.",
+    "viewDetails": "View Details",
+    "ctaTitle": "Don't Miss Any Event!",
+    "ctaDescription": "Subscribe to our newsletter to stay informed about all our events. Benefit from special invitations and early registration opportunities.",
+    "subscribeButton": "Subscribe to Newsletter",
+    "viewEventsButton": "View Events",
+    "participants": "Participant",
+    "speakers": "Speaker",
+    "popupTitle": "Join Our Newsletter",
+    "popupDescription": "Subscribe for exclusive content and event announcements",
+    "popupClose": "Close",
+    "popupBenefit1Title": "Exclusive Content",
+    "popupBenefit1Description": "Content exclusively for subscribers",
+    "popupBenefit2Title": "Early Notification",
+    "popupBenefit2Description": "Be the first to know about events",
+    "popupBenefit3Title": "Weekly Newsletter",
+    "popupBenefit3Description": "Carefully curated content"
+  },
+  "dontspam": "Subscribe to stay informed about our publications, events, and announcements",
+  "writeMail": "Enter Your Email Address",
+  "subscribe": "Subscribe",
+  "publishedAt": "Published At",
+  "author": "Author",
+  "notFound": "No content found yet.",
+  "profile": {
+    "roles": {
+      "free": "Free Member",
+      "paid": "Paid Member",
+      "premium": "Premium Member",
+      "admin": "Administrator",
+      "member": "Member"
+    },
+    "welcome": "Welcome",
+    "emailVerified": "Email Verified",
+    "verified": "Verified",
+    "personalInfo": "Personal Information",
+    "edit": "Edit",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "Username",
+    "title": "Title",
+    "profession": "Profession",
+    "institution": "Institution",
+    "email": "Email Address",
+    "about": "About",
+    "membershipInfo": "Membership Information",
+    "activeSubscription": "You have an active subscription",
+    "usingFreePlan": "You are using the free plan",
+    "allPremiumAccess": "Access to all premium content",
+    "paidContentAccess": "Access to paid content",
+    "basicContentAccess": "Access to basic content",
+    "adminPrivileges": "Has administrator privileges",
+    "buySubscription": "Buy Subscription",
+    "upgradeToPremium": "Upgrade to Premium",
+    "accessMoreContent": "Get access to more content",
+    "socialMedia": "Social Media",
+    "educationInfo": "Education Information",
+    "completed": "Completed",
+    "ongoing": "Ongoing",
+    "security": "Security"
+  },
+  "changePassword": {
+    "title": "Change Password",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm New Password",
+    "currentPasswordPlaceholder": "Enter your current password",
+    "newPasswordPlaceholder": "Enter your new password",
+    "confirmPasswordPlaceholder": "Re-enter your new password",
+    "passwordRequirements": "Your password must contain at least 8 characters, one uppercase letter, one lowercase letter, one number, and one special character.",
+    "submitButton": "Change Password",
+    "submitting": "Processing...",
+    "validation": {
+      "minLength": "Password must be at least 5 characters",
+      "maxLength": "Password must be at most 32 characters",
+      "required": {
+        "current": "Current password is required",
+        "new": "New password is required",
+        "confirm": "Password confirmation is required"
+      },
+      "pattern": "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+      "mismatch": "Passwords do not match"
+    }
+  },
+  "editProfile": {
+    "pageTitle": "Profile Management",
+    "profilePicture": "Profile Picture",
+    "pageSubtitle": "Update your personal information",
+    "profilePictureTitle": "Profile Picture",
+    "uploadHint": "Click to change your profile picture",
+    "personalInfoTitle": "Personal Information",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "institution": "Institution",
+    "institutionPlaceholder": "Enter your institution",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Enter your title",
+    "profession": "Profession",
+    "professionPlaceholder": "Enter your profession",
+    "about": "About Me",
+    "aboutPlaceholder": "Write a brief description about yourself...",
+    "educationTitle": "Education Information",
+    "addEducation": "Add",
+    "educationNumber": "Education",
+    "educationInstitution": "Institution",
+    "educationInstitutionPlaceholder": "University/School name",
+    "educationDegree": "Degree",
+    "educationDegreePlaceholder": "Bachelor's, Master's, Doctorate",
+    "educationField": "Field",
+    "educationFieldPlaceholder": "Field of study",
+    "educationStartYear": "Start",
+    "educationEndYear": "End",
+    "educationCompleted": "Completed",
+    "socialMediaTitle": "Social Media Links",
+    "linkedinPlaceholder": "LinkedIn profile URL",
+    "twitterPlaceholder": "Twitter profile URL",
+    "instagramPlaceholder": "Instagram profile URL",
+    "facebookPlaceholder": "Facebook profile URL",
+    "saveButton": "Update Profile",
+    "saving": "Saving..."
+  },
+  "eventDetail": {
+    "daysLeft": "days left",
+    "eventDate": "Event Date",
+    "dateNotSpecified": "Date not specified",
+    "time": "Time",
+    "timeNotSpecified": "Time not specified",
+    "organizer": "Organizer",
+    "access": "Access",
+    "free": "Free",
+    "premium": "Premium",
+    "eventDescription": "Event Description",
+    "eventGallery": "Event Gallery",
+    "photos": "Photos",
+    "noGalleryImages": "No gallery images yet",
+    "imagesComingSoon": "Event images will be added soon",
+    "publishedDate": "Published Date",
+    "eventInfo": "Event Information",
+    "category": "Category",
+    "general": "General",
+    "status": "Status",
+    "active": "Active",
+    "share": "Share",
+    "information": "Information",
+    "infoMessage": "This event is organized by KAPDEM. Registration is required to participate.",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "eventRegister": {
+    "buttonText": "Register for Event",
+    "formTitle": "Event Registration",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Your last name",
+    "email": "Email",
+    "emailPlaceholder": "Your email address",
+    "phone": "Phone",
+    "phonePlaceholder": "Your phone number",
+    "institution": "Institution ",
+    "institutionPlaceholder": "Your institution (optional)",
+    "licensePlate": "License Plate",
+    "licensePlatePlaceholder": "License Plate (optional)",
+    "submitButton": "Complete Registration"
+  },
+  "seeeditorPicks": "See Editor Picks",
+  "editorPicks": "Editor Picks",
+  "publicpolicy": "Public Policy",
+  "seeallpublicpolicy": "See All Public Policies",
+  "seeAll": "See All",
+  "membership": "Membership",
+  "SubscribeKapdem": "Subscribe to Kapdem",
+  "subs": "Join Us",
+  "kapdemDigital": "Kapdem Digital Contents",
+  "contentLoading": "Content loading...",
+  "readMore": "Read More",
+  "kapdemPodcasts": "Kapdem Podcasts",
+  "slider": {
+    "loading": "Loading...",
+    "readMore": "Read More"
+  },
+  "participant": "Participant",
+  "speaker": "Speaker",
+  "upcomingEvents": "Upcoming Events",
+  "footer": {
+    "text": "The Center for Public Policy, State Administration, and Social Development (KAPDEM) was established to conduct studies focusing on fundamental public, administrative, administrative, and political decisions in political science and public administration, public policies, and economic, social, cultural, and societal issues in Turkey, develop projects, and contribute to innovative and solution-oriented approaches.KAPDEM is a completely independent, impartial, and volunteer-based think tank. It has no organic affiliation or relationship with any political party, interest group, pressure group, or national/international/transnational structure. Its founding principle is to remain independent and impartial.",
+    "additionalText": "Article Categories",
+    "publication1": "Public Policy",
+    "publication2": "Opinion Pieces",
+    "publication3": "Management Design / Reform",
+    "publication4": "Global Politics and International Relations",
+    "publication5": "Opinion Pieces",
+    "publication6": "Economy and Development",
+    "publication7": "Technology and Innovation",
+    "publication8": "Migration",
+    "publication9": "Defense and Security",
+    "publication10": "History",
+    "publication11": "Culture and Arts",
+    "publication12": "Book Reviews",
+    "publication13": "Interviews",
+    "mailtext": "Subscribe to our newsletter and be the first to know about new content and developments.",
+    "subscribe": "Subscribe",
+    "email": "Email Address"
+  },
+  "category": {
+    "publicPolicy": "Public Policy",
+    "opinionPieces": "Opinion Pieces",
+    "managementDesignReform": "Management Design Reform",
+    "globalPoliticsAndInternationalRelations": "Global Politics and International Relations",
+    "economyAndDevelopment": "Economy and Development",
+    "technologyAndInnovation": "Technology and Innovation",
+    "migration": "Migration",
+    "defenseAndSecurity": "Defense and Security",
+    "history": "History",
+    "cultureAndArts": "Culture and Arts",
+    "bookReviews": "Book Reviews",
+    "specialFiles": "Special Files",
+    "digitalContents": "Digital Contents",
+    "events": "Events",
+    "interviews": "Interviews",
+    "videos": "Videos",
+    "category": "Category",
+    "podcastler": "Podcasts",
+    "uncategorized": "Uncategorized",
+    "noContent": "There is no content to display.",
+    "latestContent": "Latest Added",
+    "readMore": "Read More",
+    "desc1": "Participate in our research on public policy, government, and social development. Work alongside our expert team.",
+    "inthiscategory": "In This Category",
+    "totalCategory": "Total Categories",
+    "totalContent": "Total Content",
+    "inlastMonth": "In Last Month"
+  },
+  "shareAndDownload": "Share and Download",
+  "sharewp": "Share with WhatsApp",
+  "sharemail": "Share via Email",
+  "sharelink": "Share Link",
+  "excerpt": "Excerpt",
+  "premiumContentNoticeTitle": "This content is exclusive to premium members",
+  "premiumContentNoticeMessage": "A paid subscription is required to read the full content.",
+  "viewMemberShip": "View Membership Plans",
+  "login": "Login",
+  "readMode": "Read Mode",
+  "listenpaper": "Listen to the article",
+  "listenModeInfo": "This feature uses the browser's built-in text-to-speech technology.",
+  "alreadyAMember": "Already a member?",
+  "latestPaperViaAuthor": "'s Latest Papers",
+  "seeAll1": "See All",
+  "detail1": "Detail",
+  "support": "Support Kapdem",
+  "support1": "Support",
+  "events": {
+    "title1": "Shape the Future with Events",
+    "title2": "Join KAPDEM's unique and visionary events, and be a part of social change. Inspiration, networking, and impact start here.",
+    "upcomingEvents": "Upcoming Events"
+  },
+  "chatbot": {
+    "title": "KAPDEM AI",
+    "placeholder": "Type your message...",
+    "send": "Send",
+    "typing": "Typing...",
+    "error": "An error occurred. Please try again.",
+    "welcome": "Hello! How can I help you?",
+    "close": "Close",
+    "minimize": "Minimize",
+    "suggestions": "Suggestions"
+  },
+  "search": {
+    "placeholder": "Search for articles, authors, or categories...",
+    "hint": "Enter at least 2 characters...",
+    "noResults": "No results found",
+    "posts": "Articles",
+    "authors": "Authors",
+    "teamMembers": "Core Team",
+    "tip": "Tip:",
+    "tipText": "You can search by article title, content, author name, core team member, or category."
+  },
+  "mainCastHero": {
+    "title": "Our Core Team",
+    "subtitle": "Strong Unity, Shared Vision",
+    "description": "Our expert core team is the greatest force driving KAPDEM forward.",
+    "statsText": "Individuals working within the KAPDEM team do not have any organic connection between their roles at KAPDEM and their roles at other institutions. Therefore, for some individuals, only information regarding their educational background or the sector they work in is provided."
+  },
+  "teamMembersList": {
+    "errorTitle": "Team Information Could Not Be Loaded",
+    "errorMessage": "Team information is currently unavailable. Please try again later."
+  },
+  "searchAndFilter": {
+    "searchPlaceholder": "Search by name or position...",
+    "clearSearchLabel": "Clear search",
+    "allPositions": "All Positions",
+    "clearFiltersLabel": "Clear all filters",
+    "clearButton": "Clear",
+    "activeFilters": "Active Filters:",
+    "searchLabel": "Search:",
+    "removeSearchLabel": "Remove search filter",
+    "roleLabel": "Role:",
+    "removeRoleLabel": "Remove role filter",
+    "resultsCount": "results"
+  },
+  "authorsPage": {
+    "title": "Our Authors",
+    "description": "Valued authors sharing their research under the KAPDEM umbrella",
+    "noAuthors": "No authors found yet."
+  },
+  "pagination": {
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page"
+  },
+  "donatePage": {
+    "title": "KAPDEM",
+    "subtitle": "Center for Public Policy, State Governance and Social Development",
+    "description": "KAPDEM is an independent think tank in Turkey that generates knowledge and develops solution-oriented recommendations in the fields of public policy, state governance, and social development. Our aim is to contribute to the formation of policies that strengthen public interest, sense of justice, and social welfare.",
+    "expandedDescription": "Each project is designed as a step towards shaping public policies in Turkey in a more participatory, transparent, and effective manner. The research we conduct aims to produce public benefit in a wide range of areas, from administrative reforms to solving social problems, from democratic governance to sustainable development. Every support you provide to KAPDEM is not just a contribution; it is an investment in knowledge, science, and social development. Your donations enable new research to be implemented, young researchers to be supported, and public policies to become more just, inclusive, and sustainable. With our independent, impartial, and volunteer-based structure; join us on this journey guided by science, reason, and public responsibility.",
+    "showMore": "Read more",
+    "showLess": "Show less",
+    "stats": {
+      "reports": "Published Reports",
+      "researchers": "Active Researchers",
+      "experience": "Years of Experience",
+      "partnerships": "Institutional Partnerships"
+    },
+    "formTitle": "Make a Donation",
+    "amountLabel": "Donation Amount",
+    "otherAmount": "Other Amount",
+    "nameLabel": "Full Name / Organization Name",
+    "namePlaceholder": "Full Name or Organization Name",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "example@email.com",
+    "categoryLabel": "Support Area",
+    "categoryPlaceholder": "Select",
+    "categories": {
+      "policy": "Public Policy",
+      "governance": "State Governance",
+      "development": "Social Development",
+      "education": "Education",
+      "innovation": "Innovation",
+      "general": "General Support"
+    },
+    "agreementText": "I accept.",
+    "agreementLink1": "Donation terms",
+    "agreementLink2": "privacy policy",
+    "agreementAnd": "and",
+    "summaryLabel": "Donation Amount:",
+    "donateButton": "Donate",
+    "whyDonateTitle": "Why Should You Donate to KAPDEM?",
+    "whyDonateReasons": [
+      {
+        "title": "For Society:",
+        "description": "KAPDEM is an independent think tank aimed at strengthening public interest, social development, and sense of justice. Your donations directly contribute to achieving these goals."
+      },
+      {
+        "title": "Scientific and Lasting Impact:",
+        "description": "Every support transforms into research and analysis work aimed at shaping public policies in a more effective, participatory, and sustainable manner."
+      },
+      {
+        "title": "Independence and Impartiality:",
+        "description": "KAPDEM works only for society, knowledge, and public interest without establishing organic ties with any political structure or interest group. You too can contribute to independent and impartial thought and public interest!"
+      },
+      {
+        "title": "",
+        "description": "You too can contribute to independent and impartial thought and public interest!"
+      }
+    ],
+    "workAreasTitle": "Our Areas of Work",
+    "workAreasContent": [
+      "KAPDEM is an independent think tank that contributes to policy development processes in Turkey through its scientific research and intellectual production activities in the fields of public policy, state governance, and social development. At the center of its work is the development of evidence-based and sustainable policy recommendations that consider public interest.",
+      "The organization addresses the design, implementation, evaluation, and development processes of public policies from a holistic perspective. It conducts solution-oriented research in structural reform areas that will increase effectiveness, accountability, and participation in state governance. In this context, it focuses on governance models, administrative reforms, governance mechanisms, decision-making processes, and public performance systems.",
+      "KAPDEM also develops projects that support social development. It aims to produce solutions to social problems and make a difference in areas such as equality, inclusiveness, education, employment, and democratic participation. It analyzes not only the administrative but also the social impacts of public policies and proposes holistic approaches accordingly.",
+      "Publication and research activities cover a wide range including public policies, governance design and reform, global policy and international relations, economy and development, technology and innovation, migration, defense and security. Reports, evaluations, policy notes, and analyses prepared in these areas create a knowledge sharing network open to public institutions, academia, civil society, and the public.",
+      "KAPDEM continues to contribute to shaping public policies in a more just, participatory, and sustainable manner with its evidence-based analyses, impartial stance, and public responsibility."
+    ]
+  },
+  "donateByIban": {
+    "title": "SUPPORT US",
+    "description": "can make a donation to our institutional bank account listed below by writing",
+    "organizationName": "Center for Public Policy, State Governance and Social Development",
+    "donationNote": "DONATION",
+    "noteInstruction": "in the description field to support our center.",
+    "bankName": "BANK NAME:",
+    "bankNameValue": "T.C. ZIRAAT BANKASI A.S.",
+    "branchCode": "BRANCH CODE:",
+    "accountNo": "ACCOUNT NO:",
+    "iban": "IBAN:"
+  },
+  "teamMemberDetail": {
+    "notFound": {
+      "title": "Member Not Found",
+      "description": "The member you are looking for could not be found or is inaccessible.",
+      "backButton": "Back to Core Team"
+    },
+    "backToTeam": "Back to Core Team",
+    "education": "Education",
+    "about": "About",
+    "ongoing": "Ongoing",
+    "contact": {
+      "title": "Get in Touch",
+      "description": "You can use the following links to contact {name} directly.",
+      "sendEmail": "Send Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "editorPickss": {
+    "title": "Editor's Picks",
+    "readMore": "Read more"
+  },
+  "forgotPassword": {
+    "title": "Forgot Password",
+    "subtitle": "Enter your email address and we'll send you a password reset link.",
+    "buttonText": "Sign In",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "Enter your email address",
+    "emailRequired": "Email is required",
+    "emailInvalid": "Please enter a valid email",
+    "submitButton": "Send Password Reset Link",
+    "sending": "Sending...",
+    "errorMessage": "An error occurred. Please try again.",
+    "successTitle": "Email Sent!",
+    "successMessage": "A password reset link has been sent to your email address.",
+    "successNote": "Check your inbox and spam folder."
+  },
+  "memberProfile": {
+    "posts": "Posts",
+    "comments": "Comments",
+    "about": "About",
+    "education": "Education",
+    "ongoing": "Ongoing",
+    "completed": "Completed",
+    "articles": "Articles",
+    "noArticles": "No articles published by this author yet.",
+    "content": "Content",
+    "characters": "characters"
+  },
+  "specialFileDetail": {
+    "notFound": "File Not Found",
+    "backToFiles": "Back to Special Files",
+    "backToArchive": "BACK TO ARCHIVE",
+    "confidentialLayer": "Confidential Data Layer",
+    "verifiedAccess": "Verified Access Level",
+    "summaryTitle": "Summary and Analysis",
+    "visualEvidence": "Visual Evidence",
+    "figureLabel": "Fig.",
+    "embeddedProof": "Embedded Proof",
+    "accessLevel": "Access Authorization Level:",
+    "disclaimer": "This document is for authorized personnel only. Unauthorized sharing is prohibited."
+  },
+  "specialFiles": {
+    "warningModal": {
+      "title": "Special Files Section",
+      "description": "The reports in this section are KAPDEM's most special and detailed works. You can only view the summary sections. To access the full content, you need to log in or contact us.",
+      "continueButton": "I Understand, Continue",
+      "loginButton": "Sign In",
+      "contactButton": "Contact"
+    },
+    "header": {
+      "badge": "Special Access Required",
+      "title": "Special Files",
+      "description": "KAPDEM's most comprehensive research reports and strategic analyses. In-depth reviews and special studies are located in this section."
+    },
+    "search": {
+      "placeholder": "Search in reports..."
+    },
+    "categories": {
+      "all": "All",
+      "strategicResearch": "Strategic Research",
+      "publicPolicies": "Public Policies",
+      "securityResearch": "Security Research",
+      "socialPolicy": "Social Policy",
+      "economy": "Economy",
+      "environment": "Environment and Sustainability"
+    },
+    "viewFullText": "View Full Text",
+    "loginRequired": "Login required",
+    "noResults": {
+      "title": "No Documents Found",
+      "description": "No documents match your search criteria."
+    },
+    "footer": {
+      "moreInfo": "For more information:"
+    }
+  },
+  "resetPassword": {
+    "title": "Reset Password",
+    "subtitle": "Set your new password",
+    "buttonText": "Sign In",
+    "newPasswordLabel": "New Password",
+    "newPasswordPlaceholder": "Enter your new password",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordPlaceholder": "Enter your password again",
+    "passwordMinLength": "Password must be at least 6 characters",
+    "passwordRequired": "New password is required",
+    "passwordsMismatch": "Passwords do not match",
+    "confirmRequired": "Password confirmation is required",
+    "submitButton": "Reset My Password",
+    "processing": "Processing...",
+    "successTitle": "Password Successfully Changed!",
+    "successMessage": "Your password has been successfully updated. You are being redirected to the login page...",
+    "successRedirectNote": "If automatic redirection doesn't work",
+    "clickHere": "click here",
+    "invalidToken": "Invalid password reset link",
+    "invalidTokenTitle": "Invalid Password Reset Link",
+    "invalidTokenMessage": "Please create a new password reset request.",
+    "goToForgotPassword": "Go to Forgot Password Page",
+    "tokenNotFound": "Token not found",
+    "resetError": "Password reset failed. Please try again.",
+    "generalError": "An error occurred. Please try again."
+  },
+  "sendPaper": {
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "titleMinLength": "Title must be at least 10 characters",
+      "titleRequired": "Article title is required",
+      "emailInvalid": "Invalid email",
+      "emailRequired": "Email is required",
+      "summaryRequired": "Article summary is required",
+      "contentMinLength": "Content must be at least 100 characters",
+      "contentMaxLength": "Content can be at most 10000 characters",
+      "contentRequired": "Content field is required",
+      "contentValidationError": "Content must be between 100 and 10,000 characters and cannot be empty."
+    },
+    "welcomeModal": {
+      "title": "Share Your Article with Us",
+      "description": "Share your ideas, experiences, and opinions with the KAPDEM community. When published, your article will reach thousands of readers and spark important discussions.",
+      "startButton": "Start Submitting My Article",
+      "rulesButton": "Article Submission Guidelines"
+    },
+    "header": {
+      "badge": "Article Submission",
+      "title": "Share Your Ideas",
+      "description": "Share your experiences, analyses, and opinions with the KAPDEM family. Your article will add value to our community and lead to important discussions."
+    },
+    "features": {
+      "wideCrowd": {
+        "title": "Wide Audience",
+        "description": "Your article will reach thousands of readers"
+      },
+      "professional": {
+        "title": "Professional Publication",
+        "description": "Your article will be published professionally"
+      },
+      "secure": {
+        "title": "Secure Platform",
+        "description": "Your privacy is protected, we have guidelines"
+      }
+    },
+    "form": {
+      "title": "Article Submission Form",
+      "subtitle": "Fill in all fields carefully"
+    },
+    "footer": {
+      "questionsLabel": "For questions:",
+      "email": "info@kapdem.org"
+    }
+  },
+  "paperDisclaimerModal": {
+    "title": "Article Submission Guidelines",
+    "subtitle": "Please read these guidelines carefully before submitting your article",
+    "generalRules": {
+      "title": "General Rules",
+      "items": [
+        "Your submission must be original",
+        "Content containing copyright infringement is not accepted",
+        "Articles containing insults, profanity, or hate speech will be rejected",
+        "Scientific and objective language is expected",
+        "Your article's subject must be related to KAPDEM's areas of interest"
+      ]
+    },
+    "contentStandards": {
+      "title": "Content Standards",
+      "items": [
+        "Article must be at least 800 words",
+        "Summary section should be between 200-300 words",
+        "Sources must be cited",
+        "Must comply with spelling and grammar rules",
+        "Compliance with academic writing standards is preferred"
+      ]
+    },
+    "publishProcess": {
+      "title": "Publishing Process",
+      "items": [
+        "Submitted articles are reviewed by our editors",
+        "Review process may take 1-2 weeks",
+        "Accepted articles will be published and you will be notified",
+        "Feedback is provided for rejected articles",
+        "No royalties are paid for published articles"
+      ]
+    },
+    "warning": {
+      "title": "Important Notice",
+      "message": "Articles that do not comply with these rules will be automatically rejected by the system. Please check all rules before submitting your article."
+    },
+    "buttons": {
+      "understood": "Understood",
+      "fillForm": "Fill the Form"
+    }
+  },
+  "sendPaperForm": {
+    "labels": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "institution": "Institution/Organization",
+      "title": "Article Title",
+      "category": "Category",
+      "summary": "Article Summary",
+      "content": "Article Content",
+      "photo": "Photo (Optional)",
+      "biography": "Short Biography"
+    },
+    "placeholders": {
+      "firstName": "Enter your first name",
+      "lastName": "Enter your last name",
+      "email": "email@example.com",
+      "phone": "+90 5XX XXX XX XX",
+      "institution": "Your institution or organization",
+      "title": "Your article title",
+      "summary": "Short summary of your article (200-300 words)",
+      "content": "Full text of your article",
+      "biography": "Short information about yourself",
+      "photo": "Click to upload photo",
+      "photoInfo": "JPG, PNG, GIF (Max: 5MB)"
+    },
+    "categories": {
+      "select": "Select category",
+      "politik": "Politics",
+      "ekonomi": "Economy",
+      "sosyal": "Social",
+      "guvenlik": "Security",
+      "egitim": "Education",
+      "diger": "Other"
+    },
+    "buttons": {
+      "submit": "Submit My Article",
+      "submitting": "Submitting..."
+    }
+  },
+  "consulting": {
+    "title": "Consulting",
+    "subtitle": "We provide specialized consulting services to institutions in the field of public policy through scientific knowledge and analytical methods",
+    "aboutTitle": "Independent Think Tank",
+    "aboutText1": "KAPDEM is an independent think tank working in the field of public policy. It contributes to the processes of formulation, implementation, monitoring and development of public policies through scientific knowledge, analytical methods and multi-dimensional evaluations.",
+    "aboutText2": "It conducts studies aimed at increasing the effectiveness and sustainability of public policies by examining the relationship between public administration, political decision-making mechanisms and social dynamics.",
+    "features": {
+      "analytical": {
+        "title": "Analytical Approach",
+        "description": "In-depth analysis with scientific methods"
+      },
+      "independence": {
+        "title": "Independence",
+        "description": "Impartial and objective evaluation"
+      },
+      "innovation": {
+        "title": "Innovative Solutions",
+        "description": "Constructive and applicable recommendations"
+      },
+      "expertise": {
+        "title": "Expertise",
+        "description": "Experienced team and knowledge base"
+      }
+    },
+    "servicesTitle": "Our Consulting Services",
+    "servicesSubtitle": "We provide professional support at every stage of public policy",
+    "services": {
+      "policyDesign": {
+        "title": "Policy Design",
+        "description": "Comprehensive support in the design and formulation of public policies"
+      },
+      "politicalAnalysis": {
+        "title": "Political Analysis",
+        "description": "In-depth analysis of political, administrative and social struggles"
+      },
+      "implementationSupport": {
+        "title": "Implementation Support",
+        "description": "Dynamics and decision-making processes in the policy implementation phase"
+      },
+      "evaluation": {
+        "title": "Evaluation and Development",
+        "description": "Evaluation and restructuring of existing policies"
+      },
+      "research": {
+        "title": "Special Research",
+        "description": "Scientific studies and research tailored to institutional needs"
+      },
+      "strategicPlanning": {
+        "title": "Strategic Planning",
+        "description": "Developing long-term policy strategies and action plans"
+      }
+    },
+    "audienceTitle": "Who Do We Serve?",
+    "audienceSubtitle": "We provide scientific studies and specialized consulting services on public policy in Turkey to various institutions and organizations",
+    "audience": {
+      "political": {
+        "title": "Political Institutions",
+        "description": "Parliament, ministries and political parties"
+      },
+      "administrative": {
+        "title": "Administrative Institutions",
+        "description": "Public institutions and local governments"
+      },
+      "privateSector": {
+        "title": "Private Sector",
+        "description": "Domestic and foreign private companies"
+      },
+      "civilSociety": {
+        "title": "Civil Society",
+        "description": "NGOs and international organizations"
+      }
+    },
+    "principlesTitle": "Our Core Principles",
+    "principles": {
+      "impartiality": {
+        "title": "Impartiality",
+        "description": "Objective evaluation by maintaining equal distance from all political views"
+      },
+      "independence": {
+        "title": "Independence",
+        "description": "Free analysis without establishing organic ties with any interest group"
+      },
+      "voluntariness": {
+        "title": "Voluntariness",
+        "description": "Serving with the motivation to contribute to the public interest"
+      },
+      "scientificApproach": {
+        "title": "Scientific Approach",
+        "description": "Reliable results with ethical stance and scientific approach"
+      }
+    },
+    "ethicsTitle": "Ethical and Reliable Consulting",
+    "ethicsText1": "KAPDEM conducts its consulting activities within the framework of the principles of impartiality, independence and voluntariness. It encourages its members to use their knowledge and expertise in a way that contributes to the public interest.",
+    "ethicsText2": "The institution maintains equal distance from all political, administrative, social and cultural views; it refuses to establish organic ties with any political party, structure or interest group.",
+    "ethicsText3": "With its scientific approach and ethical stance, it aims to contribute to shaping public policies in a more effective, fair and participatory manner.",
+    "contactTitle": "Learn About Our Consulting Services",
+    "contactSubtitle": "Contact our expert team for consulting solutions tailored to your organization's needs",
+    "contactEmail": "info@kapdem.org",
+    "contactInfo": "For detailed information and contact"
+  },
+  "membershipBanner": {
+    "badge": "Membership Options",
+    "title": "Choose Your Membership",
+    "description": "Join our community with three different membership types and personalize your experience at Kapdem.",
+    "tiers": {
+      "free": {
+        "label": "Basic",
+        "title": "Basic",
+        "description": "Access to basic content"
+      },
+      "paid": {
+        "label": "Researcher Student",
+        "title": "Researcher Student",
+        "description": "Additional benefits and access to exclusive content"
+      },
+      "premium": {
+        "label": "Corporate",
+        "title": "Corporate",
+        "description": "All privileges and full participation rights"
+      }
+    },
+    "detailButton": "Learn More"
+  },
+  "podcastSections": {
+    "title": "Podcasts",
+    "seeAll": "See All",
+    "viewDetails": "View Details",
+    "ariaLabel": "view details"
+  },
+  "toast": {
+    "login": {
+      "success": "Login successful!",
+      "error": "Login failed. Please check your credentials.",
+      "verifyEmail": "Please verify your email address. A verification link has been sent to your email."
+    },
+    "contact": {
+      "success": "Thank you, your message has been sent.",
+      "error": "Message could not be sent. Please try again."
+    },
+    "newsletter": {
+      "emailRequired": "Please enter your email address",
+      "emailInvalid": "Please enter a valid email address",
+      "success": "Successfully subscribed to newsletter!",
+      "error": "This email address is already registered or an error occurred",
+      "connectionError": "Connection error. Please try again."
+    },
+    "profile": {
+      "updateSuccess": "Profile updated successfully!",
+      "updateError": "Error occurred while updating profile!"
+    },
+    "password": {
+      "changeSuccess": "Your password has been changed successfully"
+    },
+    "sendPaper": {
+      "success": "Your paper has been submitted successfully. We will contact you during the review process.",
+      "error": "An error occurred while sending the article. Please try again."
+    },
+    "common": {
+      "error": "An error occurred. Please try again.",
+      "browserNotSupported": "This browser does not support text-to-speech feature.",
+      "donateRedirect": "Thank you for your donation. You are being redirected to the secure payment page..."
+    }
+  },
+  "donation": {
+    "title": "Build the Future",
+    "titleHighlight": "Together",
+    "description": "Support KAPDEM to ensure the continuity of our research and development projects. Every contribution matters for a stronger future.",
+    "stats": {
+      "supporters": "Supporters",
+      "projects": "Projects",
+      "experience": "Years of Experience"
+    },
+    "buttons": {
+      "donate": "Donate Now",
+      "membership": "Membership System"
+    }
+  },
+  "aboutUsPage": {
+    "hero": {
+      "title": "KAPDEM",
+      "subtitle": "About Us",
+      "description": "The Center for Public Policy, Government Administration and Social Development (KAPDEM) was established in Türkiye to conduct studies, develop projects, and contribute to innovative and solution-oriented approaches focused on political science and public administration, public policies, and fundamental public, administrative/political decisions in economic, social, cultural, and societal issues."
+    },
+    "whatIsKapdem": {
+      "title": "What is KAPDEM?",
+      "description": "The Center for Public Policy, State Governance and Social Development (KAPDEM) was established in Turkey to conduct studies, develop projects, and contribute to innovative and solution-oriented approaches focused on political science and public administration, public policies, and fundamental public, administrative/political decisions in economic, social, cultural, and social issues. KAPDEM is a think tank established entirely independently, impartially, and on a voluntary basis. It has no organic connection or relationship with any political party, interest group, pressure group, or national/international/transnational structure. Independence and impartiality have been adopted as the fundamental founding principles."
+    },
+    "publishingPrinciple": {
+      "title": "KAPDEM Publishing Principles and Legal Responsibility",
+      "description": "KAPDEM accepts article requests from all individuals and institutions, especially corporate members and volunteer supporters, who are permanent/staff writers or wish to contribute as guest writers, within a certain editorial review framework to contribute to public policies and public debate culture, and to inform the public. KAPDEM considers it important in terms of social production, sharing and development to work with a perspective that prioritizes scientific and social values and to mediate the sharing of views shaped in this direction with the public, and is therefore open to contributions from all individuals and institutions as writers. KAPDEM accepts as correct the personal information shared by authors who submit their articles and works for publication and publishes them accordingly. KAPDEM may also republish various articles published on other platforms, respecting copyright, to contribute to the making and evaluation process of public policies and the culture of social debate. It includes articles and works that have not been subjected to editorial review and inspection, but whose publication has been approved to contribute to social debates by only examining whether there is a legal problem in their publication, in the 'free tribune' category. All articles and works on KAPDEM are published to contribute to a constructive debate culture. Therefore, articles and works published under all other categories, especially the 'free tribune' category, definitely do not reflect KAPDEM's institutional view and cannot be considered or accepted as KAPDEM's institutional view. All legal responsibility for published articles and works belongs to the authors."
+    },
+    "cta": {
+      "title": "Join Us",
+      "description": "Join Turkey's leading public policy and social development platform. Let's work together for a stronger tomorrow.",
+      "buttons": {
+        "join": "Become a Member",
+        "learnMore": "Learn More"
+      }
+    }
+  },
+  "contactPage": {
+    "title": "Contact",
+    "subtitle": "Get in Touch",
+    "description": "Your opinions are valuable to us. We are happy to help you.",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "whyContact": "Why Contact Us?",
+    "quickReply": "Fast and reliable response",
+    "expertSupport": "Expert support team",
+    "responseTime": "Response within 24 hours",
+    "personalizedSolutions": "Personalized solutions",
+    "sendMessage": "Send Message",
+    "formDescription": "You can contact us by filling out the form. We will get back to you as soon as possible.",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
+    "emailPlaceholder": "Enter your email address",
+    "subject": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjectOptions": {
+      "complaint": "Complaint",
+      "thanks": "Thanks",
+      "membership": "Membership",
+      "other": "Other"
+    },
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "sendButton": "Send Message",
+    "whyWriteTitle": "Why Write to Us?",
+    "expertSupportTitle": "Expert Support",
+    "expertSupportDesc": "We are here to provide you with the best support with our expert team.",
+    "quickResponseTitle": "Fast Response",
+    "quickResponseDesc": "We respond to all messages within 24 hours.",
+    "wideNetworkTitle": "Wide Network",
+    "wideNetworkDesc": "Get access to a strong professional network with 500+ active members and 50+ institutional partners.",
+    "faqTitle": "Frequently Asked Questions",
+    "faq1Question": "How long does it take to respond to my message?",
+    "faq1Answer": "All messages are responded to within 24 hours.",
+    "faq2Question": "Which channels can I reach you from?",
+    "faq2Answer": "You can reach us via email, phone or contact form.",
+    "faq3Question": "Is my information safe?",
+    "faq3Answer": "All your information is kept confidential and not shared with third parties."
+  },
+  "loginPage": {
+    "loginacc": "Log in to your account",
+    "placeholder": "example@kapdem.org / your username",
+    "emailorusername": "Email or Username",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "register": "Register Now",
+    "login": "Login",
+    "loading": "Logging in...",
+    "allrightsreserved": "All rights reserved.",
+    "seepaper": "See Paper"
+  },
+  "registerPage": {
+    "title": "Register",
+    "description": "Fill in your information to join Kapdem",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "username": "Username",
+    "usernamePlaceholder": "Your Username",
+    "institution": "Institution or University (optional)",
+    "institutionPlaceholder": "Institution or University",
+    "email": "Email Address",
+    "emailPlaceholder": "example@kapdem.org",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "••••••••",
+    "kvkkLabel": "KVKK Privacy Policy and Consent",
+    "kvkkTitle": "KVKK Privacy Policy",
+    "communicationLabel": "Communication Policy and Consent",
+    "communicationTitle": "Communication Policy",
+    "newsletterLabel": "I want to subscribe to the newsletter",
+    "registerButton": "Register",
+    "registeringButton": "Registering...",
+    "errorPasswordMismatch": "Passwords do not match.",
+    "errorConsentRequired": "You must provide KVKK and Communication consents.",
+    "errorGeneric": "Registration failed. Please try again.",
+    "successMessage": "Registration successful! You can now log in.",
+    "footer": "© 2024 Kapdem. All rights reserved."
+  },
+  "kvkkread": "Read and approve this document",
+  "membershipPage": {
+    "heroTitle": "KAPDEM",
+    "heroSubtitle": "Membership System",
+    "heroDescription": "Join our research in public policy, government administration, and social development. Work alongside our expert team.",
+    "stats": {
+      "researchReports": "Research Reports",
+      "expertResearchers": "Expert Researchers",
+      "yearsExperience": "Years of Experience",
+      "activeMembers": "Active Members",
+      "corporatePartners": "Corporate Partners",
+      "publishedArticles": "Published Articles",
+      "support247": "Support Service"
+    },
+    "selectPlanTitle": "Choose the Membership Plan That Fits You Best",
+    "selectPlanDescription": "KAPDEM membership provides priority access to our current research, analysis, and reports in public policy, government administration, and social development. Members can closely follow the organization's work, access special files and evaluations, and be informed in advance about member-only sessions and events. Additionally, they have priority rights to KAPDEM's closed meetings, workshops, and special publication shares. Membership offers a privileged platform for access and contribution to evidence-based policy production.",
+    "plans": {
+      "free": {
+        "name": "Basic",
+        "description": "KAPDEM members have the privilege of being closer to thought production and public policy work. Membership offers not only access but also knowledge-based interaction and sharing opportunities.",
+        "price": "₺0",
+        "period": "/forever",
+        "notice": "Start now, no credit card required",
+        "features": [
+          "Access to exclusive publications and analysis content for members only",
+          "Priority notification of public events, panels, and workshops organized by KAPDEM",
+          "Access to KAPDEM newsletter and current research announcements",
+          "Access to two special dossiers prepared exclusively for members",
+          "Ability to download publications and research reports in PDF format"
+        ],
+        "button": "Start Free"
+      },
+      "researcher": {
+        "name": "Researcher - Student",
+        "description": "KAPDEM Researcher Membership is a comprehensive membership model developed for academics, experts, researchers, and policy analysts. This membership offers the privilege of access to in-depth research, participation in exclusive content, and placement in the internal knowledge-sharing network. A professional membership model developed for academics, experts, and policy researchers.",
+        "price": "₺250",
+        "period": "/month",
+        "notice": "100 ₺ discount for edu.tr email registrations",
+        "features": [
+          "Full access to all publications and archive content within KAPDEM",
+          "Priority access to current and special Research Reports",
+          "Invitation to all events and closed sessions organized by KAPDEM",
+          "Unlimited access to all Special Dossiers prepared for members",
+          "Benefit from all basic membership advantages (newsletter, forum, public events, PDF downloads, etc.)"
+        ],
+        "button": "Start Now"
+      },
+      "corporate": {
+        "name": "Corporate",
+        "badge": "MOST POPULAR",
+        "description": "KAPDEM Corporate Membership is a multi-user, strategic collaboration-based membership model developed for public institutions, local governments, civil society organizations, think tanks, and private sector representatives. Corporate membership provides information, content, and interaction opportunities that will directly contribute to institutions' policy development, analysis, strategic planning, and governance processes.",
+        "price": "₺2000",
+        "period": "/month",
+        "features": [
+          "Multi-user access and strategic collaboration model for public institutions, NGOs, and the private sector.",
+          "Unlimited access to KAPDEM's entire research and publication archive",
+          "Corporate access rights for up to 10 users",
+          "Invitation to special events, closed sessions, and collaboration meetings organized by KAPDEM",
+          "Support and information service responded to within 24 hours",
+          "Visibility on collaboration pages with corporate logo and promotion",
+          "Full benefit from all researcher and basic membership advantages"
+        ],
+        "button": "Start Corporate Membership"
+      },
+      "strategic": {
+        "name": "Strategic Partner",
+        "description": "Premium solution for large-scale institutions and special research projects",
+        "price": "₺10,000",
+        "period": "/year",
+        "notice": "Special pricing options available",
+        "features": [
+          "All corporate advantages included",
+          "Special research projects and consulting",
+          "Unlimited user access",
+          "24/7 VIP support line",
+          "Unlimited publication rights",
+          "Special event organization",
+          "Dedicated consultant assignment",
+          "Custom reporting and analysis"
+        ],
+        "button": "Contact Us"
+      }
+    },
+    "whyKapdem": {
+      "title": "Why Should You Become a KAPDEM Member?",
+      "expertise": {
+        "title": "Proven Expertise",
+        "description": "With 8 years of experience, we are Turkey's leading organization in public policy. We provide reliable information with 150+ research reports and 25 expert researchers."
+      },
+      "currentAnalysis": {
+        "title": "Current and Objective Analysis",
+        "description": "We support your decision-making processes with our constantly updated content and objective analysis."
+      },
+      "network": {
+        "title": "Extensive Network and Collaboration",
+        "description": "Gain access to a strong professional network with 500+ active members and 50+ corporate partners."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "cancellation": {
+        "question": "How to cancel membership?",
+        "answer": "You can cancel your membership at any time. Simply contact our support team for the cancellation process."
+      },
+      "payment": {
+        "question": "What are the payment options?",
+        "answer": "You can pay with credit card, debit card, and bank transfer. Special payment plans are also available for corporate memberships."
+      },
+      "trial": {
+        "question": "Is there a trial period?",
+        "answer": "Yes, we offer a 7-day free trial period for all packages. You can test all features during this period."
+      },
+      "change": {
+        "question": "Can I change my plan?",
+        "answer": "Yes, you can upgrade or downgrade your plan at any time. Price differences are calculated proportionally."
+      }
+    },
+    "cta": {
+      "title": "Start Now",
+      "description": "Join Turkey's leading public policy research center. Meet our expert team and comprehensive research.",
+      "startButton": "Start Now",
+      "learnMoreButton": "Learn More"
+    }
+  }
+}

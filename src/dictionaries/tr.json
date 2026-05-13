@@ -1,0 +1,1142 @@
+{
+  "categoryMap": {
+    "uncategorized": "Kategorisiz",
+    "gorus-yazilari": "Görüş Yazıları",
+    "yayinlar": "Yayınlar",
+    "kuresel-politika-ve-uluslararasi-iliskiler": "Küresel Politika ve Uluslararası İlişkiler",
+    "kamu-politikalari": "Kamu Politikaları",
+    "yonetim-tasarimi": "Yönetim Tasarımı",
+    "ekonomi-ve-kalkinma": "Ekonomi ve Kalkınma",
+    "teknoloji-ve-inovasyon": "Teknoloji ve İnovasyon",
+    "goc": "Göç",
+    "tarih": "Tarih",
+    "savunma-ve-guvenlik": "Savunma ve Güvenlik",
+    "kultur-ve-sanat": "Kültür ve Sanat",
+    "kitap-incelemeleri": "Kitap İncelemeleri",
+    "roportajlar": "Röportajlar",
+    "etkinlikler": "Etkinlikler",
+    "dijital-perspektif": "Dijital Perspektif",
+    "podcastler": "Podcastler",
+    "videolar": "Videolar",
+    "webinarlar": "Webinarlar",
+    "ceviri-makaleler": "Çeviri Makaleler",
+    "siyasi-anilar": "Siyasi Anılar",
+    "editorun-sectikleri": "Editörün Seçtikleri",
+    "duyurular": "Duyurular",
+    "gecmis-etkinlikler": "Geçmiş Etkinlikler",
+    "gelecek-etkinlikler": "Gelecek Etkinlikler",
+    "one-cikan": "Öne Çıkan"
+  },
+  "navbar": {
+    "donate": "Bizi Destekle",
+    "publications": {
+      "title": "Yayınlar",
+      "items": {
+        "publication1": "Kamu Politikaları",
+        "publication2": "Yönetim Tasarımı / Reformu",
+        "publication3": "Küresel Politika ve Uluslararası İlişkiler",
+        "publication4": "Ekonomi ve Kalkınma",
+        "publication5": "Teknoloji ve İnovasyon",
+        "publication6": "Göç",
+        "publication7": "Savunma ve Güvenlik",
+        "publication8": "Tarih",
+        "publication9": "Kültür ve Sanat",
+        "publication10": "Kitap İncelemeleri",
+        "publication11": "Görüş Yazıları",
+        "publication12": "Röportajlar"
+      }
+    },
+    "specialfiles": "Özel Dosyalar",
+    "digital": "KAPDEM Dijital",
+    "events": "Etkinlikler",
+    "membership": "Üyelik",
+    "consulting": "Danışmanlık",
+    "interviews": "Röportajlar",
+    "aboutus": {
+      "title": "Hakkımızda",
+      "items": {
+        "item1": "Ana Kadro",
+        "authors": "Yazarlar",
+        "item1Sub": "Ekibimizi Tanıyın",
+        "item2": "Hakkımızda",
+        "item2Sub": "Biz Kimiz?",
+        "item3": "İletişim",
+        "item3Sub": "Bize Ulaşın"
+      }
+    },
+    "fastsearch": "Hızlı Arama",
+    "profile": "Profil",
+    "logout": "Çıkış Yap",
+    "login": "Giriş Yap",
+    "homePage": "Ana Sayfa",
+    "sendPaper": "Yazı Gönder"
+  },
+  "subscribeNewsletter": "Bültenimize Abone Ol",
+  "events": {
+    "heroTitle": "Etkinliklerle Geleceğe Yön Ver",
+    "heroDescription": "KAPDEM'in özgün ve vizyoner etkinliklerinde yerini al, toplumsal değişimin parçası ol. İlham, network ve etki burada başlar.",
+    "upcomingEvents": "Yaklaşan Etkinlik",
+    "pastEvents": "Geçmiş Etkinlik",
+    "totalEvents": "Toplam Etkinlik",
+    "discoverEvents": "Etkinlikleri Keşfet",
+    "upcomingTitle": "Yaklaşan Etkinlikler",
+    "upcomingDescription": "Kariyerine ve vizyonuna katkı sağlayacak, ilham verici buluşmalar. Geleceğin liderleri burada bir araya geliyor.",
+    "activeEvents": "Aktif Etkinlik",
+    "noUpcomingEvents": "Yaklaşan etkinlik bulunamadı. Çok yakında yeni etkinlikler eklenecek!",
+    "dateNotSpecified": "Tarih belirtilmemiş",
+    "joinAndDetails": "Katıl & Detay",
+    "pastTitle": "Geçmiş Etkinlikler",
+    "pastDescription": "KAPDEM'in gerçekleştirdiği etkinliklere göz atın, geçmişte neler yaptığımızı keşfedin.",
+    "completedEvents": "Tamamlanan Etkinlik",
+    "noPastEvents": "Henüz tamamlanmış etkinlik bulunmuyor.",
+    "viewDetails": "Detaylı İncele",
+    "ctaTitle": "Hiçbir Etkinliği Kaçırma!",
+    "ctaDescription": "Bültenimize abone olarak tüm etkinliklerimizden haberdar olun. Özel davetiye ve erken kayıt fırsatlarından yararlanın.",
+    "subscribeButton": "Bültene Abone Ol",
+    "viewEventsButton": "Etkinlikleri Görüntüle",
+    "participants": "Katılımcı",
+    "speakers": "Konuşmacı",
+    "popupTitle": "Bültenimize Katılın",
+    "popupDescription": "Özel içerikler ve etkinlik duyuruları için abone olun",
+    "popupClose": "Kapat",
+    "popupBenefit1Title": "Özel İçerik",
+    "popupBenefit1Description": "Sadece abonelere özel içerikler",
+    "popupBenefit2Title": "Erken Bilgilendirme",
+    "popupBenefit2Description": "Etkinliklerden ilk siz haberdar olun",
+    "popupBenefit3Title": "Haftalık Bülten",
+    "popupBenefit3Description": "Özenle hazırlanmış içerikler"
+  },
+  "dontspam": "Yayınlarımız, etkinliklerimiz ve duyurularımızdan haberdar olmak için abone olun",
+  "writeMail": "E-Mail Adresinizi Girin",
+  "subscribe": "Abone Ol",
+  "publishedAt": "Yayınlanma Tarihi",
+  "author": "Yazar",
+  "notFound": "Henüz içerik bulunmamaktadır.",
+  "profile": {
+    "roles": {
+      "free": "Ücretsiz Üye",
+      "paid": "Ücretli Üye",
+      "premium": "Premium Üye",
+      "admin": "Yönetici",
+      "member": "Üye"
+    },
+    "welcome": "Hoş geldiniz",
+    "emailVerified": "E-posta Onaylı",
+    "verified": "Onaylı",
+    "personalInfo": "Kişisel Bilgiler",
+    "edit": "Düzenle",
+    "firstName": "Ad",
+    "lastName": "Soyad",
+    "username": "Kullanıcı Adı",
+    "title": "Unvan",
+    "profession": "Meslek",
+    "institution": "Kurum",
+    "email": "E-posta Adresi",
+    "about": "Hakkında",
+    "membershipInfo": "Üyelik Bilgileri",
+    "activeSubscription": "Aktif aboneliğiniz bulunmaktadır",
+    "usingFreePlan": "Ücretsiz plan kullanıyorsunuz",
+    "allPremiumAccess": "Tüm premium içeriklere erişim",
+    "paidContentAccess": "Ücretli içeriklere erişim",
+    "basicContentAccess": "Temel içeriklere erişim",
+    "adminPrivileges": "Yönetici yetkilerine sahip",
+    "buySubscription": "Abonelik Satın Al",
+    "upgradeToPremium": "Premium'a Yükselt",
+    "accessMoreContent": "Daha fazla içeriğe erişim sağlayın",
+    "socialMedia": "Sosyal Medya",
+    "educationInfo": "Eğitim Bilgileri",
+    "completed": "Tamamlandı",
+    "ongoing": "Devam ediyor",
+    "security": "Güvenlik"
+  },
+  "changePassword": {
+    "title": "Şifre Değiştir",
+    "currentPassword": "Mevcut Şifre",
+    "newPassword": "Yeni Şifre",
+    "confirmPassword": "Yeni Şifre Tekrar",
+    "currentPasswordPlaceholder": "Mevcut şifrenizi girin",
+    "newPasswordPlaceholder": "Yeni şifrenizi girin",
+    "confirmPasswordPlaceholder": "Yeni şifrenizi tekrar girin",
+    "passwordRequirements": "Şifreniz en az 8 karakter, bir büyük harf, bir küçük harf, bir sayı ve bir özel karakter içermelidir.",
+    "submitButton": "Şifreyi Değiştir",
+    "submitting": "İşleniyor...",
+    "validation": {
+      "minLength": "Şifre en az 8 karakter olmalıdır",
+      "maxLength": "Şifre en fazla 32 karakter olmalıdır",
+      "required": {
+        "current": "Mevcut şifre gereklidir",
+        "new": "Yeni şifre gereklidir",
+        "confirm": "Şifre tekrarı gereklidir"
+      },
+      "pattern": "Şifre en az bir büyük harf, bir küçük harf, bir sayı ve bir özel karakter içermelidir",
+      "mismatch": "Şifreler eşleşmiyor"
+    }
+  },
+  "editProfile": {
+    "pageTitle": "Profil Yönetimi",
+    "profilePicture": "Profil Fotoğrafı",
+    "pageSubtitle": "Kişisel bilgilerinizi güncelleyin",
+    "profilePictureTitle": "Profil Fotoğrafı",
+    "uploadHint": "Profil fotoğrafınızı değiştirmek için tıklayın",
+    "personalInfoTitle": "Kişisel Bilgiler",
+    "firstName": "Ad",
+    "firstNamePlaceholder": "Adınızı girin",
+    "lastName": "Soyad",
+    "lastNamePlaceholder": "Soyadınızı girin",
+    "username": "Kullanıcı Adı",
+    "usernamePlaceholder": "Kullanıcı adınızı girin",
+    "institution": "Kurum",
+    "institutionPlaceholder": "Çalıştığınız kurumu girin",
+    "titleLabel": "Unvan",
+    "titlePlaceholder": "Unvanınızı girin",
+    "profession": "Meslek",
+    "professionPlaceholder": "Mesleğinizi girin",
+    "about": "Hakkımda",
+    "aboutPlaceholder": "Kendiniz hakkında kısa bir açıklama yazın...",
+    "educationTitle": "Eğitim Bilgileri",
+    "addEducation": "Ekle",
+    "educationNumber": "Eğitim",
+    "educationInstitution": "Kurum",
+    "educationInstitutionPlaceholder": "Üniversite/Okul adı",
+    "educationDegree": "Derece",
+    "educationDegreePlaceholder": "Lisans, Yüksek Lisans, Doktora",
+    "educationField": "Alan",
+    "educationFieldPlaceholder": "Eğitim alanı",
+    "educationStartYear": "Başlangıç",
+    "educationEndYear": "Bitiş",
+    "educationCompleted": "Tamamlandı",
+    "socialMediaTitle": "Sosyal Medya Bağlantıları",
+    "linkedinPlaceholder": "LinkedIn profil URL'i",
+    "twitterPlaceholder": "Twitter profil URL'i",
+    "instagramPlaceholder": "Instagram profil URL'i",
+    "facebookPlaceholder": "Facebook profil URL'i",
+    "saveButton": "Profili Güncelle",
+    "saving": "Kaydediliyor..."
+  },
+  "eventDetail": {
+    "daysLeft": "gün kaldı",
+    "eventDate": "Etkinlik Tarihi",
+    "dateNotSpecified": "Tarih belirtilmemiş",
+    "time": "Saat",
+    "timeNotSpecified": "Saat belirtilmemiş",
+    "organizer": "Düzenleyen",
+    "access": "Erişim",
+    "free": "Ücretsiz",
+    "premium": "Premium",
+    "eventDescription": "Etkinlik Açıklaması",
+    "eventGallery": "Etkinlik Galerisi",
+    "photos": "Fotoğraf",
+    "noGalleryImages": "Henüz galeri resmi eklenmemiş",
+    "imagesComingSoon": "Etkinlik görselleri yakında eklenecek",
+    "publishedDate": "Yayınlanma Tarihi",
+    "eventInfo": "Etkinlik Bilgileri",
+    "category": "Kategori",
+    "general": "Genel",
+    "status": "Durum",
+    "active": "Aktif",
+    "share": "Paylaş",
+    "information": "Bilgilendirme",
+    "infoMessage": "Bu etkinlik KAPDEM tarafından düzenlenmektedir. Katılım için kayıt olmak zorunludur.",
+    "close": "Kapat",
+    "previous": "Önceki",
+    "next": "Sonraki"
+  },
+  "eventRegister": {
+    "buttonText": "Etkinliğe Katıl",
+    "formTitle": "Etkinlik Kaydı",
+    "firstName": "Ad",
+    "firstNamePlaceholder": "Adınız",
+    "lastName": "Soyad",
+    "lastNamePlaceholder": "Soyadınız",
+    "email": "E-posta",
+    "emailPlaceholder": "E-posta Adresiniz",
+    "phone": "Telefon",
+    "phonePlaceholder": "Telefon Numaranız",
+    "institution": "Kurum ",
+    "institutionPlaceholder": "Kurumunuz (İsteğe Bağlı)",
+    "licensePlate": "Araç Plakası ",
+    "licensePlatePlaceholder": "Araç Plakası (İsteğe Bağlı)",
+    "submitButton": "Kaydı Tamamla"
+  },
+  "seeeditorPicks": "Editörün Seçimlerini Görüntüle",
+  "editorPicks": "Editörün Seçtikleri",
+  "seeallpublicpolicy": "Tüm Kamu Politikaları Yazılarını Görüntüle",
+  "publicpolicy": "Kamu Politikaları",
+  "seeAll": "Tümünü Gör",
+  "SubscribeKapdem": "Kapdem'e Abone Ol",
+  "subs": "Üye Ol",
+  "kapdemDigital": "Kapdem Dijital İçerikleri",
+  "contentLoading": "İçerik yükleniyor...",
+  "readMore": "Devamını Oku",
+  "kapdemPodcasts": "Kapdem Podcastleri",
+  "slider": {
+    "loading": "Yükleniyor...",
+    "readMore": "Devamını Oku"
+  },
+  "participant": "Katılımcı",
+  "speaker": "Konuşmacı",
+  "upcomingEvents": "Yaklaşan Etkinlikler",
+  "footer": {
+    "text": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi(KAPDEM), Türkiye’de siyaset bilimi ve kamu yönetimi, kamupolitikaları ile ekonomik, sosyal, kültürel ve toplumsalkonulardaki temel kamusal, yönetimsel/idari/siyasi kararlara odaklı çalışmalar yapmak, projeler geliştirmek ve yenilikçi ve çözüm odaklı yaklaşımlara katkıda bulunmak üzere kurulmuştur. KAPDEM; tamamen bağımsız, tarafsız ve gönüllülük esasına dayalı olarak kurulmuş bir düşünce kuruluşudur. Herhangi bir siyasi parti, çıkar grubu, baskı grubu veya ulusal/uluslararası/ulus ötesi yapı ile organik bir bağı ya da ilişkisi yoktur. Bağımsız ve tarafsız kalmayı temel kuruluş ilkesi olarak benimsenmiştir.",
+    "additionalText": "Yazı Kategorileri",
+    "publication1": "Kamu Politikaları",
+    "publication2": "Görüş Yazıları",
+    "publication3": "Yönetim Tasarımı / Reformu",
+    "publication4": "Küresel Politika ve Uluslararası İlişkiler",
+    "publication5": "Görüş Yazıları",
+    "publication6": "Ekonomi ve Kalkınma",
+    "publication7": "Teknoloji ve İnovasyon",
+    "publication8": "Göç",
+    "publication9": "Savunma ve Güvenlik",
+    "publication10": "Tarih",
+    "publication11": "Kültür Sanat",
+    "publication12": "Kitap İncelemeleri",
+    "publication13": "Röportajlar",
+    "mailtext": "Bültenimize abone olun, yeni içeriklerden ve gelişmelerden ilk siz haberdar olun.",
+    "subscribe": "Abone Ol",
+    "email": "E-posta Adresiniz"
+  },
+  "category": {
+    "publicPolicy": "Kamu Politikaları",
+    "opinionPieces": "Görüş Yazıları",
+    "managementDesignReform": "Yönetim Tasarım Reformu",
+    "globalPoliticsAndInternationalRelations": "Küresel Politika ve Uluslararası İlişkiler",
+    "economyAndDevelopment": "Ekonomi ve Kalkınma",
+    "technologyAndInnovation": "Teknoloji ve İnovasyon",
+    "migration": "Göç",
+    "defenseAndSecurity": "Savunma ve Güvenlik",
+    "history": "Tarih",
+    "cultureAndArts": "Kültür Sanat",
+    "bookReviews": "Kitap İncelemeleri",
+    "specialFiles": "Özel Dosyalar",
+    "digitalContents": "Dijital İçerikler",
+    "videos": "Videolar",
+    "events": "Etkinlikler",
+    "interviews": "Röportajlar",
+    "category": "Kategorisi",
+    "podcastler": "Podcastler",
+    "noContent": "Gösterilecek içerik yok.",
+    "latestContent": "Son Eklenen",
+    "readMore": "Devamını Oku",
+    "desc1": " Kamu politikası, devlet yönetimi ve toplumsal gelişim alanındaki araştırmalarımıza katılın. Uzman kadromuzla birlikte çalışın.",
+    "inthiscategory": "Bu Kategoride",
+    "totalCategory": "Toplam Kategoriler",
+    "totalContent": "Toplam İçerik",
+    "inlastMonth": "Son Ayda"
+  },
+  "shareAndDownload": "Paylaş ve İndir",
+  "sharewp": "WhatsApp ile Paylaş",
+  "sharemail": "E-posta ile Paylaş",
+  "sharelink": "Linki Paylaş",
+  "excerpt": "Özet",
+  "premiumContentNoticeTitle": "Bu içerik premium üyelere özeldir",
+  "premiumContentNoticeMessage": "Bu içeriğin tamamını okumak için ücretli üyelik gereklidir.",
+  "viewMemberShip": " Üyelik Planlarını İncele",
+  "login": "Giriş Yap",
+  "readMode": "Okuma Modu",
+  "listenpaper": "Makaleyi Dinle",
+  "listenModeInfo": "Bu özellik tarayıcının yerleşik sesli okuma teknolojisini kullanır",
+  "alreadyAMember": "Zaten bir üye misiniz?",
+  "latestPaperViaAuthor": "Son Yazıları",
+  "seeAll1": "Tümünü Gör",
+  "detail1": "Detay",
+  "support": "Kapdem'i Destekle",
+  "support1": "Destek Ol",
+  "events": {
+    "title1": "Etkinliklerle Geleceğe Yön Ver",
+    "title2": "KAPDEM'in özgün ve vizyoner etkinliklerinde yerini al, toplumsal değişimin parçası ol. İlham, network ve etki burada başlar."
+  },
+  "chatbot": {
+    "title": "KAPDEM AI",
+    "placeholder": "Mesajınızı yazın...",
+    "send": "Gönder",
+    "typing": "Yazıyor...",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "welcome": "Merhaba! Size nasıl yardımcı olabilirim?",
+    "close": "Kapat",
+    "minimize": "Küçült",
+    "suggestions": "Öneriler"
+  },
+  "search": {
+    "placeholder": "Yazı, yazar veya kategori ara...",
+    "hint": "En az 2 karakter girin...",
+    "noResults": "Sonuç bulunamadı",
+    "posts": "Yazılar",
+    "authors": "Yazarlar",
+    "teamMembers": "Ana Kadro",
+    "tip": "İpucu:",
+    "tipText": "Yazı başlığı, içerik, yazar adı, ana kadro üyesi veya kategori ile arama yapabilirsiniz."
+  },
+  "mainCastHero": {
+    "title": "Ana Kadromuz",
+    "subtitle": "Güçlü Birliktelik, Ortak Vizyon",
+    "description": "Alanında uzman ana kadromuz, KAPDEM'i ileriye taşıyan en büyük gücümüzdür.",
+    "statsText": "KAPDEM kadrosunda görev alan kişilerin, KAPDEM’deki görevleri ile diğer kurumlardaki görevleri arasında herhangi bir organik bağ bulunmamaktadır. Bu nedenle bazı kişiler için yalnızca eğitim durumu veya çalıştıkları sektör bilgisine yer verilmiştir."
+  },
+  "teamMembersList": {
+    "errorTitle": "Ana Kadro Bilgileri Yüklenemedi",
+    "errorMessage": "Ana kadro bilgilerine şu anda erişilemiyor. Lütfen daha sonra tekrar deneyin."
+  },
+  "searchAndFilter": {
+    "searchPlaceholder": "İsim veya pozisyon ara...",
+    "clearSearchLabel": "Aramayı temizle",
+    "allPositions": "Tüm Pozisyonlar",
+    "clearFiltersLabel": "Tüm filtreleri temizle",
+    "clearButton": "Temizle",
+    "activeFilters": "Aktif Filtreler:",
+    "searchLabel": "Arama:",
+    "removeSearchLabel": "Arama filtresini kaldır",
+    "roleLabel": "Rol:",
+    "removeRoleLabel": "Rol filtresini kaldır",
+    "resultsCount": "sonuç"
+  },
+  "authorsPage": {
+    "title": "Yazarlarımız",
+    "description": "KAPDEM çatısı altında araştırmalarını paylaşan değerli yazarlarımız",
+    "noAuthors": "Henüz yazar bulunmamaktadır."
+  },
+  "pagination": {
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "page": "Sayfa"
+  },
+  "donatePage": {
+    "title": "KAPDEM",
+    "subtitle": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi",
+    "description": "KAPDEM, Türkiye'de kamu politikaları, devlet yönetimi ve toplumsal gelişim alanlarında bilgi üreten, çözüm odaklı öneriler geliştiren bağımsız bir düşünce kuruluşudur. Amacımız; kamu yararını, adalet duygusunu ve toplumsal refahı güçlendiren politikaların oluşumuna katkı sunmaktır.",
+    "expandedDescription": "Her çalışma, Türkiye'de kamu politikalarının daha katılımcı, şeffaf ve etkili biçimde şekillenmesine yönelik bir adım olarak tasarlanır. Yürüttüğümüz araştırmalar, idari reformlardan toplumsal sorunların çözümüne, demokratik yönetişimden sürdürülebilir kalkınmaya kadar geniş bir yelpazede kamusal fayda üretmeyi hedefler. KAPDEM'e yapacağınız her destek, yalnızca bir katkı değil; bilgiye, bilimsellige ve toplumsal gelişime yapılan bir yatırımdır. Bağışlarınız, yeni araştırmaların hayata geçmesini, genç araştırmacıların desteklenmesini ve kamu politikalarının daha adil, kapsayıcı ve sürdürülebilir hale gelmesini sağlar. Bağımsız, tarafsız ve gönüllüluk esasına dayalı yapımızla; bilimin, aklın ve kamusal sorumluluğun rehberliğinde yürüttüğümüz bu yolculukta siz de yanımızda olun.",
+    "showMore": "Devamını oku",
+    "showLess": "Daha az göster",
+    "stats": {
+      "reports": "Yayınlanan Rapor",
+      "researchers": "Aktif Araştırmacı",
+      "experience": "Yıllık Deneyim",
+      "partnerships": "Kurum Ortaklığı"
+    },
+    "formTitle": "Bağış Yapın",
+    "amountLabel": "Bağış Miktarı",
+    "otherAmount": "Diğer Miktar",
+    "nameLabel": "Ad Soyad / Kurum Adı",
+    "namePlaceholder": "Ad Soyad veya Kurum Adı",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "ornek@email.com",
+    "categoryLabel": "Destek Alanı",
+    "categoryPlaceholder": "Seçiniz",
+    "categories": {
+      "policy": "Kamu Politikası",
+      "governance": "Devlet Yönetimi",
+      "development": "Toplumsal Gelişim",
+      "education": "Eğitim",
+      "innovation": "İnovasyon",
+      "general": "Genel Destek"
+    },
+    "agreementText": "kabul ediyorum.",
+    "agreementLink1": "Bağış koşulları",
+    "agreementLink2": "gizlilik politikası",
+    "agreementAnd": "ve",
+    "summaryLabel": "Bağış Miktarı:",
+    "donateButton": "Bağışla",
+    "whyDonateTitle": "Neden KAPDEM'e Bağış Yapmalısınız?",
+    "whyDonateReasons": [
+      {
+        "title": "Toplum İçin:",
+        "description": "KAPDEM, kamu yararını, toplumsal gelişimi ve adalet duygusunu güçlendirmeyi amaçlayan bağımsız bir düşünce kuruluşudur. Bağışlarınız, bu hedeflere ulaşmamıza doğrudan katkı sağlar."
+      },
+      {
+        "title": "Bilimsel ve Kalıcı Etki:",
+        "description": "Her destek, kamu politikalarının daha etkili, katılımcı ve sürdürülebilir biçimde şekillenmesine yönelik araştırma ve analiz çalışmalarına dönüşür."
+      },
+      {
+        "title": "Bağımsızlık ve Tarafsızlık:",
+        "description": "KAPDEM, hiçbir siyasi yapı veya çıkar grubuyla organik bağ kurmadan; sadece toplum, bilgi ve kamu yararı için çalışır. Siz de bağımsız ve tarafsız düşünceye ve kamu yararına katkı sağlayın!"
+      },
+      {
+        "title": "",
+        "description": "Siz de bağımsız ve tarafsız düşünceye ve kamu yararına katkı sağlayın!"
+      }
+    ],
+    "workAreasTitle": "Çalışma Alanlarımız",
+    "workAreasContent": [
+      "KAPDEM, kamu politikaları, devlet yönetimi ve toplumsal gelişim alanlarında yürüttüğü bilimsel araştırmalar ve düşünsel üretim faaliyetleriyle, Türkiye'de politika geliştirme süreçlerine katkı sunan bağımsız bir düşünce kuruluşudur. Çalışmalarının merkezinde; kamu yararını gözeten, kanıta dayalı ve sürdürülebilir politika önerileri geliştirmek yer alır.",
+      "Kurum, kamu politikalarının tasarımı, uygulanması, değerlendirilmesi ve geliştirilmesi süreçlerini bütüncül bir bakış açısıyla ele alır. Devlet yönetiminde etkinliği, hesap verebilirliği ve katılımcılığı artıracak yapısal reform alanlarında çözüm odaklı araştırmalar yürütür. Bu çerçevede, yönetim modelleri, idari reformlar, yönetişim mekanizmaları, karar alma süreçleri ve kamu performans sistemleri üzerine odaklanır.",
+      "KAPDEM, aynı zamanda toplumsal gelişimi destekleyen projeler geliştirir. Sosyal sorunlara çözüm üretmeyi, eşitlik, kapsayıcılık, eğitim, istihdam ve demokratik katılım gibi alanlarda fark yaratmayı hedefler. Kamu politikalarının yalnızca idari değil, toplumsal etkilerini de analiz eder; bu doğrultuda bütüncül yaklaşımlar önerir.",
+      "Yayın ve araştırma faaliyetleri; kamu politikaları, yönetim tasarımı ve reformu, küresel politika ve uluslararası ilişkiler, ekonomi ve kalkınma, teknoloji ve inovasyon, göç, savunma ve güvenlik gibi geniş bir yelpazeyi kapsar. Bu alanlarda hazırlanan raporlar, değerlendirmeler, politika notları ve analizler, kamu kurumlarına, akademiye, sivil topluma ve topluma açık bir bilgi paylaşım ağı oluşturur.",
+      "KAPDEM, bilgiye dayalı analizleri, tarafsız duruşu ve kamusal sorumluluğu ile kamu politikalarının daha adil, katılımcı ve sürdürülebilir biçimde şekillenmesine katkı sağlamayı sürdürmektedir."
+    ]
+  },
+  "donateByIban": {
+    "title": "BİZİ DESTEKLE",
+    "description": "ne bağış yapmak isteyen gönüllülerimiz aşağıda bilgileri yer alan kurumsal banka hesabımıza, açıklamaya",
+    "organizationName": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi",
+    "donationNote": "BAĞIŞ",
+    "noteInstruction": "yazarak merkezimize destekte bulunabilirler.",
+    "bankName": "BANKA ADI:",
+    "bankNameValue": "T.C. ZİRAAT BANKASI A.Ş.",
+    "branchCode": "ŞUBE KODU:",
+    "accountNo": "HESAP NO:",
+    "iban": "IBAN:"
+  },
+  "teamMemberDetail": {
+    "notFound": {
+      "title": "Üye Bulunamadı",
+      "description": "Aradığınız üye bulunamadı veya erişilemiyor.",
+      "backButton": "Ana Kadroya Dön"
+    },
+    "backToTeam": "Ana Kadroya Dön",
+    "education": "Eğitim",
+    "about": "Hakkında",
+    "ongoing": "Devam Ediyor",
+    "contact": {
+      "title": "İletişime Geçin",
+      "description": "{name} ile doğrudan iletişim kurmak için aşağıdaki bağlantıları kullanabilirsiniz.",
+      "sendEmail": "E-posta Gönder",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "editorPickss": {
+    "title": "Editörün Seçtikleri",
+    "readMore": "Devamını oku"
+  },
+  "forgotPassword": {
+    "title": "Şifremi Unuttum",
+    "subtitle": "E-posta adresinizi girin, size şifre sıfırlama bağlantısı gönderelim.",
+    "buttonText": "Giriş Yap",
+    "emailLabel": "E-posta Adresi",
+    "emailPlaceholder": "E-posta adresinizi girin",
+    "emailRequired": "E-posta gereklidir",
+    "emailInvalid": "Geçerli bir e-posta girin",
+    "submitButton": "Şifre Sıfırlama Linki Gönder",
+    "sending": "Gönderiliyor...",
+    "errorMessage": "Bir hata oluştu. Lütfen tekrar deneyin.",
+    "successTitle": "E-posta Gönderildi!",
+    "successMessage": "Şifre sıfırlama bağlantısı e-posta adresinize gönderildi.",
+    "successNote": "Gelen kutunuzu ve spam klasörünüzü kontrol edin."
+  },
+  "memberProfile": {
+    "posts": "Yazı",
+    "comments": "Yorum",
+    "about": "Hakkında",
+    "education": "Eğitim",
+    "ongoing": "Devam Ediyor",
+    "completed": "Tamamlandı",
+    "articles": "Yazılar",
+    "noArticles": "Yazar tarafından henüz bir makale yayınlanmamış.",
+    "content": "İçerik",
+    "characters": "karakter"
+  },
+  "specialFileDetail": {
+    "notFound": "Dosya Bulunamadı",
+    "backToFiles": "Özel Dosyalara Dön",
+    "backToArchive": "ARŞİVE DÖN",
+    "confidentialLayer": "Gizli Veri Katmanı",
+    "verifiedAccess": "Verified Access Level",
+    "summaryTitle": "Özet ve Analiz",
+    "visualEvidence": "Görsel Kanıtlar",
+    "figureLabel": "Fig.",
+    "embeddedProof": "Yerleşik Kanıt",
+    "accessLevel": "Erişim Yetki Seviyesi:",
+    "disclaimer": "Bu döküman sadece yetkili personel içindir. İzinsiz paylaşılması yasaktır."
+  },
+  "specialFiles": {
+    "warningModal": {
+      "title": "Özel Dosyalar Bölümü",
+      "description": "Bu bölümde yer alan raporlar KAPDEM'in en özel ve detaylı çalışmalarıdır. Sadece özet kısımlarını görüntüleyebilirsiniz. Tam içerik için giriş yapmanız veya bizimle iletişime geçmeniz gerekmektedir.",
+      "continueButton": "Anladım, Devam Et",
+      "loginButton": "Giriş Yap",
+      "contactButton": "İletişim"
+    },
+    "header": {
+      "badge": "Özel Erişim Gerekli",
+      "title": "Özel Dosyalar",
+      "description": "KAPDEM'in en kapsamlı araştırma raporları ve stratejik analizleri. Derinlemesine incelemeler ve özel çalışmalar bu bölümde yer almaktadır."
+    },
+    "search": {
+      "placeholder": "Raporlarda ara..."
+    },
+    "categories": {
+      "all": "Tümü",
+      "strategicResearch": "Stratejik Araştırma",
+      "publicPolicies": "Kamu Politikaları",
+      "securityResearch": "Güvenlik Araştırmaları",
+      "socialPolicy": "Sosyal Politika",
+      "economy": "Ekonomi",
+      "environment": "Çevre ve Sürdürülebilirlik"
+    },
+    "viewFullText": "Tam Metni Gör",
+    "loginRequired": "Giriş gerekli",
+    "noResults": {
+      "title": "Belge Bulunamadı",
+      "description": "Arama kriterlerinize uygun belge bulunmuyor."
+    },
+    "footer": {
+      "moreInfo": "Daha fazla bilgi için:"
+    }
+  },
+  "resetPassword": {
+    "title": "Şifre Sıfırla",
+    "subtitle": "Yeni şifrenizi belirleyin",
+    "buttonText": "Giriş Yap",
+    "newPasswordLabel": "Yeni Şifre",
+    "newPasswordPlaceholder": "Yeni şifrenizi girin",
+    "confirmPasswordLabel": "Şifre Onayı",
+    "confirmPasswordPlaceholder": "Şifrenizi tekrar girin",
+    "passwordMinLength": "Şifre en az 6 karakter olmalıdır",
+    "passwordRequired": "Yeni şifre gereklidir",
+    "passwordsMismatch": "Şifreler eşleşmiyor",
+    "confirmRequired": "Şifre onayı gereklidir",
+    "submitButton": "Şifremi Sıfırla",
+    "processing": "İşleniyor...",
+    "successTitle": "Şifre Başarıyla Değiştirildi!",
+    "successMessage": "Şifreniz başarıyla güncellendi. Giriş sayfasına yönlendiriliyorsunuz...",
+    "successRedirectNote": "Otomatik yönlendirme olmazsa",
+    "clickHere": "buraya tıklayın",
+    "invalidToken": "Geçersiz şifre sıfırlama linki",
+    "invalidTokenTitle": "Geçersiz Şifre Sıfırlama Linki",
+    "invalidTokenMessage": "Lütfen şifre sıfırlama talebini tekrar oluşturun.",
+    "goToForgotPassword": "Şifremi Unuttum Sayfasına Git",
+    "tokenNotFound": "Token bulunamadı",
+    "resetError": "Şifre sıfırlama başarısız. Lütfen tekrar deneyin.",
+    "generalError": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "sendPaper": {
+    "validation": {
+      "firstNameRequired": "Ad gerekli",
+      "lastNameRequired": "Soyad gerekli",
+      "titleMinLength": "Başlık en az 10 karakter olmalıdır",
+      "titleRequired": "Yazı başlığı gerekli",
+      "emailInvalid": "Geçersiz e-posta",
+      "emailRequired": "E-posta gerekli",
+      "summaryRequired": "Yazı özeti gerekli",
+      "contentMinLength": "İçerik en az 100 karakter olmalıdır",
+      "contentMaxLength": "İçerik en fazla 10000 karakter olabilir",
+      "contentRequired": "İçerik alanı zorunludur",
+      "contentValidationError": "İçerik en az 100, en fazla 10.000 karakter olmalı ve boş olmamalı."
+    },
+    "welcomeModal": {
+      "title": "Yazınızı Bizimle Paylaşın",
+      "description": "Fikirlerinizi, deneyimlerinizi ve görüşlerinizi KAPDEM topluluğuyla paylaşın. Yazınız yayınlandığında binlerce okuyucuya ulaşacak ve önemli tartışmalara yol açacak.",
+      "startButton": "Yazımı Göndermeye Başla",
+      "rulesButton": "Yazı Gönderme Kuralları"
+    },
+    "header": {
+      "badge": "Yazı Gönderimi",
+      "title": "Fikirlerinizi Paylaşın",
+      "description": "Deneyimlerinizi, analizlerinizi ve görüşlerinizi KAPDEM ailesiyle paylaşın. Yazınız topluluğumuza değer katacak ve önemli tartışmalara yol açacak."
+    },
+    "features": {
+      "wideCrowd": {
+        "title": "Geniş Kitle",
+        "description": "Yazınız binlerce okuyucuya ulaşacak"
+      },
+      "professional": {
+        "title": "Profesyonel Yayın",
+        "description": "Yazınız profesyonel şekilde yayınlanacak"
+      },
+      "secure": {
+        "title": "Güvenli Platform",
+        "description": "Gizliliğiniz korunur, kurallarımız vardır"
+      }
+    },
+    "form": {
+      "title": "Yazı Gönderme Formu",
+      "subtitle": "Tüm alanları dikkatlice doldurun"
+    },
+    "footer": {
+      "questionsLabel": "Sorularınız için:",
+      "email": "info@kapdem.org"
+    }
+  },
+  "paperDisclaimerModal": {
+    "title": "Yazı Gönderme Kuralları",
+    "subtitle": "Lütfen yazınızı göndermeden önce bu kuralları dikkatlice okuyun",
+    "generalRules": {
+      "title": "Genel Kurallar",
+      "items": [
+        "Gönderdiğiniz yazı özgün olmalıdır",
+        "Telif hakkı ihlali içeren içerikler kabul edilmez",
+        "Hakaret, küfür veya nefret söylemi içeren yazılar reddedilir",
+        "Bilimsel ve nesnel bir dil kullanmanız beklenir",
+        "Yazınızın konusu KAPDEM'in ilgi alanları ile ilgili olmalıdır"
+      ]
+    },
+    "contentStandards": {
+      "title": "İçerik Standartları",
+      "items": [
+        "Yazı en az 800 kelime olmalıdır",
+        "Özet kısmı 200-300 kelime arasında olmalıdır",
+        "Kaynaklarınız belirtilmelidir",
+        "İmla ve gramer kurallarına uygun olmalıdır",
+        "Akademik yazım kurallarına uygunluk tercih edilir"
+      ]
+    },
+    "publishProcess": {
+      "title": "Yayın Süreci",
+      "items": [
+        "Gönderdiğiniz yazılar editörlerimiz tarafından incelenir",
+        "İnceleme süreci 1-2 hafta sürebilir",
+        "Kabul edilen yazılar yayınlanır ve size bilgi verilir",
+        "Reddedilen yazılar için geri bildirim sağlanır",
+        "Yayınlanan yazılar için telif ücreti ödenmez"
+      ]
+    },
+    "warning": {
+      "title": "Önemli Uyarı",
+      "message": "Bu kurallara uymayan yazılar sistem tarafından otomatik olarak reddedilir. Lütfen yazınızı göndermeden önce tüm kuralları kontrol edin."
+    },
+    "buttons": {
+      "understood": "Anladım",
+      "fillForm": "Formu Doldur"
+    }
+  },
+  "sendPaperForm": {
+    "labels": {
+      "firstName": "Ad",
+      "lastName": "Soyad",
+      "email": "E-posta",
+      "phone": "Telefon",
+      "institution": "Kurum/Kuruluş",
+      "title": "Yazı Başlığı",
+      "category": "Kategori",
+      "summary": "Yazı Özeti",
+      "content": "Yazı İçeriği",
+      "photo": "Fotoğraf (İsteğe bağlı)",
+      "biography": "Kısa Biyografi"
+    },
+    "placeholders": {
+      "firstName": "Adınızı girin",
+      "lastName": "Soyadınızı girin",
+      "email": "email@ornek.com",
+      "phone": "+90 5XX XXX XX XX",
+      "institution": "Çalıştığınız kurum veya kuruluş",
+      "title": "Yazınızın başlığı",
+      "summary": "Yazınızın kısa özeti (200-300 kelime)",
+      "content": "Yazınızın tam metni",
+      "biography": "Kendiniz hakkında kısa bilgi",
+      "photo": "Fotoğraf yüklemek için tıklayın",
+      "photoInfo": "JPG, PNG, GIF (Max: 5MB)"
+    },
+    "categories": {
+      "select": "Kategori seçin",
+      "politik": "Politik",
+      "ekonomi": "Ekonomi",
+      "sosyal": "Sosyal",
+      "guvenlik": "Güvenlik",
+      "egitim": "Eğitim",
+      "diger": "Diğer"
+    },
+    "buttons": {
+      "submit": "Yazımı Gönder",
+      "submitting": "Gönderiliyor..."
+    }
+  },
+  "consulting": {
+    "title": "Danışmanlık",
+    "subtitle": "Kamu politikaları alanında bilimsel bilgi ve analitik yöntemlerle kurumlara özel danışmanlık hizmetleri sunuyoruz",
+    "aboutTitle": "Bağımsız Düşünce Kuruluşu",
+    "aboutText1": "KAPDEM, kamu politikaları alanında çalışan bağımsız bir düşünce kuruluşudur. Bilimsel bilgi, analitik yöntemler ve çok boyutlu değerlendirmeler yoluyla kamu politikalarının oluşturulması, uygulanması, denetlenmesi ve geliştirilmesi süreçlerine katkı sunar.",
+    "aboutText2": "Kamu yönetimi, siyasi karar alma mekanizmaları ve toplumsal dinamikler arasındaki ilişkiyi inceleyerek, kamu politikalarının etkinliğini ve sürdürülebilirliğini artırmaya yönelik çalışmalar yürütür.",
+    "features": {
+      "analytical": {
+        "title": "Analitik Yaklaşım",
+        "description": "Bilimsel yöntemlerle derinlemesine analiz"
+      },
+      "independence": {
+        "title": "Bağımsızlık",
+        "description": "Tarafsız ve objektif değerlendirme"
+      },
+      "innovation": {
+        "title": "İnovatif Çözümler",
+        "description": "Yapıcı ve uygulanabilir öneriler"
+      },
+      "expertise": {
+        "title": "Uzmanlık",
+        "description": "Deneyimli kadro ve bilgi birikimi"
+      }
+    },
+    "servicesTitle": "Danışmanlık Hizmetlerimiz",
+    "servicesSubtitle": "Kamu politikalarının her aşamasında profesyonel destek sunuyoruz",
+    "services": {
+      "policyDesign": {
+        "title": "Politika Tasarımı",
+        "description": "Kamu politikalarının tasarlanma ve oluşturulma süreçlerinde kapsamlı destek"
+      },
+      "politicalAnalysis": {
+        "title": "Siyasi Analiz",
+        "description": "Siyasi, idari ve toplumsal mücadelelerin derinlemesine analizi"
+      },
+      "implementationSupport": {
+        "title": "Uygulama Desteği",
+        "description": "Politika uygulama aşamasındaki dinamikler ve karar alma süreçleri"
+      },
+      "evaluation": {
+        "title": "Değerlendirme ve Geliştirme",
+        "description": "Mevcut politikaların değerlendirilmesi ve yeniden yapılandırılması"
+      },
+      "research": {
+        "title": "Özel Araştırmalar",
+        "description": "Kurum ihtiyaçlarına özel bilimsel çalışmalar ve araştırmalar"
+      },
+      "strategicPlanning": {
+        "title": "Stratejik Planlama",
+        "description": "Uzun vadeli politika stratejileri ve eylem planları geliştirme"
+      }
+    },
+    "audienceTitle": "Kimler İçin Hizmet Veriyoruz?",
+    "audienceSubtitle": "Çeşitli kurum ve kuruluşlara Türkiye'de kamu politikaları konusunda bilimsel çalışmalar ve özel danışmanlık hizmetleri sunuyoruz",
+    "audience": {
+      "political": {
+        "title": "Siyasi Kurumlar",
+        "description": "Parlamento, bakanlıklar ve siyasi partiler"
+      },
+      "administrative": {
+        "title": "İdari Kurumlar",
+        "description": "Kamu kuruluşları ve yerel yönetimler"
+      },
+      "privateSector": {
+        "title": "Özel Sektör",
+        "description": "Yerli ve yabancı özel şirketler"
+      },
+      "civilSociety": {
+        "title": "Sivil Toplum",
+        "description": "STK'lar ve uluslararası kuruluşlar"
+      }
+    },
+    "principlesTitle": "Temel İlkelerimiz",
+    "principles": {
+      "impartiality": {
+        "title": "Tarafsızlık",
+        "description": "Tüm siyasi görüşlere eşit mesafede durarak objektif değerlendirme"
+      },
+      "independence": {
+        "title": "Bağımsızlık",
+        "description": "Herhangi bir çıkar grubu ile organik bağ kurmadan özgür analiz"
+      },
+      "voluntariness": {
+        "title": "Gönüllülük",
+        "description": "Kamu yararına katkı sağlama motivasyonuyla hizmet verme"
+      },
+      "scientificApproach": {
+        "title": "Bilimsellik",
+        "description": "Etik duruş ve bilimsel yaklaşımla güvenilir sonuçlar"
+      }
+    },
+    "ethicsTitle": "Etik ve Güvenilir Danışmanlık",
+    "ethicsText1": "KAPDEM, danışmanlık faaliyetlerini tarafsızlık, bağımsızlık ve gönüllülük ilkeleri çerçevesinde yürütür. Üyelerinin bilgi birikimlerini ve uzmanlık alanlarını kamu yararına katkı sağlayacak biçimde değerlendirmelerini teşvik eder.",
+    "ethicsText2": "Kurum, tüm siyasi, idari, sosyal ve kültürel görüşlere eşit mesafede durur; herhangi bir siyasi parti, yapı veya çıkar grubu ile organik bağ kurmayı reddeder.",
+    "ethicsText3": "Bilimsel yaklaşımı ve etik duruşuyla kamu politikalarının daha etkili, adil ve katılımcı biçimde şekillenmesine katkı sağlamayı hedefler.",
+    "contactTitle": "Danışmanlık Hizmetlerimiz Hakkında Bilgi Alın",
+    "contactSubtitle": "Kurumunuzun ihtiyaçlarına özel danışmanlık çözümleri için uzman ekibimizle iletişime geçin",
+    "contactEmail": "info@kapdem.org",
+    "contactInfo": "Detaylı bilgi ve iletişim için"
+  },
+  "membershipBanner": {
+    "badge": "Üyelik Seçenekleri",
+    "title": "Sana Uygun Üyeliği Seç",
+    "description": "Kapdem'de üç farklı üyelik tipi ile topluluğumuza katıl ve deneyimini kişiselleştir.",
+    "tiers": {
+      "free": {
+        "label": "Temel",
+        "title": "Temel",
+        "description": "Temel içeriklere erişim sağlar"
+      },
+      "paid": {
+        "label": "Araştırmacı Öğrenci",
+        "title": "Araştırmacı Öğrenci",
+        "description": "Ek avantajlar ve özel içeriklere erişim"
+      },
+      "premium": {
+        "label": "Kurumsal",
+        "title": "Kurumsal",
+        "description": "Tüm ayrıcalıklar ve tam katılım hakkı"
+      }
+    },
+    "detailButton": "Detaylı İncele"
+  },
+  "podcastSections": {
+    "title": "Podcast'ler",
+    "seeAll": "Tümünü Gör",
+    "viewDetails": "Detayları Gör",
+    "ariaLabel": "detaylarını gör"
+  },
+  "toast": {
+    "login": {
+      "success": "Giriş başarılı!",
+      "error": "Giriş başarısız. Lütfen bilgilerinizi kontrol edin.",
+      "verifyEmail": "Lütfen e-posta adresinizi doğrulayın. Doğrulama linki e-posta adresinize gönderildi."
+    },
+    "contact": {
+      "success": "Teşekkürler, mesajınız iletildi.",
+      "error": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+    },
+    "newsletter": {
+      "emailRequired": "Lütfen e-posta adresinizi girin",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin",
+      "success": "Bültene başarıyla abone oldunuz!",
+      "error": "Bu e-posta adresi zaten kayıtlı veya bir hata oluştu",
+      "connectionError": "Bağlantı hatası. Lütfen tekrar deneyin."
+    },
+    "profile": {
+      "updateSuccess": "Profil başarıyla güncellendi!",
+      "updateError": "Profil güncellenirken hata oluştu!"
+    },
+    "password": {
+      "changeSuccess": "Şifreniz başarıyla değiştirildi"
+    },
+    "sendPaper": {
+      "success": "Makaleniz başarıyla gönderildi. İnceleme sürecinde sizinle iletişime geçeceğiz.",
+      "error": "Yazı gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
+    },
+    "common": {
+      "error": "Bir hata oluştu. Lütfen tekrar deneyin.",
+      "browserNotSupported": "Bu tarayıcı sesli okuma özelliğini desteklemiyor.",
+      "donateRedirect": "Bağışınız için teşekkür ederiz. Güvenli ödeme sayfasına yönlendiriliyorsunuz..."
+    }
+  },
+  "donation": {
+    "title": "Geleceği Birlikte",
+    "titleHighlight": "İnşa Edelim",
+    "description": "KAPDEM'e destek olarak araştırma ve geliştirme projelerimizin devamlılığını sağlayın. Her katkı, daha güçlü bir gelecek için önemli.",
+    "stats": {
+      "supporters": "Destekçi",
+      "projects": "Proje",
+      "experience": "Yıllık Deneyim"
+    },
+    "buttons": {
+      "donate": "Bağış Yap",
+      "membership": "Üyelik Sistemi"
+    }
+  },
+  "aboutUsPage": {
+    "hero": {
+      "title": "KAPDEM",
+      "subtitle": "Hakkımızda",
+      "description": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi (KAPDEM), Türkiye'de siyaset bilimi ve kamu yönetimi, kamu politikaları ile ekonomik, sosyal, kültürel ve toplumsal konulardaki temel kamusal, yönetimsel/idari/siyasi kararlara odaklı çalışmalar yapmak, projeler geliştirmek ve yenilikçi ve çözüm odaklı yaklaşımlara katkıda bulunmak üzere kurulmuştur."
+    },
+    "whatIsKapdem": {
+      "title": "KAPDEM Nedir ?",
+      "description": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi (KAPDEM), Türkiye'de siyaset bilimi ve kamu yönetimi, kamu politikaları ile ekonomik, sosyal, kültürel ve toplumsal konulardaki temel kamusal, yönetimsel/idari/siyasi kararlara odaklı çalışmalar yapmak, projeler geliştirmek ve yenilikçi ve çözüm odaklı yaklaşımlara katkıda bulunmak üzere kurulmuştur. KAPDEM; tamamen bağımsız, tarafsız ve gönüllülük esasına dayalı olarak kurulmuş bir düşünce kuruluşudur. Herhangi bir siyasi parti, çıkar grubu, baskı grubu veya ulusal/uluslararası/ulus ötesi yapı ile organik bir bağı ya da ilişkisi yoktur. Bağımsız ve tarafsız kalmayı temel kuruluş ilkesi olarak benimsenmiştir.."
+    },
+    "publishingPrinciple": {
+      "title": "KAPDEM Yayın ilkesi ve Yasal Sorumluluk",
+      "description": "KAPDEM, kurumsal üyeleri ve gönüllü destekçileri başta olmak üzere sürekli/kadrolu yazarı olan ya da konuk yazar olarak katkıda bulunmak isteyen tüm kişi ve kurumlardan gelen yazı taleplerini kamu politikalarına ve toplumsal tartışma kültürüne katkıda bulunmak, kamuoyunu bilgilendirmek amacıyla belirli bir editöryal denetim çerçevesinde yayın gündemine kabul eder. KAPDEM, bilimsel ve toplumsal değerlere öncelik veren bir perspektif ile çalışmayı ve bu doğrultuda şekillendirilen görüşlerin kamuoyu ile paylaşılmasına aracılık etmeyi ilkesel olarak toplumsal üretim, paylaşım ve gelişim açısından önemli gördüğü için tüm kişi ve kurumların yazar olarak katkılarına açıktır. KAPDEM, yazı ve çalışmalarını gönderen yazarların yayında kullanılmak üzere paylaştıkları kişisel bilgilerini doğru kabul eder ve aynı şekilde yayınlar. KAPDEM, kamu politikalarının yapım ve değerlendirilme sürecine ve toplumsal tartışma kültürüne katkıda bulunmak amacıyla başka platformlarda yayınlanmış çeşitli yazıları da telif haklarını gözeterek yeniden yayınlayabilir, takipçileri ile paylaşabilir. Editöryal inceleme ve denetime tabi tutmadığı, sadece yayınlanmasında hukuki bir sorun olup olmadığını inceleterek toplumsal tartışmalara katkıda bulunmak adına yayınlanmasını onayladığı yazı ve çalışmalara 'serbest kürsü' kategorisinde yer verir. KAPDEM'deki tüm yazı ve çalışmalar yapıcı bir tartışma kültürüne katkı vermek için yayınlanır. Bu nedenle 'serbest kürsü' kategorisi başta olmak üzere diğer tüm kategoriler altında yayınlanan yazılar ve çalışmalar kesinlikle KAPDEM'in kurumsal görüşünü yansıtmaz, kurumsal görüşü olarak değerlendirilemez, kabul edilemez. Yayınlanan yazı ve çalışmaların tüm yasal sorumluluğu yazarlara aittir."
+    },
+    "cta": {
+      "title": "Bize Katılın",
+      "description": "Türkiye'nin önde gelen kamu politikası ve toplumsal gelişim platformuna siz de katılın. Birlikte daha güçlü yarınlar için çalışalım.",
+      "buttons": {
+        "join": "Üye Ol",
+        "learnMore": "Daha Fazla Bilgi"
+      }
+    }
+  },
+  "contactPage": {
+    "title": "İletişim",
+    "subtitle": "Bizimle iletişime geçin",
+    "description": "Görüşleriniz bizim için değerli. Size yardımcı olmaktan mutluluk duyarız.",
+    "contactInfo": "İletişim Bilgileri",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "address": "Adres",
+    "whyContact": "Neden Bize Ulaşmalısınız?",
+    "quickReply": "Hızlı ve güvenilir yanıt",
+    "expertSupport": "Uzman destek ekibi",
+    "responseTime": "24 saat içinde geri dönüş",
+    "personalizedSolutions": "Kişiselleştirilmiş çözümler",
+    "sendMessage": "Mesaj Gönder",
+    "formDescription": "Formu doldurarak bizimle iletişime geçebilirsiniz. Size en kısa sürede dönüş yapacağız.",
+    "firstName": "Ad",
+    "firstNamePlaceholder": "Adınızı giriniz",
+    "lastName": "Soyad",
+    "lastNamePlaceholder": "Soyadınızı giriniz",
+    "emailPlaceholder": "E-posta adresinizi giriniz",
+    "subject": "Konu",
+    "subjectPlaceholder": "Konu seçiniz",
+    "subjectOptions": {
+      "complaint": "Şikayet",
+      "thanks": "Teşekkür",
+      "membership": "Üyelik",
+      "other": "Diğer"
+    },
+    "message": "Mesaj",
+    "messagePlaceholder": "Mesajınızı buraya yazınız...",
+    "sendButton": "Mesajı Gönder",
+    "whyWriteTitle": "Neden Bize Yazmalısınız?",
+    "expertSupportTitle": "Uzman Destek",
+    "expertSupportDesc": "Alanında uzman ekibimiz ile size en iyi desteği sunmak için buradayız.",
+    "quickResponseTitle": "Hızlı Geri Dönüş",
+    "quickResponseDesc": "Tüm mesajlarınıza 24 saat içinde dönüş sağlıyoruz.",
+    "wideNetworkTitle": "Geniş Ağ",
+    "wideNetworkDesc": "500+ aktif üyemiz ve 50+ kurum ortağımız ile güçlü bir profesyonel ağa erişim sağlayın.",
+    "faqTitle": "Sıkça Sorulan Sorular",
+    "faq1Question": "Mesajıma ne kadar sürede dönüş yapılır?",
+    "faq1Answer": "Tüm mesajlara 24 saat içinde dönüş yapılır.",
+    "faq2Question": "Hangi kanallardan ulaşabilirim?",
+    "faq2Answer": "E-posta, telefon veya iletişim formu üzerinden bize ulaşabilirsiniz.",
+    "faq3Question": "Bilgilerim güvende mi?",
+    "faq3Answer": "Tüm bilgileriniz gizli tutulur ve üçüncü kişilerle paylaşılmaz."
+  },
+  "loginPage": {
+    "loginacc": "Hesabınıza giriş yapın",
+    "placeholder": "ornek@kapdem.org / kullanıcı adınız",
+    "emailorusername": "E-posta veya Kullanıcı Adı",
+    "password": "Şifre",
+    "forgotpassword": "Şifrenizi mi unuttunuz?",
+    "register": " Hesap oluşturun",
+    "login": "Giriş Yap",
+    "loading": "Giriş yapılıyor...",
+    "allrightsreserved": "Tüm hakları saklıdır.",
+    "seepaper": " Makaleyi Görüntüle"
+  },
+  "registerPage": {
+    "title": "Kayıt Ol",
+    "description": "Kapdem'e katılmak için bilgilerinizi doldurun",
+    "firstName": "Adınız",
+    "lastName": "Soyadınız",
+    "username": "Kullanıcı Adı",
+    "usernamePlaceholder": "Kullanıcı Adınız",
+    "institution": "Kurum veya Üniversite (opsiyonel)",
+    "institutionPlaceholder": "Kurum veya Üniversite",
+    "email": "E-mail Adresiniz",
+    "emailPlaceholder": "ornek@kapdem.org",
+    "password": "Şifre",
+    "passwordPlaceholder": "••••••••",
+    "confirmPassword": "Şifre Tekrar",
+    "confirmPasswordPlaceholder": "••••••••",
+    "kvkkLabel": "KVKK Aydınlatma Metni ve Onayı",
+    "kvkkTitle": "KVKK Aydınlatma Metni",
+    "communicationLabel": "Açık İletişim Metni ve Onayı",
+    "communicationTitle": "Açık İletişim Metni",
+    "newsletterLabel": "Mail bültenimize abone olmak istiyorum",
+    "registerButton": "Kayıt Ol",
+    "registeringButton": "Kayıt Oluyor...",
+    "errorPasswordMismatch": "Şifreler eşleşmiyor.",
+    "errorConsentRequired": "KVKK ve Açık İletişim onaylarını vermelisiniz.",
+    "errorGeneric": "Kayıt başarısız. Lütfen tekrar deneyin.",
+    "successMessage": "Kayıt başarılı! Giriş yapabilirsiniz.",
+    "footer": "© 2024 Kapdem. Tüm hakları saklıdır."
+  },
+  "kvkkread": "Metni okudum ve kabul ediyorum",
+  "membershipPage": {
+    "heroTitle": "KAPDEM",
+    "heroSubtitle": "Üyelik Sistemi",
+    "heroDescription": "Kamu politikası, devlet yönetimi ve toplumsal gelişim alanındaki araştırmalarımıza katılın. Uzman kadromuzla birlikte çalışın.",
+    "stats": {
+      "researchReports": "Araştırma Raporu",
+      "expertResearchers": "Uzman Araştırmacı",
+      "yearsExperience": "Yıllık Deneyim",
+      "activeMembers": "Aktif Üye",
+      "corporatePartners": "Kurum Ortağı",
+      "publishedArticles": "Yayınlanan Makale",
+      "support247": "Destek Hizmeti"
+    },
+    "selectPlanTitle": "Size En Uygun Üyelik Paketini Seçin",
+    "selectPlanDescription": "KAPDEM üyeliği, kamu politikaları, devlet yönetimi ve toplumsal gelişim alanlarındaki güncel araştırma, analiz ve raporlarımıza öncelikli erişim imkânı sağlar. Üyeler, kurumun yürüttüğü çalışmaları yakından takip edebilir, özel dosya ve değerlendirmelere ulaşabilir, yalnızca üyelere açık oturumlar ve etkinlikler hakkında önceden bilgilendirilir. Ayrıca KAPDEM'in düzenlediği kapalı toplantılar, atölyeler ve özel yayın paylaşımlarında öncelik hakkına sahip olurlar. Üyelik, bilgiye dayalı politika üretimine erişim ve katkı için ayrıcalıklı bir platform sunar.",
+    "plans": {
+      "free": {
+        "name": "Temel",
+        "description": "KAPDEM üyeleri, düşünce üretimi ve kamu politikası çalışmalarına daha yakın olma ayrıcalığına sahiptir. Üyelik, yalnızca erişim değil; bilgiye dayalı etkileşim ve paylaşım imkânı sunar.",
+        "price": "₺0",
+        "period": "/sonsuza kadar",
+        "notice": "Hemen başlayın, kredi kartı gerektirmez",
+        "features": [
+          "Yalnızca üyelere açık özel yayın ve analiz içeriklerine erişim",
+          "KAPDEM tarafından düzenlenen açık etkinliklerden, panellerden ve atölyelerden öncelikli haberdar olma",
+          "KAPDEM bültenine ve güncel araştırma duyurularına erişim",
+          "Üyelere özel olarak hazırlanan iki adet özel dosyaya erişim hakkı",
+          "Yayınları ve araştırma raporlarını PDF formatında indirme imkânı"
+        ],
+        "button": "Ücretsiz Başla"
+      },
+      "researcher": {
+        "name": "Araştırmacı - Öğrenci",
+        "description": "KAPDEM Araştırmacı Üyeliği, akademisyenler, uzmanlar, araştırmacılar ve politika analistleri için geliştirilmiş kapsamlı bir üyelik modelidir. Bu üyelik, derinlemesine araştırmalara erişim, özel içeriklere katılım ve kurum içi bilgi paylaşım ağında yer alma ayrıcalığı sunar. Akademisyenler, uzmanlar ve politika araştırmacıları için geliştirilmiş profesyonel üyelik modeli.",
+        "price": "₺250",
+        "period": "/ay",
+        "notice": "edu.tr maili ile kayıt olanlara 100 ₺",
+        "features": [
+          "KAPDEM bünyesindeki tüm yayınlara ve arşiv içeriklerine tam erişim",
+          "Güncel ve özel Araştırma Raporlarına öncelikli erişim hakkı",
+          "KAPDEM tarafından düzenlenen tüm etkinliklere ve kapalı oturumlara davet",
+          "Üyelere özel hazırlanmış tüm Özel Dosyalara sınırsız erişim",
+          "Temel üyelik kapsamındaki tüm avantajlardan yararlanma (bülten, forum, açık etkinlikler, PDF indirme vb.)"
+        ],
+        "button": "Hemen Başla"
+      },
+      "corporate": {
+        "name": "Kurumsal",
+        "badge": "EN POPÜLER",
+        "description": "KAPDEM Kurumsal Üyeliği, kamu kurumları, yerel yönetimler, sivil toplum kuruluşları, düşünce merkezleri ve özel sektör temsilcileri için geliştirilmiş, çok kullanıcılı ve stratejik iş birliği temelli bir üyelik modelidir. Kurumsal üyelik, kurumların politika geliştirme, analiz, stratejik planlama ve yönetişim süreçlerine doğrudan katkı sağlayacak bilgi, içerik ve etkileşim imkânı sunar.",
+        "price": "₺2000",
+        "period": "/ay",
+        "features": [
+          "Kamu kurumları, sivil toplum kuruluşları ve özel sektör için çok kullanıcılı erişim ve stratejik iş birliği modeli.",
+          "KAPDEM'in tüm araştırma ve yayın arşivine sınırsız erişim",
+          "10 kullanıcıya kadar kurumsal erişim hakkı",
+          "KAPDEM tarafından düzenlenen özel etkinlikler, kapalı oturumlar ve iş birliği toplantılarına davet",
+          "24 saat içinde yanıtlanan destek ve bilgi hizmeti",
+          "Kurumsal logo ve tanıtım ile iş birliği sayfalarında görünürlük",
+          "Tüm araştırmacı ve temel üyelik avantajlarından tam yararlanma"
+        ],
+        "button": "Kurumsal Üyelik Başlat"
+      },
+      "strategic": {
+        "name": "Stratejik Ortak",
+        "description": "Büyük ölçekli kurumlar ve özel araştırma projeleri için premium çözüm",
+        "price": "₺10.000",
+        "period": "/yıl",
+        "notice": "Özel fiyatlandırma seçenekleri mevcut",
+        "features": [
+          "Tüm kurum avantajları dahil",
+          "Özel araştırma projeleri ve danışmanlık",
+          "Sınırsız kullanıcı erişimi",
+          "7/24 VIP destek hattı",
+          "Sınırsız yayın hakkı",
+          "Özel etkinlik organizasyonu",
+          "Özel danışman ataması",
+          "Özel raporlama ve analiz"
+        ],
+        "button": "İletişime Geç"
+      }
+    },
+    "whyKapdem": {
+      "title": "Neden KAPDEM Üyesi Olmalısınız?",
+      "expertise": {
+        "title": "Kanıtlanmış Uzmanlık",
+        "description": "8 yıllık deneyim ile kamu politikası alanında Türkiye'nin öncü kuruluşuyuz. 150+ araştırma raporu ve 25 uzman araştırmacımızla güvenilir bilgi sunuyoruz."
+      },
+      "currentAnalysis": {
+        "title": "Güncel ve Objektif Analizler",
+        "description": "Sürekli güncelenen içeriklerimiz ve objektif analizlerimiz ile karar verme süreçlerinizi destekliyoruz."
+      },
+      "network": {
+        "title": "Geniş Ağ ve İş Birliği",
+        "description": "500+ aktif üyemiz ve 50+ kurum ortağımız ile güçlü bir profesyonel ağa erişim sağlayın."
+      }
+    },
+    "faq": {
+      "title": "Sıkça Sorulan Sorular",
+      "cancellation": {
+        "question": "Üyelik iptali nasıl yapılır?",
+        "answer": "Üyeliğinizi istediğiniz zaman iptal edebilirsiniz. İptal işlemi için destek ekibimizle iletişime geçmeniz yeterlidir."
+      },
+      "payment": {
+        "question": "Ödeme seçenekleri nelerdir?",
+        "answer": "Kredi kartı, banka kartı ve havale ile ödeme yapabilirsiniz. Kurumsal üyelikler için özel ödeme planları da mevcuttur."
+      },
+      "trial": {
+        "question": "Deneme süresi var mı?",
+        "answer": "Evet, tüm paketler için 7 günlük ücretsiz deneme süresi sunuyoruz. Bu süre içinde tüm özellikleri test edebilirsiniz."
+      },
+      "change": {
+        "question": "Paket değişikliği yapabilir miyim?",
+        "answer": "Evet, istediğiniz zaman paketinizi yükseltebilir veya düşürebilirsiniz. Fark ücretleri orantılı olarak hesaplanır."
+      }
+    },
+    "cta": {
+      "title": "Hemen Başlayın",
+      "description": "Türkiye'nin önde gelen kamu politikası araştırma merkezine katılın. Uzman kadromuz ve kapsamlı araştırmalarımızla tanışın.",
+      "startButton": "Hemen Başla",
+      "learnMoreButton": "Daha Fazla Bilgi"
+    }
+  }
+}

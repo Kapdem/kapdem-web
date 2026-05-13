@@ -1,0 +1,85 @@
+{
+  "paperSubmission": {
+    "title": "KAPDEM'e Yazı Gönder",
+    "description": "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi'nde (KAPDEM'de) yazı, makale ya da araştırma metinlerinizi yayımlamak isterseniz, çalışmalarınızı aşağıda belirtilen iletişim adresine iletebilirsiniz.",
+
+    "generalRules": {
+      "originality": "Yayımlanmak üzere gönderdiğiniz metinler, daha önce başka bir mecrada yayımlanmamış olmalıdır. Yazılan metnin KAPDEM'e gönderilmiş olması, daha önce yayımlanmamış ya da başka bir mecrada incelemede olmadığının kabulü anlamına gelmektedir.",
+
+      "reviewProcess": "Yayım için gönderilen metinler, yazar ismi metinden çıkarılarak, ilgili editör, genel yayın yönetmeni ve Yayın Kurulu'nun incelemesine sunulmaktadır. Gerekli görüldüğü durumlarda bazı metinler için kör hakemlik süreci işletilmektedir. Editör incelemesinden sonra genel yayın yönetmeni ve Yayın Kurulu tarafından uygun bulunan metinler, KAPDEM yayın ilkeleri ile çelişmediği sürece yayımlanmaktadır.",
+
+      "disclaimer": "Yayımlanan metinler kesinlikle KAPDEM ya da inceleme sürecinde yer alan kişilerin şahsi görüşlerini yansıtmaz, metinlerin içeriklerini onayladıkları şeklinde yorumlanamaz. Yayımlanmasını istediğiniz metinde kullanılmasını istediğiniz görsel ve işitsel materyalleri de çalışmanızla birlikte iletebilirsiniz.",
+
+      "language": "Yazdığınız metinleri Türkçe ya da İngilizce olarak gönderebilirsiniz. Metnin yayımlanması onaylanırsa, metin Türkçeye çevrilerek yayımlanacaktır. Metnin kısa bir özeti mutlaka metnin ilk sayfasına eklenerek gönderilmelidir."
+    },
+
+    "legalResponsibilities": {
+      "authorLiability": "KAPDEM'de yayımlanan metinlerden doğan yasal yükümlülükler tamamen metnin yazarına aittir.",
+      "copyrights": "Yayımlanan metinlerin tüm yasal hakları KAPDEM'e aittir. Kaynak göstermeden alıntı yapılamaz, kopyalanamaz ve izinsiz kullanılamaz."
+    },
+
+    "formatRequirements": {
+      "introduction": "Yazdığınız metinleri gönderirken bazı hususlara dikkat etmeniz, metinlerin inceleme sürecini kolaylaştıracaktır:",
+
+      "fileFormat": "Yazılan tüm metinler Microsoft Word formatında gönderilmelidir.",
+
+      "textFormatting": {
+        "mainText": {
+          "font": "Times New Roman",
+          "size": "12 punto",
+          "alignment": "iki yana yaslı",
+          "lineSpacing": "1.5 satır aralığı"
+        },
+        "mainTitle": {
+          "size": "16 punto",
+          "style": "koyu renkli ve ortalanmış"
+        },
+        "subTitles": {
+          "size": "14 punto",
+          "style": "koyu renkli ve iki yana yaslı"
+        },
+        "titleRules": "Ana başlık ve ara başlıklarda yer alan kelimelerin baş harfleri büyük, diğer harfler ise küçük olarak yazılmalıdır.",
+        "footnotes": {
+          "font": "Times New Roman",
+          "size": "10 punto",
+          "alignment": "iki yana yaslı",
+          "lineSpacing": "1 satır aralığı"
+        },
+        "bibliography": {
+          "font": "Times New Roman",
+          "size": "11 punto",
+          "alignment": "iki yana yaslı",
+          "lineSpacing": "1 satır aralığı"
+        },
+        "pageNumbers": "Gönderilen metinlere sayfa numarası eklenmesi zorunludur, sayfa numaraları sayfa altında ortalanmış şekilde yer almalıdır.",
+        "paragraphs": "Yazılan metinlerde paragraf girintisi kullanılmamalıdır."
+      },
+
+      "authorName": "Yazarın ismi ve soy ismi (veya yazarların isimleri ve soy isimleri), ana başlık altında, koyu renkte, sola yatık şekilde yazılmalıdır. Yazarın ismi baş harfi büyük, diğer harfler küçük şeklinde, soy ismi ise tamamen büyük harfler ile yazılmalıdır.",
+
+      "abstract": {
+        "requirement": "Yazılan metinlerin, metnin kısa bir özeti ile gönderilmesi gerekmektedir.",
+        "wordLimit": "Yazılan özetin en fazla 300 kelimeyi geçmemesine özen gösterilmelidir.",
+        "title": {
+          "text": "ÖZET",
+          "font": "Times New Roman",
+          "size": "14 punto",
+          "style": "koyu renkte, tüm harfleri büyük ve sayfaya ortalanmış"
+        },
+        "content": {
+          "font": "Times New Roman",
+          "size": "11 punto",
+          "alignment": "iki yana yaslı",
+          "lineSpacing": "1 satır aralığı"
+        },
+        "placement": "Metnin özet bölümü, yazar tarafından ayrı bir Microsoft Word dosyası olarak ya da doğrudan gönderilen metin içerisinde ana başlık ve yazar isim/soy isminin altına yerleştirilmiş bir bölüm olarak iletebilir."
+      }
+    },
+
+    "citationRules": {
+      "obligation": "Yazarlar, yazdıkları metinlerde başka kaynaklardan doğrudan kullandıkları bölümler ve yaptıkları alıntılar için kaynakça göstermek zorundadırlar.",
+      "liability": "Telif hakkı istismarı ya da intihal durumlarında sorumluluk tamamen yazara aittir.",
+      "flexibility": "KAPDEM, belirli bir kaynak gösterme kuralı ve kaynakçada kullanılmak üzere kesin bir format şartı koymamaktadır. Ancak, yazarların, standart/bilinen kaynak gösterme kurallarından ve kaynakça için kullanılabilecek formatlardan bir tanesini seçip uygulamaları gerekmektedir."
+    }
+  }
+}
