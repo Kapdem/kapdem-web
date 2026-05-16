@@ -35,7 +35,7 @@ export default function ArticlesCard({ article, formatDate, lang }: Props) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
-        <h2 className="text-lg md:text-xl font-semibold mb-2 line-clamp-2">
+        <h2 className="text-lg md:text-xl font-semibold mb-2">
           {article.title}
         </h2>
         <p className="text-gray-600 text-sm mb-4 line-clamp-3">

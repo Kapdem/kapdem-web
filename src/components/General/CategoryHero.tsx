@@ -52,7 +52,7 @@ export default function CategoryHero({
                     {dict?.category?.latestContent}
                   </span>
                 </div>
-                <h3 className="text-white font-bold text-lg mb-3 line-clamp-2 leading-snug">
+                <h3 className="text-white font-bold text-lg mb-3 leading-snug">
                   {articles[0]?.title}
                 </h3>
                 <p className="text-blue-100 text-sm mb-4 line-clamp-3">

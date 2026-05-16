@@ -273,7 +273,7 @@ export default function OzelDosyalar({
                   </div>
 
                   {/* Başlık */}
-                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-200 line-clamp-2 min-h-[3.5rem]">
+                  <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-200">
                     {doc.title}
                   </h3>
 

@@ -103,7 +103,7 @@ export default function SlimCard({ slimCards }: Props) {
                   </span>
                 </div>
 
-                <h3 className="text-sm sm:text-base md:text-xl font-semibold leading-tight text-slate-100 group-hover:text-white transition-colors line-clamp-2 mb-1 md:mb-2">
+                <h3 className="text-sm sm:text-base md:text-xl font-semibold leading-tight text-slate-100 group-hover:text-white transition-colors mb-1 md:mb-2">
                   {item.title}
                 </h3>
 

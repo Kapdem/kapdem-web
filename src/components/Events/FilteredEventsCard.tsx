@@ -110,7 +110,7 @@ export default function FilteredEventsCard({
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-bold text-slate-800 mb-2 line-clamp-2 h-12 flex-shrink-0 group-hover:text-slate-600 transition-colors duration-200">
+                  <h3 className="text-lg font-bold text-slate-800 mb-2 flex-shrink-0 group-hover:text-slate-600 transition-colors duration-200">
                     {event.title}
                   </h3>
 

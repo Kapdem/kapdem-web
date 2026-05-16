@@ -306,18 +306,26 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
 
     const sorted = sortType === "date" ? sortByDate() : sortByScore();
 
-    // Kategori bazlı önceliklendirme (sadece kategori filtresi yokken)
-    if (!selectedCategory && detectedCategory) {
-      const prioritized = [];
-      const others = [];
-      sorted.forEach((item) => {
-        if (item.type === "post" && item.category === detectedCategory) {
-          prioritized.push(item);
-        } else {
-          others.push(item);
-        }
-      });
-      return [...prioritized, ...others];
+    // Yazarlar her zaman en üstte (kategori filtresi yokken)
+    if (!selectedCategory) {
+      const authorsList = sorted.filter((item) => item.type === "author");
+      const rest = sorted.filter((item) => item.type !== "author");
+
+      // Kategori bazlı önceliklendirme - sadece postlar arasında
+      if (detectedCategory) {
+        const prioritized = [];
+        const others = [];
+        rest.forEach((item) => {
+          if (item.type === "post" && item.category === detectedCategory) {
+            prioritized.push(item);
+          } else {
+            others.push(item);
+          }
+        });
+        return [...authorsList, ...prioritized, ...others];
+      }
+
+      return [...authorsList, ...rest];
     }
 
     return sorted;

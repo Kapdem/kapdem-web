@@ -28,7 +28,7 @@ export default function VideoCard({ formatDate, item }: Props) {
         className="group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-200 flex flex-col overflow-hidden border border-gray-100 cursor-pointer"
       >
         <div className="flex-1 flex flex-col p-4">
-          <h2 className="text-lg font-bold mb-2 line-clamp-2 group-hover:text-blue-700 transition-colors cursor-pointer">
+          <h2 className="text-lg font-bold mb-2 group-hover:text-blue-700 transition-colors cursor-pointer">
             {item.title}
           </h2>
           <div className="flex items-center gap-2 mb-2">

@@ -57,14 +57,16 @@ export default function Etkinlikler({
               "KAPDEM'in özgün ve vizyoner etkinliklerinde yerini al, toplumsal değişimin parçası ol. İlham, network ve etki burada başlar."}
           </p>
           <div className="flex gap-6 justify-center mb-8">
-            <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold text-white mb-1">
-                {upcomingEvents1.length}
-              </span>
-              <span className="text-gray-300 text-xs">
-                {dict?.events1?.upcomingEvents || "Yaklaşan Etkinlik"}
-              </span>
-            </div>
+            {upcomingEvents1.length > 0 && (
+              <div className="flex flex-col items-center">
+                <span className="text-2xl font-bold text-white mb-1">
+                  {upcomingEvents1.length}
+                </span>
+                <span className="text-gray-300 text-xs">
+                  {dict?.events1?.upcomingEvents || "Yaklaşan Etkinlik"}
+                </span>
+              </div>
+            )}
             <div className="flex flex-col items-center">
               <span className="text-2xl font-bold text-white mb-1">
                 {pastEvents1.length}
@@ -92,6 +94,7 @@ export default function Etkinlikler({
         </div>
       </section>
 
+      {upcomingEvents1.length > 0 && (
       <section id="upcoming" className="py-16 px-4 bg-gray-50 relative">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-6">
@@ -123,15 +126,6 @@ export default function Etkinlikler({
               </div>
             </div>
           </div>
-          {upcomingEvents1.length === 0 ? (
-            <div className="text-gray-500 text-center py-12 text-base bg-white rounded-lg border border-gray-200 shadow-sm">
-              <Calendar className="w-12 h-12 mx-auto mb-3 text-gray-300" />
-              <p className="max-w-md mx-auto">
-                {dict?.events1?.noUpcomingEvents ||
-                  "Yaklaşan etkinlik bulunamadı. Çok yakında yeni etkinlikler eklenecek!"}
-              </p>
-            </div>
-          ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {upcomingEvents1.map((event, index) => {
                 // Cover image URL düzeltme
@@ -151,7 +145,7 @@ export default function Etkinlikler({
                 return (
                   <div
                     key={event._id || event.id || index}
-                    className="relative bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 group flex flex-col h-[420px] overflow-hidden"
+                    className="relative bg-white rounded-lg shadow hover:shadow-md transition-all duration-200 group flex flex-col min-h-[420px] overflow-hidden"
                   >
                     {/* Date badge */}
                     <div className="absolute top-3 left-3 bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-md z-10 flex items-center">
@@ -192,7 +186,7 @@ export default function Etkinlikler({
                         href={`/${lang}/etkinlikler/${eventSlug}`}
                         className="block flex-shrink-0"
                       >
-                        <h3 className="text-lg font-bold text-[#002c54] mb-2 hover:text-[#b61e24] transition-colors duration-200 line-clamp-2">
+                        <h3 className="text-lg font-bold text-[#002c54] mb-2 hover:text-[#b61e24] transition-colors duration-200">
                           {eventTitle}
                         </h3>
                       </Link>
@@ -221,9 +215,9 @@ export default function Etkinlikler({
                 );
               })}
             </div>
-          )}
         </div>
       </section>
+      )}
 
       {/* GEÇMİŞ ETKİNLİKLER */}
       <section className="py-16 px-4 bg-white relative">
@@ -293,7 +287,7 @@ export default function Etkinlikler({
                 return (
                   <div
                     key={event._id || event.id || index}
-                    className="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300 group flex flex-col h-[420px] overflow-hidden border border-gray-100 relative"
+                    className="bg-white rounded-lg shadow hover:shadow-lg transition-all duration-300 group flex flex-col min-h-[420px] overflow-hidden border border-gray-100 relative"
                   >
                     {/* Past Event Badge */}
                     <div className="absolute top-3 left-3 bg-[#002c54] text-white text-xs px-3 py-1 rounded-md font-medium z-20 flex items-center">
@@ -340,7 +334,7 @@ export default function Etkinlikler({
                         href={`/${lang}/etkinlikler/${eventSlug}`}
                         className="block flex-shrink-0"
                       >
-                        <h3 className="text-lg font-bold text-[#002c54] mb-2 hover:text-[#b61e24] transition-colors duration-200 line-clamp-2">
+                        <h3 className="text-lg font-bold text-[#002c54] mb-2 hover:text-[#b61e24] transition-colors duration-200">
                           {eventTitle}
                         </h3>
                       </Link>

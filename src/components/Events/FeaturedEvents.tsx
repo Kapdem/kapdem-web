@@ -97,7 +97,7 @@ export default function FeaturedEvents({
                   <div className="text-slate-500 text-sm">{event.category}</div>
                 </div>
 
-                <h3 className="text-xl font-bold text-slate-800 mb-3 line-clamp-2 group-hover:text-slate-600 transition-colors duration-200">
+                <h3 className="text-xl font-bold text-slate-800 mb-3 group-hover:text-slate-600 transition-colors duration-200">
                   {event.title}
                 </h3>
 

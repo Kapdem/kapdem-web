@@ -144,7 +144,7 @@ export default function HomePopup({
                   )}
 
                   <div className="px-3 py-2.5">
-                    <h3 className="font-bold text-slate-800 text-xs leading-snug mb-1.5 group-hover:text-indigo-600 transition-colors line-clamp-2">
+                    <h3 className="font-bold text-slate-800 text-xs leading-snug mb-1.5 group-hover:text-indigo-600 transition-colors">
                       {t?.title || "Etkinlik Başlığı"}
                     </h3>
 

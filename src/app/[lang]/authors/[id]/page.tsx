@@ -180,7 +180,7 @@ export default async function page({ params }: Props) {
                       )}
 
                       {/* Title */}
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                         {postTitle}
                       </h3>
 

@@ -34,8 +34,12 @@ export default function EventsList({
   events: EventData[];
   pastEvents: EventData[];
 }) {
-  const [activeTab, setActiveTab] = useState<"upcoming" | "past">("upcoming");
-  const displayEvents = (activeTab === "upcoming" ? events : pastEvents).slice(
+  const hasUpcoming = events.length > 0;
+  const [activeTab, setActiveTab] = useState<"upcoming" | "past">(
+    hasUpcoming ? "upcoming" : "past",
+  );
+  const effectiveTab = hasUpcoming ? activeTab : "past";
+  const displayEvents = (effectiveTab === "upcoming" ? events : pastEvents).slice(
     0,
     4,
   );
@@ -50,15 +54,17 @@ export default function EventsList({
           Etkinlikler
         </h2>
         <div className="flex gap-5 text-[10px] font-bold uppercase">
-          <button
-            onClick={() => setActiveTab("upcoming")}
-            className={`pb-1 transition-all ${activeTab === "upcoming" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
-          >
-            Gelecek
-          </button>
+          {hasUpcoming && (
+            <button
+              onClick={() => setActiveTab("upcoming")}
+              className={`pb-1 transition-all ${effectiveTab === "upcoming" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
+            >
+              Gelecek
+            </button>
+          )}
           <button
             onClick={() => setActiveTab("past")}
-            className={`pb-1 transition-all ${activeTab === "past" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
+            className={`pb-1 transition-all ${effectiveTab === "past" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
           >
             Geçmiş
           </button>
@@ -114,7 +120,7 @@ export default function EventsList({
                   <h3
                     className={`font-extrabold text-slate-900 leading-tight group-hover:text-blue-700 transition-colors
                     ${isLarge ? "text-2xl mb-3" : "text-base mb-1"}
-                    ${isSmall ? "text-[13px] line-clamp-2" : ""}`}
+                    ${isSmall ? "text-[13px]" : ""}`}
                   >
                     {event.translations.tr.title}
                   </h3>

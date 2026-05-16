@@ -160,8 +160,8 @@ export default function FeaturedContent({
                     </div>
 
                     <div className="max-w-full">
-                      <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 md:mb-8 line-clamp-3 md:line-clamp-none">
-                        {heroData.title?.slice(0, 50)}...
+                      <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 md:mb-8">
+                        {heroData.title}
                       </h2>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 md:gap-4">
@@ -215,7 +215,7 @@ export default function FeaturedContent({
                       />
                     </div>
                     <div className="flex min-w-0 flex-1 flex-col justify-center gap-2 self-center">
-                      <h3 className="text-sm sm:text-[15px] md:text-lg font-bold leading-snug text-slate-800 group-hover:text-black transition-colors line-clamp-3">
+                      <h3 className="text-sm sm:text-[15px] md:text-lg font-bold leading-snug text-slate-800 group-hover:text-black transition-colors">
                         {card.title}
                       </h3>
                       <span className="text-[10px] md:text-[11px] text-slate-400 font-medium italic line-clamp-1">

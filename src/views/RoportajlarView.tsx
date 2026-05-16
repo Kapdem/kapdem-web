@@ -74,7 +74,7 @@ export default function RoportajlarView({ dict }) {
               />
               <div className="flex-1 flex flex-col p-5">
                 {/* Başlık */}
-                <h2 className="text-xl font-semibold mb-2 line-clamp-2">
+                <h2 className="text-xl font-semibold mb-2">
                   {post.title}
                 </h2>
                 {/* Excerpt */}
