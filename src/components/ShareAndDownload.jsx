@@ -38,228 +38,303 @@ export default function ShareAndDownload({ blogPost, dict }) {
       return;
     }
 
-    const loadLogo = () =>
-      new Promise((resolve) => {
-        const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => {
-          const canvas = document.createElement("canvas");
-          canvas.width = img.width;
-          canvas.height = img.height;
-          canvas.getContext("2d").drawImage(img, 0, 0);
-          resolve({
-            dataUrl: canvas.toDataURL("image/png"),
-            aspectRatio: img.width / img.height,
-          });
-        };
-        img.onerror = () => resolve(null);
-        img.src = "/images/kapdem.jpeg";
-      });
+    const escapeHtml = (s) =>
+      String(s || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
-    const fetchFontAsBase64 = async (url, cacheKey) => {
+    const sanitizeFilename = (s) =>
+      String(s || "yazi")
+        .replace(/[\/\\?%*:|"<>]/g, "-")
+        .slice(0, 80) || "yazi";
+
+    // İçerik HTML'i hazırla — site ile aynı URL düzeltmesi
+    const rawContent =
+      (typeof blogPost.content === "object"
+        ? blogPost.content?.html
+        : blogPost.content) || "";
+    const contentHtml = rawContent.replace(
+      /https?:\/\/(www\.)?kapdem\.org\/wp-content\/uploads\//g,
+      "https://kapdem-org.s3.eu-north-1.amazonaws.com/wp-content/uploads/",
+    );
+
+    const formattedDate = blogPost.formattedDate || blogPost.date || "";
+    const author = blogPost.author || {};
+    const authorName = `${author.firstName || ""} ${
+      author.lastName || ""
+    }`.trim();
+
+    const coverImage = blogPost.coverImage || "";
+
+    // PDF üretimi sırasında kullanıcıya overlay göster
+    const overlay = document.createElement("div");
+    overlay.id = "__kapdem-pdf-overlay";
+    overlay.style.cssText = `
+      position: fixed;
+      inset: 0;
+      background: #002c54;
+      z-index: 2147483647;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      color: #ffffff;
+      font-family: system-ui, -apple-system, sans-serif;
+    `;
+    overlay.innerHTML = `
+      <div style="width:56px;height:56px;border:4px solid rgba(255,255,255,0.2);border-top-color:#ffffff;border-radius:50%;animation:kapdem-spin 0.8s linear infinite;"></div>
+      <div style="font-size:16px;font-weight:600;letter-spacing:0.5px;">PDF İndiriliyor...</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.7);">Lütfen bekleyin</div>
+      <style>@keyframes kapdem-spin{to{transform:rotate(360deg);}}</style>
+    `;
+    document.body.appendChild(overlay);
+
+    // PDF için render container'ı oluştur.
+    // position: absolute (fixed değil) — html2canvas tam içerik yüksekliğini yakalayabilsin.
+    // Overlay tarafından gizleniyor.
+    const container = document.createElement("div");
+    container.id = "__kapdem-pdf-container";
+    container.style.cssText = `
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 794px;
+      padding: 40px 48px;
+      box-sizing: border-box;
+      background: #ffffff;
+      color: #1a1a1a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.75;
+      text-rendering: optimizeSpeed;
+      z-index: 2147483645;
+    `;
+
+    container.innerHTML = `
+      ${
+        coverImage
+          ? `<div style="margin-bottom:24px;overflow:hidden;border-radius:8px;">
+              <img src="${escapeHtml(coverImage)}"
+                   crossorigin="anonymous"
+                   style="width:100%;max-height:380px;object-fit:cover;display:block;" />
+            </div>`
+          : ""
+      }
+      <h1 style="font-size:26px;font-weight:700;line-height:1.3;color:#002c54;margin:0 0 12px 0;letter-spacing:-0.01em;">
+        ${escapeHtml(blogPost.title || "")}
+      </h1>
+      <div style="font-size:12px;color:#6b7280;margin:0 0 24px 0;padding-bottom:14px;border-bottom:1px solid #e5e7eb;">
+        ${authorName ? `<strong style="color:#374151;">${escapeHtml(authorName)}</strong>` : ""}
+        ${authorName && formattedDate ? '<span style="margin:0 8px;">·</span>' : ""}
+        ${formattedDate ? `<span>${escapeHtml(formattedDate)}</span>` : ""}
+      </div>
+      <div class="ck-content" style="font-size:14px;line-height:1.75;color:#1f2937;word-wrap:break-word;">
+        ${contentHtml}
+      </div>
+      <div style="margin-top:32px;padding-top:16px;border-top:1px solid #e5e7eb;font-size:11px;color:#6b7280;line-height:1.5;">
+        <strong style="color:#374151;">Yazı linki:</strong>
+        <span style="word-break:break-all;">${escapeHtml(window.location.href)}</span>
+      </div>
+    `;
+
+    document.body.appendChild(container);
+
+    // Container içindeki tüm görsellere stil ver
+    container.querySelectorAll("img").forEach((img) => {
+      img.style.maxWidth = "100%";
+      img.style.height = "auto";
+      img.style.display = "block";
+      img.style.margin = "16px auto";
+      img.style.borderRadius = "6px";
+    });
+
+    // Görselleri base64 data URL'e çevir (CORS sorunlarını atlatmak için).
+    // Cross-origin URL'ler same-origin proxy üzerinden geçiriliyor.
+    const imageToDataUrl = async (url) => {
       try {
-        const cached = sessionStorage.getItem(cacheKey);
-        if (cached) return cached;
-      } catch (_) {}
-
-      const res = await fetch(url);
-      if (!res.ok) {
-        throw new Error(`Font fetch failed: ${url} (${res.status})`);
-      }
-      const buf = await res.arrayBuffer();
-      const bytes = new Uint8Array(buf);
-      let bin = "";
-      const chunk = 0x8000;
-      for (let i = 0; i < bytes.length; i += chunk) {
-        bin += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
-      }
-      const base64 = btoa(bin);
-      try {
-        sessionStorage.setItem(cacheKey, base64);
-      } catch (_) {}
-      return base64;
-    };
-
-    const loadRegular = () =>
-      fetchFontAsBase64(
-        "/fonts/Roboto-Regular.ttf",
-        "__kapdem_pdf_font_regular_v2",
-      );
-
-    const loadBold = () =>
-      fetchFontAsBase64(
-        "/fonts/Roboto-Bold.ttf",
-        "__kapdem_pdf_font_bold_v2",
-      );
-
-    const { jsPDF } = await import("jspdf");
-
-    const safeLoad = (fn) => fn().catch((err) => {
-      console.warn("[PDF] Font yüklenemedi:", err);
-      return null;
-    });
-    const [regularBase64, boldBase64, logoData] = await Promise.all([
-      safeLoad(loadRegular),
-      safeLoad(loadBold),
-      loadLogo(),
-    ]);
-
-    const pdf = new jsPDF({
-      unit: "mm",
-      format: "a4",
-      orientation: "portrait",
-      putOnlyUsedFonts: true,
-    });
-
-    let fontName = "helvetica";
-    if (regularBase64) {
-      pdf.addFileToVFS("Roboto-Regular.ttf", regularBase64);
-      pdf.addFont("Roboto-Regular.ttf", "Roboto", "normal");
-      fontName = "Roboto";
-    }
-    let hasBold = false;
-    if (boldBase64 && fontName === "Roboto") {
-      pdf.addFileToVFS("Roboto-Bold.ttf", boldBase64);
-      pdf.addFont("Roboto-Bold.ttf", "Roboto", "bold");
-      hasBold = true;
-    }
-
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    const marginX = 20;
-    const marginTop = 22;
-    const marginBottom = 26;
-    const contentWidth = pageWidth - marginX * 2;
-    const bodyFontSize = 11;
-    const bodyLineHeight = 6.8;
-    const paragraphGap = 4.5;
-    const firstLineIndent = 6;
-
-    let y = marginTop;
-
-    const ensureSpace = (needed) => {
-      if (y + needed > pageHeight - marginBottom) {
-        pdf.addPage();
-        y = marginTop;
-      }
-    };
-
-    // Başlık
-    const titleFontSize = 18;
-    const titleLineHeight = 8.5;
-    pdf.setFont(fontName, hasBold ? "bold" : "normal");
-    pdf.setFontSize(titleFontSize);
-    pdf.setTextColor(20, 20, 20);
-    const titleLines = pdf.splitTextToSize(blogPost.title || "", contentWidth);
-    titleLines.forEach((line) => {
-      ensureSpace(titleLineHeight);
-      pdf.text(line, marginX, y + 6.3);
-      y += titleLineHeight;
-    });
-
-    // Başlık altı ince çizgi
-    y += 3;
-    pdf.setDrawColor(200, 200, 200);
-    pdf.setLineWidth(0.3);
-    pdf.line(marginX, y, marginX + contentWidth, y);
-    y += 6;
-
-    // Gövde
-    pdf.setFont(fontName, "normal");
-    pdf.setFontSize(bodyFontSize);
-    pdf.setTextColor(40, 40, 40);
-    const content = blogPost.content?.text || "";
-    const paragraphs = content.split("\n\n").filter((p) => p.trim());
-
-    paragraphs.forEach((paragraph) => {
-      const trimmed = paragraph.trim();
-      const firstLine = pdf.splitTextToSize(
-        trimmed,
-        contentWidth - firstLineIndent,
-      )[0];
-      const restText = trimmed.substring(firstLine.length).trim();
-      const restLines = restText
-        ? pdf.splitTextToSize(restText, contentWidth)
-        : [];
-      const allLines = [
-        { text: firstLine, x: marginX + firstLineIndent },
-        ...restLines.map((t) => ({ text: t, x: marginX })),
-      ];
-      allLines.forEach((ln) => {
-        ensureSpace(bodyLineHeight);
-        pdf.text(ln.text, ln.x, y + 4.3);
-        y += bodyLineHeight;
-      });
-      y += paragraphGap;
-    });
-
-    // Yazı linki kutusu
-    const linkUrl = window.location.href;
-    const linkLines = pdf.splitTextToSize(linkUrl, contentWidth - 10);
-    const boxPadding = 5;
-    const boxHeight = boxPadding * 2 + 5 + linkLines.length * 5;
-    ensureSpace(boxHeight + 6);
-    y += 6;
-    pdf.setFillColor(248, 249, 250);
-    pdf.rect(marginX, y, contentWidth, boxHeight, "F");
-    pdf.setFillColor(0, 0, 0);
-    pdf.rect(marginX, y, 1.2, boxHeight, "F");
-    pdf.setFontSize(9);
-    pdf.setTextColor(73, 80, 87);
-    pdf.text("Yazı linki:", marginX + boxPadding, y + boxPadding + 3);
-    pdf.setTextColor(0, 0, 0);
-    linkLines.forEach((line, idx) => {
-      pdf.text(
-        line,
-        marginX + boxPadding,
-        y + boxPadding + 8 + idx * 5,
-      );
-    });
-    y += boxHeight;
-
-    // Her sayfaya footer
-    const totalPages = pdf.internal.getNumberOfPages();
-    for (let i = 1; i <= totalPages; i++) {
-      pdf.setPage(i);
-      pdf.setFont(fontName, "normal");
-
-      pdf.setFontSize(9);
-      pdf.setTextColor(100, 100, 100);
-      pdf.text(`Sayfa ${i} / ${totalPages}`, marginX, pageHeight - 8);
-
-      pdf.setFontSize(7);
-      pdf.setTextColor(120, 120, 120);
-      const footerUrl = window.location.href;
-      const footerUrlWidth = pdf.getTextWidth(footerUrl);
-      pdf.text(
-        footerUrl,
-        (pageWidth - footerUrlWidth) / 2,
-        pageHeight - 8,
-      );
-
-      if (logoData) {
-        const maxW = 28;
-        const maxH = 14;
-        let lw, lh;
-        if (logoData.aspectRatio > maxW / maxH) {
-          lw = maxW;
-          lh = maxW / logoData.aspectRatio;
-        } else {
-          lh = maxH;
-          lw = maxH * logoData.aspectRatio;
+        let fetchUrl = url;
+        if (/^https?:\/\//i.test(url)) {
+          try {
+            const u = new URL(url);
+            if (u.origin !== window.location.origin) {
+              fetchUrl = `/api/image/proxy?url=${encodeURIComponent(url)}`;
+            }
+          } catch {}
         }
-        pdf.addImage(
-          logoData.dataUrl,
-          "PNG",
-          pageWidth - marginX - lw,
-          pageHeight - lh - 4,
-          lw,
-          lh,
+        const res = await fetch(fetchUrl);
+        if (!res.ok) return null;
+        const blob = await res.blob();
+        return await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = () => resolve(null);
+          reader.readAsDataURL(blob);
+        });
+      } catch (e) {
+        return null;
+      }
+    };
+
+    await Promise.all(
+      Array.from(container.querySelectorAll("img")).map(async (img) => {
+        const src = img.getAttribute("src") || "";
+        if (!src || src.startsWith("data:")) return;
+        const dataUrl = await imageToDataUrl(src);
+        if (dataUrl) {
+          img.removeAttribute("crossorigin");
+          img.src = dataUrl;
+        } else {
+          // Yüklenemeyen görseli kaldır (boş yer bırakma)
+          img.remove();
+        }
+      }),
+    );
+
+    // Layout'un tam oluşması için bir frame bekle
+    await new Promise((r) => requestAnimationFrame(() => r()));
+    await new Promise((r) => requestAnimationFrame(() => r()));
+
+    const originalScrollY = window.scrollY;
+    window.scrollTo({ top: 0, behavior: "instant" });
+
+    try {
+      const [jsPDFMod, html2canvasMod] = await Promise.all([
+        import("jspdf"),
+        import("html2canvas"),
+      ]);
+      const JsPDF = jsPDFMod.jsPDF || jsPDFMod.default;
+      const html2canvas = html2canvasMod.default || html2canvasMod;
+
+      // 1. Container'ı canvas'a render et
+      const canvas = await html2canvas(container, {
+        scale: 1.8,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: "#ffffff",
+        logging: false,
+        windowWidth: container.offsetWidth,
+        windowHeight: container.scrollHeight,
+      });
+
+      const pdf = new JsPDF({
+        unit: "mm",
+        format: "a4",
+        orientation: "portrait",
+        compress: true,
+      });
+
+      const pageWidth = pdf.internal.pageSize.getWidth(); // 210mm
+      const pageHeight = pdf.internal.pageSize.getHeight(); // 297mm
+      const marginX = 10;
+      const marginY = 10;
+      const usableWidth = pageWidth - marginX * 2;
+      const usableHeight = pageHeight - marginY * 2;
+
+      // px → mm dönüşüm oranı
+      const pxToMm = usableWidth / canvas.width;
+      const sliceHeightPx = Math.floor(usableHeight / pxToMm);
+
+      // 2. Akıllı sayfa kesimi: kesim noktasını beyaz boşluğa kaydır.
+      // Tek seferde tüm canvas ImageData'sını al — getImageData her seferinde
+      // yeniden çağırmak yerine hız için.
+      const ctx = canvas.getContext("2d");
+      const fullData = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+      const w = canvas.width;
+      const sampleStepX = 16; // her 16 pikselde bir kontrol (hız için)
+
+      const isRowWhite = (y) => {
+        const rowStart = y * w * 4;
+        for (let x = 0; x < w; x += sampleStepX) {
+          const i = rowStart + x * 4;
+          if (
+            fullData[i] < 245 ||
+            fullData[i + 1] < 245 ||
+            fullData[i + 2] < 245
+          ) {
+            return false;
+          }
+        }
+        return true;
+      };
+
+      const findWhitespaceRow = (targetY) => {
+        // ±40 piksellik bir pencerede beyaz satır ara, üstten başla
+        const searchRange = 40;
+        const startY = Math.max(0, targetY - searchRange);
+        for (let y = targetY; y >= startY; y -= 2) {
+          if (isRowWhite(y)) return y;
+        }
+        return targetY;
+      };
+
+      // 3. Sayfa sayfa ekle, kesim noktalarını ayarla
+      let currentY = 0;
+      let isFirstPage = true;
+
+      while (currentY < canvas.height) {
+        let nextY = Math.min(currentY + sliceHeightPx, canvas.height);
+
+        // Son sayfa değilse beyaz boşluğa kaydır
+        if (nextY < canvas.height) {
+          nextY = findWhitespaceRow(nextY);
+        }
+
+        const sliceHeight = nextY - currentY;
+        if (sliceHeight <= 0) break;
+
+        // Kesilen parçayı geçici canvas'a kopyala
+        const sliceCanvas = document.createElement("canvas");
+        sliceCanvas.width = canvas.width;
+        sliceCanvas.height = sliceHeight;
+        const sliceCtx = sliceCanvas.getContext("2d");
+        sliceCtx.fillStyle = "#ffffff";
+        sliceCtx.fillRect(0, 0, sliceCanvas.width, sliceCanvas.height);
+        sliceCtx.drawImage(
+          canvas,
+          0,
+          currentY,
+          canvas.width,
+          sliceHeight,
+          0,
+          0,
+          canvas.width,
+          sliceHeight,
         );
+
+        const sliceData = sliceCanvas.toDataURL("image/jpeg", 0.95);
+        const sliceMmHeight = sliceHeight * pxToMm;
+
+        if (!isFirstPage) pdf.addPage();
+        pdf.addImage(
+          sliceData,
+          "JPEG",
+          marginX,
+          marginY,
+          usableWidth,
+          sliceMmHeight,
+        );
+
+        currentY = nextY;
+        isFirstPage = false;
+      }
+
+      pdf.save(`${sanitizeFilename(blogPost.title)}.pdf`);
+    } catch (err) {
+      console.error("[PDF] Üretim hatası:", err);
+      alert("PDF oluşturulurken bir hata oluştu. Lütfen tekrar deneyin.");
+    } finally {
+      window.scrollTo({ top: originalScrollY, behavior: "instant" });
+      if (container.parentNode) {
+        container.parentNode.removeChild(container);
+      }
+      if (overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
       }
     }
-
-    pdf.save(`${blogPost.title || "yazi"}.pdf`);
   };
 
   return (
