@@ -5,21 +5,21 @@
   overflow-y: auto;
 }
 
-.ck-content h1,
-.ck-content h2,
-.ck-content h3,
-.ck-content h4,
-.ck-content h5,
-.ck-content h6,
 .ck-content p,
 .ck-content li,
 .ck-content blockquote,
-.ck-content table,
 .ck-content td,
 .ck-content th,
 .ck-content figcaption {
-  font-size: 22px !important;
+  font-size: 22px;
 }
+
+.ck-content h1 { font-size: 2rem; font-weight: 700; }
+.ck-content h2 { font-size: 1.75rem; font-weight: 700; }
+.ck-content h3 { font-size: 1.5rem; font-weight: 600; }
+.ck-content h4 { font-size: 1.25rem; font-weight: 600; }
+.ck-content h5 { font-size: 1.1rem; font-weight: 600; }
+.ck-content h6 { font-size: 1rem; font-weight: 600; }
 
 .ck-content h2 {
   margin-top: 1rem;
@@ -76,6 +76,6 @@
   display: table-caption;
   text-align: center;
   color: #6b7280;
-  font-size: 20px !important;
+  font-size: 20px;
   padding: 0.5rem;
 }

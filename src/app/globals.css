@@ -8,12 +8,6 @@
 }
 @import "tailwindcss";
 
-.ck-content * {
-  font-size: 22px !important;
-}
-.ck-content [style*="font-size"] {
-  font-size: 22px !important;
-}
 
 /* Custom text shadow utilities for better readability on images */
 .text-shadow-lg {
