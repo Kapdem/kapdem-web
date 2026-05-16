@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import PostsView from "../../../views/PostsView";
 import { getPostByAuthorPosts, getPostDetails } from "../../../lib/posts/data";
 import { getDictionary } from "../dictionaries";
@@ -80,6 +81,11 @@ export default async function page({ params }: Props) {
     getPostDetails(slug),
     getDictionary(lang),
   ]);
+
+  // Slug ile post bulunamadıysa 404
+  if (!res || !res._id) {
+    notFound();
+  }
 
   const publishedAt = res?.publishedAt ? new Date(res.publishedAt) : null;
 

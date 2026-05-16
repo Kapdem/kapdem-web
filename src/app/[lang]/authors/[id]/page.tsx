@@ -1,4 +1,5 @@
 import { getAuthorById } from "@/lib/data";
+import { notFound } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,11 +26,7 @@ export default async function page({ params }: Props) {
   const author = await getAuthorById(id);
 
   if (!author || !author._id) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p>Yazar bulunamadı.</p>
-      </div>
-    );
+    notFound();
   }
 
   const { firstName, lastName, email, profilePicture, postCount, posts } =

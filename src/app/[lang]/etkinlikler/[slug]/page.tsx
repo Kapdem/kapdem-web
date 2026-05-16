@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { getEventDetails } from "../../../../lib/posts/data";
 import EventDetailClient from "./EventDetailClient";
 import { getDictionary } from "../../dictionaries";
@@ -26,6 +27,10 @@ export default async function page({ params }) {
   const awaitedParams = await params;
   const event = await getEventDetails(awaitedParams.slug);
   const dict = await getDictionary(awaitedParams.lang);
+
+  if (!event || !event._id) {
+    notFound();
+  }
 
   return (
     <EventDetailClient event={event} dict={dict} lang={awaitedParams.lang} />
