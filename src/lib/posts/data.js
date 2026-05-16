@@ -20,7 +20,7 @@ export const getPosts = cache(async (query) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage };
+          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
         }
         return post;
       });
@@ -172,7 +172,7 @@ export const getPostByAuthorPosts = async (authorId) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage };
+          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
         }
         return post;
       });
@@ -204,7 +204,7 @@ export const findPastEvents = async () => {
           !event.coverImage.startsWith(s3Prefix) &&
           !event.coverImage.startsWith("http")
         ) {
-          return { ...event, coverImage: s3Prefix + event.coverImage };
+          return { ...event, coverImage: s3Prefix + event.coverImage.replace(/^\/+/, '') };
         }
         return event;
       });
@@ -238,7 +238,7 @@ export const findUpcomingEvents = async () => {
           !event.coverImage.startsWith(s3Prefix) &&
           !event.coverImage.startsWith("http")
         ) {
-          return { ...event, coverImage: s3Prefix + event.coverImage };
+          return { ...event, coverImage: s3Prefix + event.coverImage.replace(/^\/+/, '') };
         }
         return event;
       });
@@ -268,7 +268,7 @@ export const getPostByUsername = async (username) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage };
+          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
         }
         return post;
       });
@@ -298,7 +298,7 @@ export const getFeaturedPosts = async () => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage };
+          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
         }
         return post;
       });
@@ -329,7 +329,7 @@ export const getEditorsPicks = async () => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage };
+          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
         }
         return post;
       });
