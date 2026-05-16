@@ -79,11 +79,15 @@ export default function RegisterView({
       const res = await Register(form);
 
       if (res?.success) {
-        setSuccess(dict.registerPage.successMessage);
-        // Opsiyonel: yönlendirme yerine kısa gecikme
+        setSuccess(
+          dict.registerPage.successCheckEmail ||
+            (lang === "tr"
+              ? "Üyeliğiniz oluşturuldu! Hoş geldiniz ve e-posta doğrulama maillerini e-posta kutunuzda kontrol edin. (Spam klasörüne de bakmayı unutmayın.)"
+              : "Your account has been created! Please check your inbox for the welcome and verification emails. (Don't forget to check the spam folder.)"),
+        );
         setTimeout(() => {
           window.location.href = `/${lang}/login`;
-        }, 800);
+        }, 4000);
       } else {
         setError(res?.message || dict.registerPage.errorGeneric);
       }

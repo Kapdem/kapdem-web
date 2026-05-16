@@ -120,6 +120,39 @@ export const ForgotPassword = async (email) => {
   }
 };
 
+export const VerifyEmail = async (token) => {
+  try {
+    const res = await fetch(
+      `${NEXT_PUBLIC_BASE_URL}/auth/verify-email?token=${encodeURIComponent(
+        token,
+      )}`,
+      {
+        method: "GET",
+        headers: { "Content-Type": "application/json" },
+        credentials: "omit",
+      },
+    );
+
+    let data;
+    try {
+      data = await res.json();
+    } catch (e) {
+      data = {};
+    }
+
+    if (res.ok) {
+      return { success: true, message: data.message };
+    }
+    return {
+      success: false,
+      message: data.message || "Email verification failed",
+    };
+  } catch (error) {
+    console.error("Error during email verification:", error);
+    return { success: false, message: error.message || "Unexpected error" };
+  }
+};
+
 export const ResetPassword = async (token, newPassword) => {
   try {
     const res = await fetch(`${NEXT_PUBLIC_BASE_URL}/auth/reset-password`, {
