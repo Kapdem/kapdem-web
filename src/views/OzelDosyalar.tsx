@@ -279,7 +279,7 @@ export default function OzelDosyalar({
 
                   {/* Özet */}
                   <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3 min-h-[4.5rem]">
-                    {doc.content.text}
+                    {doc.content?.text || ""}
                   </p>
 
                   {/* Meta Bilgiler */}

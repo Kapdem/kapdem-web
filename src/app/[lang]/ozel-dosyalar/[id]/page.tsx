@@ -217,17 +217,30 @@ export default async function page({
           {/* Content */}
           <div className="relative">
             <div className="prose prose-invert prose-amber max-w-none">
-              <div
-                className="ck-content text-slate-300 leading-relaxed text-lg"
-                dangerouslySetInnerHTML={{
-                  __html: res.content.html
-                    ? res.content.html.replace(
-                        /https:\/\/www\.kapdem\.org\/wp-content\/uploads\//g,
-                        "https://kapdem-org.s3.eu-north-1.amazonaws.com/"
-                      )
-                    : "",
-                }}
-              />
+              {res.content?.html ? (
+                <div
+                  className="ck-content text-slate-300 leading-relaxed text-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: res.content.html.replace(
+                      /https:\/\/www\.kapdem\.org\/wp-content\/uploads\//g,
+                      "https://kapdem-org.s3.eu-north-1.amazonaws.com/"
+                    ),
+                  }}
+                />
+              ) : (
+                <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-8 text-center">
+                  <Shield className="w-12 h-12 text-amber-400 mx-auto mb-4" />
+                  <h3 className="text-xl font-bold text-amber-200 mb-2">
+                    {dict?.specialFileDetail?.accessRestricted ||
+                      "Bu içeriğe erişim için üyelik yükseltmesi gerekiyor"}
+                  </h3>
+                  <p className="text-slate-400 text-sm">
+                    {res.preview?.message ||
+                      dict?.specialFileDetail?.accessRestrictedDescription ||
+                      "Üyeliğinizi yükselterek bu özel dosyaya erişebilirsiniz."}
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 
