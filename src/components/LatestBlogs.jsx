@@ -29,7 +29,7 @@ export default function LatestBlogs({ authorPosts, dict }) {
       <div className="flex flex-col gap-8">
         {authorPosts
           ?.filter((blog) => blog.coverImage)
-          ?.slice(0, 2)
+          ?.slice(0, 5)
           ?.map((blog) => (
             <div
               key={blog._id}
