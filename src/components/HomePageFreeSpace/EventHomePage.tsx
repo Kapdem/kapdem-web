@@ -62,12 +62,6 @@ export default function EventHomePage({
   pastEvents: any[];
   editorsPicks: any[];
 }) {
-  console.log("EventHomePage Props:", {
-    res,
-    events,
-    pastEvents,
-    editorsPicks,
-  }); // Debug: Gelen tüm verileri kontrol et
   const [heroIndex, setHeroIndex] = useState(0);
 
   const hasRes = res && res.length > 0;
