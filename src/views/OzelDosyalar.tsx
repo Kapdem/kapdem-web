@@ -13,7 +13,6 @@ import {
   Search,
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
-import LoginRequiredModal from "../components/LoginRequiredModal";
 import { useRouter, usePathname } from "next/navigation";
 type Props = {
   dict: any;
@@ -51,7 +50,6 @@ export default function OzelDosyalar({
   const router = useRouter();
   const pathname = usePathname();
   const [showWarningModal, setShowWarningModal] = useState(true);
-  const [showLoginModal, setShowLoginModal] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -106,7 +104,7 @@ export default function OzelDosyalar({
 
   const handleDocumentAccess = (documentId: string) => {
     if (!auth) {
-      setShowLoginModal(true);
+      router.push(`/${lang}/login`);
     } else {
       router.push(`/${lang}/ozel-dosyalar/${documentId}`);
     }
@@ -168,13 +166,15 @@ export default function OzelDosyalar({
                 </button>
 
                 <div className="flex gap-2">
-                  <button
-                    onClick={() => setShowLoginModal(true)}
-                    className="flex-1 px-4 py-2 bg-slate-700 text-slate-300 rounded-lg font-medium hover:bg-slate-600 transition-all duration-200 text-sm"
-                  >
-                    {dict?.specialFiles?.warningModal?.loginButton ||
-                      "Giriş Yap"}
-                  </button>
+                  {!auth && (
+                    <button
+                      onClick={() => router.push(`/${lang}/login`)}
+                      className="flex-1 px-4 py-2 bg-slate-700 text-slate-300 rounded-lg font-medium hover:bg-slate-600 transition-all duration-200 text-sm"
+                    >
+                      {dict?.specialFiles?.warningModal?.loginButton ||
+                        "Giriş Yap"}
+                    </button>
+                  )}
                   <button
                     onClick={() =>
                       (window.location.href = "mailto:info@kapdem.org")
@@ -309,13 +309,15 @@ export default function OzelDosyalar({
                     </button>
                   </div>
 
-                  {/* Kilit İkonu */}
-                  <div className="flex items-center justify-center mt-3 text-slate-500">
-                    <Lock className="w-4 h-4 mr-1" />
-                    <span className="text-xs">
-                      {dict?.specialFiles?.loginRequired || "Giriş gerekli"}
-                    </span>
-                  </div>
+                  {/* Kilit İkonu - yalnızca giriş yapmamış kullanıcılara göster */}
+                  {!auth && (
+                    <div className="flex items-center justify-center mt-3 text-slate-500">
+                      <Lock className="w-4 h-4 mr-1" />
+                      <span className="text-xs">
+                        {dict?.specialFiles?.loginRequired || "Giriş gerekli"}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -354,11 +356,6 @@ export default function OzelDosyalar({
         </div>
       </div>
 
-      {/* Login Modal */}
-      <LoginRequiredModal
-        open={showLoginModal}
-        onClose={() => setShowLoginModal(false)}
-      />
     </div>
   );
 }
