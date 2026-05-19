@@ -74,7 +74,9 @@ export default function SendPaperPage({ dict }: SendPaperPageProps) {
         dict?.sendPaper?.validation?.contentRequired ||
           "İçerik alanı zorunludur"
       ),
-    photo: Yup.mixed(),
+    // Yup v1'de şemalar varsayılan olarak null kabul etmez; kapak görseli
+    // opsiyonel olduğu ve başlangıç değeri null olduğu için .nullable() şart.
+    photo: Yup.mixed().nullable().notRequired(),
     biografi: Yup.string(),
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
