@@ -222,7 +222,7 @@ export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
           {/* Footer */}
           <div className="text-center text-sm text-white/70 mt-6">
             <p>
-              © 2024 Kapdem.{" "}
+              © {new Date().getFullYear()} KAPDEM.{" "}
               {dict?.loginPage?.allrightsreserved || "Tüm hakları saklıdır."}
             </p>
           </div>

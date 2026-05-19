@@ -1016,7 +1016,7 @@
     "errorConsentRequired": "You must provide KVKK and Communication consents.",
     "errorGeneric": "Registration failed. Please try again.",
     "successMessage": "Registration successful! You can now log in.",
-    "footer": "© 2024 Kapdem. All rights reserved."
+    "footer": "© {year} KAPDEM. All rights reserved."
   },
   "kvkkread": "Read and approve this document",
   "membershipPage": {

@@ -343,7 +343,12 @@ export default function RegisterView({
 
           {/* Footer */}
           <div className="text-center text-sm text-white/70 mt-6">
-            <p>{dict.registerPage.footer}</p>
+            <p>
+              {dict.registerPage.footer?.replace(
+                "{year}",
+                String(new Date().getFullYear())
+              )}
+            </p>
           </div>
         </div>
       </div>

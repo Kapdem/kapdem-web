@@ -1013,7 +1013,7 @@
     "errorConsentRequired": "KVKK ve Açık İletişim onaylarını vermelisiniz.",
     "errorGeneric": "Kayıt başarısız. Lütfen tekrar deneyin.",
     "successMessage": "Kayıt başarılı! Giriş yapabilirsiniz.",
-    "footer": "© 2024 Kapdem. Tüm hakları saklıdır."
+    "footer": "© {year} KAPDEM. Tüm hakları saklıdır."
   },
   "kvkkread": "Metni okudum ve kabul ediyorum",
   "membershipPage": {
