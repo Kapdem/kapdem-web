@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Eye, EyeOff } from "lucide-react";
 
 import CustomSlider from "../components/CustomSlider";
 import { Login, ResendVerification } from "../lib/auth/action";
@@ -13,6 +14,7 @@ import { useAuth } from "../context/AuthContext";
 export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
   const [emailOrUsername, setEmailOrUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [needsVerification, setNeedsVerification] = useState(false);
   const [isResending, setIsResending] = useState(false);
@@ -139,15 +141,31 @@ export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
                 >
                   {dict?.loginPage?.password || "Şifre"}
                 </label>
-                <input
-                  id="password"
-                  type="password"
-                  className="w-full border-2 text-white border-gray-400 rounded-lg px-4 py-3 transition-all duration-200"
-                  placeholder="••••••••"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    className="w-full border-2 text-white border-gray-400 rounded-lg px-4 py-3 pr-12 transition-all duration-200"
+                    placeholder="••••••••"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white transition-colors"
+                    aria-label={
+                      showPassword ? "Şifreyi gizle" : "Şifreyi göster"
+                    }
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
 
               <div className="flex items-center justify-between">

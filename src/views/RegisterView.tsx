@@ -2,6 +2,7 @@
 import Image from "next/image";
 import CustomSlider from "../components/CustomSlider";
 import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
 import ConsentModal from "../components/ConsentModal";
 import ConsentToggle from "../components/ConsentToggle";
 import { Register } from "../lib/auth/action";
@@ -25,6 +26,8 @@ export default function RegisterView({
     username: "",
   });
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   // KVKK, iletişim, bülten toggle state
@@ -220,29 +223,63 @@ export default function RegisterView({
                 <label className="block text-sm font-semibold text-white mb-2">
                   {dict.registerPage.password}
                 </label>
-                <input
-                  type="password"
-                  name="password"
-                  value={form.password}
-                  onChange={handleChange}
-                  className="w-full border-2 text-white border-gray-200 rounded-lg px-4 py-3 transition-all duration-200 bg-transparent"
-                  placeholder={dict.registerPage.passwordPlaceholder}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    name="password"
+                    value={form.password}
+                    onChange={handleChange}
+                    className="w-full border-2 text-white border-gray-200 rounded-lg px-4 py-3 pr-12 transition-all duration-200 bg-transparent"
+                    placeholder={dict.registerPage.passwordPlaceholder}
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white transition-colors"
+                    aria-label={
+                      showPassword ? "Şifreyi gizle" : "Şifreyi göster"
+                    }
+                  >
+                    {showPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
               <div>
                 <label className="block text-sm font-semibold text-white mb-2">
                   {dict.registerPage.confirmPassword}
                 </label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  value={form.confirmPassword}
-                  onChange={handleChange}
-                  className="w-full border-2 text-white border-gray-200 rounded-lg px-4 py-3 transition-all duration-200 bg-transparent"
-                  placeholder={dict.registerPage.confirmPasswordPlaceholder}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={showConfirmPassword ? "text" : "password"}
+                    name="confirmPassword"
+                    value={form.confirmPassword}
+                    onChange={handleChange}
+                    className="w-full border-2 text-white border-gray-200 rounded-lg px-4 py-3 pr-12 transition-all duration-200 bg-transparent"
+                    placeholder={dict.registerPage.confirmPasswordPlaceholder}
+                    required
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmPassword((v) => !v)}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-300 hover:text-white transition-colors"
+                    aria-label={
+                      showConfirmPassword
+                        ? "Şifreyi gizle"
+                        : "Şifreyi göster"
+                    }
+                  >
+                    {showConfirmPassword ? (
+                      <EyeOff className="w-5 h-5" />
+                    ) : (
+                      <Eye className="w-5 h-5" />
+                    )}
+                  </button>
+                </div>
               </div>
               {/* Toggle alanları */}
               <div className="mb-6 mt-2">
