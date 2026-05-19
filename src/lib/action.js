@@ -40,9 +40,40 @@ export const contact = async (data) => {
 
 export const createPublicSubmitPost = async (submitData) => {
   try {
+    // Backend `/public-submit` endpoint'i multipart/form-data bekliyor
+    // (FileInterceptor('photo')). Bu yüzden JSON değil FormData gönderiyoruz.
+    const formData = new FormData();
+
+    // Zorunlu alanlar
+    formData.append("firstName", submitData.firstName ?? "");
+    formData.append("lastName", submitData.lastName ?? "");
+    formData.append("title", submitData.title ?? "");
+    formData.append("email", submitData.email ?? "");
+    formData.append("summary", submitData.summary ?? "");
+    formData.append("content", submitData.content ?? "");
+
+    // Opsiyonel alanlar — yalnızca dolu ise gönder.
+    // Boş string gönderilirse backend validasyonu (ör. phone regex) reddeder.
+    if (submitData.phone) formData.append("phone", submitData.phone);
+    if (submitData.institution)
+      formData.append("institution", submitData.institution);
+    if (submitData.category) formData.append("category", submitData.category);
+    if (submitData.biografi) formData.append("biografi", submitData.biografi);
+
+    // Kapak görseli opsiyonel — yalnızca gerçek bir dosya varsa ekle.
+    const photo = submitData.photo;
+    const hasPhoto =
+      photo &&
+      typeof photo === "object" &&
+      typeof photo.arrayBuffer === "function" &&
+      photo.size > 0;
+    if (hasPhoto) {
+      formData.append("photo", photo, photo.name || "photo");
+    }
+
     const response = await fetchInstance("/public-submit", {
       method: "POST",
-      body: JSON.stringify(submitData),
+      body: formData,
     });
 
     return response;

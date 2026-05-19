@@ -45,9 +45,20 @@ export default function SendPaperPage({ dict }: SendPaperPageProps) {
       .required(
         dict?.sendPaper?.validation?.emailRequired || "E-posta gerekli"
       ),
-    summary: Yup.string().required(
-      dict?.sendPaper?.validation?.summaryRequired || "Yazı özeti gerekli"
-    ),
+    summary: Yup.string()
+      .min(
+        50,
+        dict?.sendPaper?.validation?.summaryMinLength ||
+          "Yazı özeti en az 50 karakter olmalıdır"
+      )
+      .max(
+        1000,
+        dict?.sendPaper?.validation?.summaryMaxLength ||
+          "Yazı özeti en fazla 1000 karakter olabilir"
+      )
+      .required(
+        dict?.sendPaper?.validation?.summaryRequired || "Yazı özeti gerekli"
+      ),
     content: Yup.string()
       .min(
         100,
