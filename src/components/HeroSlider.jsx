@@ -54,7 +54,7 @@ export default function HeroSlider({ latestPosts, dict }) {
   return (
     <section
       aria-label="Öne çıkan yazılar"
-      className="relative w-full overflow-hidden h-[400px] md:h-[700px] sm:mt-10 mt-28"
+      className="relative w-full overflow-hidden h-[480px] md:h-[700px] sm:mt-10 mt-28"
     >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -127,7 +127,7 @@ export default function HeroSlider({ latestPosts, dict }) {
 
                 {/* İçerik */}
                 <div className="relative z-10 w-full px-6 md:px-12 max-w-7xl mx-auto">
-                  <div className="max-w-3xl space-y-6">
+                  <div className="max-w-3xl space-y-3 md:space-y-6">
                     <span className="inline-block px-4 py-2 bg-[#b61e24]/20 text-white text-sm font-semibold rounded-full border border-[#b61e24]/30 backdrop-blur-sm">
                       {Array.isArray(slide?.categories)
                         ? slide.categories
@@ -138,18 +138,18 @@ export default function HeroSlider({ latestPosts, dict }) {
                           "Genel"}
                     </span>
 
-                    <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight line-clamp-2">
+                    <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight line-clamp-4 md:line-clamp-none">
                       {slide?.title}
                     </h1>
 
-                    <p className="text-lg md:text-xl text-white/80 leading-relaxed line-clamp-3">
+                    <p className="text-lg md:text-xl text-white/80 leading-relaxed line-clamp-4 md:line-clamp-5">
                       {slide?.preview && !slide?.preview.hasAccess
                         ? slide?.preview.previewContent
                         : slide?.excerpt || slide?.description}
                     </p>
                   </div>
 
-                  <div className="mt-6 flex flex-row items-center gap-4 text-white/70 text-sm">
+                  <div className="mt-3 md:mt-6 flex flex-row items-center gap-4 text-white/70 text-sm">
                     <div className="font-bold text-lg text-white flex gap-1">
                       {dict.author}:
                       {slide?.author && typeof slide?.author === "object" ? (
