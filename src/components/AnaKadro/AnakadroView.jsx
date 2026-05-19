@@ -87,6 +87,7 @@ export default function AnakadroView({ res, dict, lang }) {
       <TeamMembersCard
         isLoading={isLoading}
         filteredMembers={filteredMembers}
+        lang={lang}
       />
 
       <JoinUsSection />

@@ -92,10 +92,10 @@ export default function SearchResultItem({
     <Link
       href={getHref()}
       onClick={onClick}
-      className="flex py-5 border-b border-gray-200 hover:bg-gray-50 transition-colors"
+      className="flex py-4 sm:py-5 border-b border-gray-200 hover:bg-gray-50 transition-colors"
     >
       {getImageSrc() && (
-        <div className="relative w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 mr-4">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 rounded-lg overflow-hidden bg-gray-100 mr-3 sm:mr-4">
           <Image
             src={getImageSrc()}
             alt={title || "Cover Image"}
@@ -107,14 +107,14 @@ export default function SearchResultItem({
           />
         </div>
       )}
-      <div className="w-full">
-        <div className="flex items-start justify-between gap-2">
+      <div className="flex-1 min-w-0">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-2">
           <p
-            className="ck-content text-[15px] font-semibold mb-1 flex-1"
+            className="ck-content text-sm sm:text-[15px] font-semibold mb-1 flex-1 min-w-0 break-words"
             dangerouslySetInnerHTML={{ __html: highlightedTitle }}
           />
           {category && (
-            <span className="px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs whitespace-nowrap">
+            <span className="self-start px-2 py-1 bg-blue-50 text-blue-600 rounded text-xs flex-shrink-0 max-w-full sm:max-w-[45%] truncate">
               {category}
             </span>
           )}
@@ -126,7 +126,7 @@ export default function SearchResultItem({
           />
         )}
         <div className="flex items-center justify-between mt-1">
-          <div className="flex items-center gap-2 text-xs text-gray-500">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-xs text-gray-500">
             {date && (
               <span className="font-medium">
                 {format(new Date(date), "dd/MM/yyyy")}

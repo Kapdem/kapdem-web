@@ -340,6 +340,13 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
     </div>
   );
 
+  const getCategoryLabel = (value) => {
+    if (!value) return "";
+    const found = categories.find((c) => c.value === value);
+    if (found) return found.label[lang] || found.label.tr;
+    return value.replace(/-/g, " ");
+  };
+
   const selectedCategoryLabel =
     categories.find((c) => c.value === selectedCategory)?.label[lang] ||
     (lang === "tr" ? "Tüm Kategoriler" : "All Categories");
@@ -354,8 +361,8 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
       <div className="relative min-h-screen flex items-start justify-center p-4 pt-20">
         <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-3xl animate-in fade-in slide-in-from-top-4 duration-300">
           {/* Header */}
-          <div className="p-6 border-b border-gray-200 overflow-visible">
-            <div className="flex items-center gap-4">
+          <div className="p-4 sm:p-6 border-b border-gray-200 overflow-visible">
+            <div className="flex items-center gap-2 sm:gap-4">
               <div className="flex-1 overflow-visible">
                 <p className="text-xs font-medium text-gray-500 mb-1">
                   {lang === "tr"
@@ -455,7 +462,7 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
           </div>
 
           {/* Results */}
-          <div className="max-h-[60vh] overflow-y-auto bg-gray-50 px-6 py-4 rounded-b-2xl">
+          <div className="max-h-[60vh] overflow-y-auto bg-gray-50 px-4 sm:px-6 py-3 sm:py-4 rounded-b-2xl">
             {isLoading && (
               <div className="flex items-center justify-center py-12">
                 <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600" />
@@ -508,7 +515,7 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
                   sortType={sortType}
                   searchTerm={searchQuery}
                   slug={result.slug}
-                  category={result.category}
+                  category={getCategoryLabel(result.category)}
                   author={result.author}
                   onClick={handleClose}
                 />

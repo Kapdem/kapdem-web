@@ -4,11 +4,16 @@ import React from "react";
 import { FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 
-type Props = { readonly filteredMembers: any[]; isLoading?: boolean };
+type Props = {
+  readonly filteredMembers: any[];
+  isLoading?: boolean;
+  lang: string;
+};
 
 export default function TeamMembersCard({
   filteredMembers,
   isLoading = false,
+  lang,
 }: Props) {
   return (
     <section className="py-8 sm:py-12 md:py-16 px-2 sm:px-4">
@@ -28,8 +33,7 @@ export default function TeamMembersCard({
             {filteredMembers.map((member, index) => (
               <Link
                 key={member.username}
-                // href={`/ana-kadro/${member.username}`}
-                href={"#"}
+                href={`/${lang}/ana-kadro/${member.username}`}
                 className="group relative bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer w-full text-left"
                 style={{
                   animationDelay: `${index * 100}ms`,

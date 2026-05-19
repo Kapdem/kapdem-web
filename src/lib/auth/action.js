@@ -88,7 +88,11 @@ export const Login = async (emailOrUsername, password) => {
 
       return { success: true };
     } else {
-      return { success: false, message: data.message || "Login failed" };
+      return {
+        success: false,
+        message: data.message || "Login failed",
+        code: data.code,
+      };
     }
   } catch (error) {
     console.error("Error during login:", error);
@@ -140,15 +144,62 @@ export const VerifyEmail = async (token) => {
       data = {};
     }
 
-    if (res.ok) {
-      return { success: true, message: data.message };
+    // Backend, geçersiz/süresi dolmuş token için de HTTP 200 + { success:false }
+    // döndürebildiğinden sadece res.ok'a güvenmiyoruz.
+    if (res.ok && data?.success !== false) {
+      let loggedIn = false;
+      // Doğrulama başarılıysa backend access token döndürür → otomatik giriş.
+      if (data?.accessToken) {
+        const cookieStorage = await cookies();
+        cookieStorage.set({
+          name: "Authentication",
+          value: data.accessToken,
+          secure: true,
+          httpOnly: true,
+          maxAge: 60 * 60 * 36,
+        });
+        loggedIn = true;
+      }
+      return { success: true, message: data?.message, loggedIn };
     }
     return {
       success: false,
-      message: data.message || "Email verification failed",
+      message: data?.message || "Email verification failed",
     };
   } catch (error) {
     console.error("Error during email verification:", error);
+    return { success: false, message: error.message || "Unexpected error" };
+  }
+};
+
+export const ResendVerification = async (emailOrUsername) => {
+  try {
+    const res = await fetch(
+      `${NEXT_PUBLIC_BASE_URL}/auth/resend-verification`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ emailOrUsername }),
+        credentials: "omit",
+      },
+    );
+
+    let data;
+    try {
+      data = await res.json();
+    } catch (e) {
+      data = {};
+    }
+
+    if (res.ok) {
+      return { success: true, message: data?.message };
+    }
+    const rawMessage = Array.isArray(data?.message)
+      ? data.message.join(", ")
+      : data?.message || "Doğrulama e-postası gönderilemedi";
+    return { success: false, message: rawMessage };
+  } catch (error) {
+    console.error("Error during resend verification:", error);
     return { success: false, message: error.message || "Unexpected error" };
   }
 };

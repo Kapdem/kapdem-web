@@ -7,18 +7,21 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 
 import CustomSlider from "../components/CustomSlider";
-import { Login } from "../lib/auth/action";
+import { Login, ResendVerification } from "../lib/auth/action";
 import { useAuth } from "../context/AuthContext";
 
 export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
   const [emailOrUsername, setEmailOrUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [needsVerification, setNeedsVerification] = useState(false);
+  const [isResending, setIsResending] = useState(false);
   const { refreshAuthFromCookies } = useAuth();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setNeedsVerification(false);
 
     try {
       const response = await Login(emailOrUsername, password);
@@ -29,10 +32,12 @@ export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
         await refreshAuthFromCookies();
         window.location.href = "/";
         return;
-      } else if (response.message === "Request failed with status code 409") {
+      } else if (response.code === "EMAIL_NOT_CONFIRMED") {
+        setNeedsVerification(true);
         toast.info(
-          dict?.toast?.login?.verifyEmail ||
-            "Lütfen e-posta adresinizi doğrulayın. Doğrulama linki e-posta adresinize gönderildi."
+          response.message ||
+            dict?.toast?.login?.verifyEmail ||
+            "Lütfen e-posta adresinizi doğrulayın."
         );
       } else {
         toast.error(
@@ -47,6 +52,35 @@ export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
       );
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleResendVerification = async () => {
+    if (!emailOrUsername.trim()) {
+      toast.error(
+        dict?.loginPage?.enterAccountFirst ||
+          "Lütfen önce e-posta veya kullanıcı adınızı girin."
+      );
+      return;
+    }
+    setIsResending(true);
+    try {
+      const res = await ResendVerification(emailOrUsername.trim());
+      if (res.success) {
+        toast.success(
+          res.message ||
+            "Doğrulama bağlantısı e-posta adresinize gönderildi."
+        );
+      } else {
+        toast.error(res.message || "Doğrulama e-postası gönderilemedi.");
+      }
+    } catch (error) {
+      console.error("Resend verification error:", error);
+      toast.error(
+        dict?.toast?.common?.error || "Bir hata oluştu. Lütfen tekrar deneyin."
+      );
+    } finally {
+      setIsResending(false);
     }
   };
   return (
@@ -142,6 +176,28 @@ export default function LoginView({ dict, lang }: { dict: any; lang: string }) {
                   ? dict?.loginPage?.loading || "Giriş yapılıyor..."
                   : dict?.loginPage?.login || "Giriş Yap"}
               </button>
+
+              {needsVerification && (
+                <div className="rounded-lg border border-amber-400/40 bg-amber-400/10 p-4 text-center space-y-3">
+                  <p className="text-sm text-amber-200">
+                    {dict?.loginPage?.verifyNotice ||
+                      "Hesabınıza giriş yapabilmek için e-posta adresinizi doğrulamanız gerekiyor. Bağlantıyı bulamıyorsanız yeniden gönderebilirsiniz."}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={handleResendVerification}
+                    disabled={isResending}
+                    className={`w-full bg-amber-500 hover:bg-amber-600 text-white font-semibold py-2.5 rounded-lg transition-all duration-200 ${
+                      isResending ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
+                  >
+                    {isResending
+                      ? dict?.loginPage?.resending || "Gönderiliyor..."
+                      : dict?.loginPage?.resendVerification ||
+                        "Doğrulama e-postasını yeniden gönder"}
+                  </button>
+                </div>
+              )}
             </form>
           </div>
 

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useSearchParams, useRouter } from "next/navigation";
 import { VerifyEmail } from "@/lib/auth/action";
@@ -17,8 +17,15 @@ export default function VerifyEmailView({
   const [message, setMessage] = useState("");
   const searchParams = useSearchParams();
   const router = useRouter();
+  // Doğrulama isteğinin yalnızca bir kez gönderilmesini garanti eder.
+  // (Token tek kullanımlık; React strict-mode'daki çift render ikinci
+  // isteğin "geçersiz token" hatası almasına yol açardı.)
+  const hasRun = useRef(false);
 
   useEffect(() => {
+    if (hasRun.current) return;
+    hasRun.current = true;
+
     const token = searchParams.get("token");
     if (!token) {
       setStatus("error");
@@ -31,21 +38,24 @@ export default function VerifyEmailView({
       return;
     }
 
-    let cancelled = false;
     (async () => {
       const res = await VerifyEmail(token);
-      if (cancelled) return;
       if (res.success) {
         setStatus("success");
         setMessage(
           res.message ||
             dict?.verifyEmail?.successMessage ||
             (lang === "tr"
-              ? "E-posta adresiniz başarıyla doğrulandı! Giriş sayfasına yönlendiriliyorsunuz..."
-              : "Your email has been verified! Redirecting to login..."),
+              ? "E-posta adresiniz başarıyla doğrulandı! Yönlendiriliyorsunuz..."
+              : "Your email has been verified! Redirecting..."),
         );
         setTimeout(() => {
-          router.push(`/${lang}/login`);
+          if (res.loggedIn) {
+            // Otomatik giriş yapıldı → ana sayfaya tam sayfa yenileme ile git.
+            window.location.href = `/${lang}`;
+          } else {
+            router.push(`/${lang}/login`);
+          }
         }, 3000);
       } else {
         setStatus("error");
@@ -58,10 +68,6 @@ export default function VerifyEmailView({
         );
       }
     })();
-
-    return () => {
-      cancelled = true;
-    };
   }, [searchParams, dict, lang, router]);
 
   return (

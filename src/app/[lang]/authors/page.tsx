@@ -12,6 +12,7 @@ export default async function page({
   const { lang } = await params;
   const dict = await getDictionary(lang);
   const authors = await getAvailableAuthors();
+  console.log("Fetched authors:", authors);
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 mt-28">
