@@ -91,6 +91,23 @@ export const metadata = {
   },
 };
 
+// Google'ın arama sonuçları ve bilgi panelinde gösterdiği logoyu kontrol eder.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KAPDEM",
+  alternateName:
+    "Kamu Politikası, Devlet Yönetimi ve Toplumsal Gelişim Merkezi",
+  url: "https://kapdem.org",
+  logo: "https://kapdem.org/images/LOGO.jpg",
+  sameAs: [
+    "https://x.com/kapdemorg",
+    "https://www.instagram.com/kapdemorg/",
+    "https://www.linkedin.com/company/kapdem/",
+    "https://www.youtube.com/channel/UCpWaTCuKLX2wEScGiEyntmQ",
+  ],
+};
+
 export default async function RootLayout({ children, params }) {
   const awaitedParams = await params;
   const dict = await getDictionary(awaitedParams.lang);
@@ -111,6 +128,12 @@ export default async function RootLayout({ children, params }) {
         <meta
           name="google-site-verification"
           content="cWOkpvAJAlllNFmDlFA2TZeuZiaYGdf5wS2mrvHigyk"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
         />
       </head>
       <body className={` ${workSans.variable}  antialiased`}>
