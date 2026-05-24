@@ -5,43 +5,6 @@ import { FiSearch, FiX, FiFilter } from "react-icons/fi";
 import { FaSort } from "react-icons/fa";
 import SearchResultItem from "./SearchResultItem";
 
-const categoryNameMap = {
-  "kamu politikaları": "kamu-politikalari",
-  "kamu politikasi": "kamu-politikalari",
-  kamu: "kamu-politikalari",
-  "görüş yazıları": "gorus-yazilari",
-  "görüş yazisi": "gorus-yazilari",
-  görüş: "gorus-yazilari",
-  "yönetim tasarımı": "yonetim-tasarimi",
-  "yonetim tasarimi": "yonetim-tasarimi",
-  yönetim: "yonetim-tasarimi",
-  "küresel politika": "kuresel-politika-ve-uluslararasi-iliskiler",
-  "kuresel politika": "kuresel-politika-ve-uluslararasi-iliskiler",
-  "uluslararası ilişkiler": "kuresel-politika-ve-uluslararasi-iliskiler",
-  "uluslararasi iliskiler": "kuresel-politika-ve-uluslararasi-iliskiler",
-  uluslararası: "kuresel-politika-ve-uluslararasi-iliskiler",
-  uluslararasi: "kuresel-politika-ve-uluslararasi-iliskiler",
-  küresel: "kuresel-politika-ve-uluslararasi-iliskiler",
-  "ekonomi kalkınma": "ekonomi-ve-kalkinma",
-  "ekonomi kalkinma": "ekonomi-ve-kalkinma",
-  "ekonomi ve kalkınma": "ekonomi-ve-kalkinma",
-  ekonomi: "ekonomi-ve-kalkinma",
-  kalkınma: "ekonomi-ve-kalkinma",
-  "teknoloji inovasyon": "teknoloji-ve-inovasyon",
-  "teknoloji ve inovasyon": "teknoloji-ve-inovasyon",
-  teknoloji: "teknoloji-ve-inovasyon",
-  inovasyon: "teknoloji-ve-inovasyon",
-  göç: "goc",
-  goc: "goc",
-  "savunma güvenlik": "savunma-ve-guvenlik",
-  "savunma guvenlik": "savunma-ve-guvenlik",
-  savunma: "savunma-ve-guvenlik",
-  güvenlik: "savunma-ve-guvenlik",
-  kultur: "kultur-ve-sanat",
-  "kültür sanat": "kultur-ve-sanat",
-  "kultur sanat": "kultur-ve-sanat",
-};
-
 const categories = [
   { value: "", label: { tr: "Tüm Kategoriler", en: "All Categories" } },
   {
@@ -94,11 +57,11 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
   const [showCategoryFilter, setShowCategoryFilter] = useState(false);
   const inputRef = useRef(null);
 
-  // Debounce input
+  // Debounce input (autocomplete hissi için kısa tutuldu)
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(searchQuery.trim());
-    }, 300);
+    }, 200);
 
     return () => clearTimeout(timer);
   }, [searchQuery]);
@@ -187,149 +150,71 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
     setShowCategoryFilter(false);
   };
 
-  const detectedCategory = useMemo(() => {
-    const lowerQuery = searchQuery.toLowerCase().trim();
-    if (!lowerQuery) return null;
-
-    if (categoryNameMap[lowerQuery]) return categoryNameMap[lowerQuery];
-
-    for (const [key, value] of Object.entries(categoryNameMap)) {
-      if (lowerQuery.includes(key)) {
-        return value;
-      }
-      const keyWords = key.split(" ");
-      if (keyWords.every((word) => lowerQuery.includes(word))) {
-        return value;
-      }
-    }
-    return null;
-  }, [searchQuery]);
-
+  // Backend sıralaması ve kategori önceliklendirmesi (alaka skoru, kategori
+  // tespiti vb.) artık sunucuda yapılıyor. Frontend yalnızca sonuçları
+  // tipe göre gruplayıp gösterir; alaka modunda backend sırasını korur.
   const combinedResults = useMemo(() => {
     if (!searchResults) return [];
-    const results = [];
 
+    const toPost = (post) => ({
+      id: post._id,
+      type: "post",
+      title: post.title,
+      excerpt: post.excerpt,
+      coverImage: post.coverImage,
+      date: post.publishedAt,
+      score: post.score ?? 0,
+      slug: post.slug,
+      category: post.category,
+      author: post.author,
+    });
 
-    // Kategori filtresi aktifse sadece post'ları ekle ve filtrele
+    // Kategori filtresi aktifse sadece o kategorideki yazıları göster
     if (selectedCategory) {
-      searchResults.posts?.forEach((post) => {
-        if (post.category === selectedCategory) {
-          results.push({
-            id: post._id,
-            type: "post",
-            title: post.title,
-            excerpt: post.excerpt,
-            coverImage: post.coverImage,
-            date: post.publishedAt,
-            score: post.score ?? 0,
-            slug: post.slug,
-            category: post.category,
-            author: post.author,
-          });
-        }
-      });
-    } else {
-      // Kategori filtresi yoksa tüm sonuçları ekle
-      searchResults.posts?.forEach((post) =>
-        results.push({
-          id: post._id,
-          type: "post",
-          title: post.title,
-          excerpt: post.excerpt,
-          coverImage: post.coverImage,
-          date: post.publishedAt,
-          score: post.score ?? 0,
-          slug: post.slug,
-          category: post.category,
-          author: post.author,
-        })
-      );
-
-      searchResults.authors?.forEach((author) =>
-        results.push({
-          id: author._id,
-          type: "author",
-          title: `${author.firstName} ${author.lastName}`,
-          excerpt: author.title || author.profession || "",
-          coverImage: author.profilePicture,
-          date: null,
-          score: author.score ?? 0,
-          slug: author.username,
-          author,
-        })
-      );
-
-      searchResults.teamMembers?.forEach((member) =>
-        results.push({
-          id: member._id,
-          type: "teamMember",
-          title: `${member.firstName} ${member.lastName}`,
-          excerpt: member.about || "",
-          coverImage: member.photo,
-          date: null,
-          score: member.score ?? 0,
-          slug: member.slug,
-          author: {
-            firstName: member.firstName,
-            lastName: member.lastName,
-            username: member.slug,
-          },
-        })
-      );
+      return (searchResults.posts || [])
+        .filter((post) => post.category === selectedCategory)
+        .map(toPost);
     }
 
-    const sortByDate = () =>
-      results.sort((a, b) => {
-        if (!a.date && !b.date) return 0;
-        if (!a.date) return 1;
-        if (!b.date) return -1;
-        return new Date(b.date) - new Date(a.date);
-      });
-    const sortByScore = () =>
-      results.sort((a, b) => {
-        const scoreA =
-          (a.score || 0) +
-          ((detectedCategory || selectedCategory) &&
-            a.type === "post" &&
-            a.category === (selectedCategory || detectedCategory)
-            ? 100
-            : 0);
-        const scoreB =
-          (b.score || 0) +
-          ((detectedCategory || selectedCategory) &&
-            b.type === "post" &&
-            b.category === (selectedCategory || detectedCategory)
-            ? 100
-            : 0);
-        return scoreB - scoreA;
-      });
+    const posts = (searchResults.posts || []).map(toPost);
+    const authors = (searchResults.authors || []).map((author) => ({
+      id: author._id,
+      type: "author",
+      title: `${author.firstName} ${author.lastName}`,
+      excerpt: author.title || author.profession || "",
+      coverImage: author.profilePicture,
+      date: null,
+      score: author.score ?? 0,
+      slug: author.username,
+      author,
+    }));
+    const teamMembers = (searchResults.teamMembers || []).map((member) => ({
+      id: member._id,
+      type: "teamMember",
+      title: `${member.firstName} ${member.lastName}`,
+      excerpt: member.about || "",
+      coverImage: member.photo,
+      date: null,
+      score: member.score ?? 0,
+      slug: member.slug,
+      author: {
+        firstName: member.firstName,
+        lastName: member.lastName,
+        username: member.slug,
+      },
+    }));
 
-    const sorted = sortType === "date" ? sortByDate() : sortByScore();
-
-    // Yazarlar her zaman en üstte (kategori filtresi yokken)
-    if (!selectedCategory) {
-      const authorsList = sorted.filter((item) => item.type === "author");
-      const rest = sorted.filter((item) => item.type !== "author");
-
-      // Kategori bazlı önceliklendirme - sadece postlar arasında
-      if (detectedCategory) {
-        const prioritized = [];
-        const others = [];
-        rest.forEach((item) => {
-          if (item.type === "post" && item.category === detectedCategory) {
-            prioritized.push(item);
-          } else {
-            others.push(item);
-          }
-        });
-        return [...authorsList, ...prioritized, ...others];
-      }
-
-      return [...authorsList, ...rest];
+    // Tarihe göre: tarihi olanlar (yazılar) en yeni önce, sonra yazar/ekip
+    if (sortType === "date") {
+      const dated = [...posts].sort(
+        (a, b) => new Date(b.date || 0) - new Date(a.date || 0)
+      );
+      return [...authors, ...dated, ...teamMembers];
     }
 
-    return sorted;
-  }, [searchResults, sortType, detectedCategory, selectedCategory]);
+    // Alakaya göre: yazarlar üstte, ardından backend sırasındaki yazılar, sonra ekip
+    return [...authors, ...posts, ...teamMembers];
+  }, [searchResults, sortType, selectedCategory]);
 
   if (!isOpen) return null;
 
