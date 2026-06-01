@@ -56,6 +56,7 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [showCategoryFilter, setShowCategoryFilter] = useState(false);
   const inputRef = useRef(null);
+  const abortRef = useRef(null);
 
   // Debounce input (autocomplete hissi için kısa tutuldu)
   useEffect(() => {
@@ -93,6 +94,11 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
   }, [isOpen]);
 
   const performSearch = async (query, sort, category) => {
+    // Önceki uçuştaki isteği iptal et — kullanıcı yazarken eskiler birikmesin
+    if (abortRef.current) abortRef.current.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     setIsLoading(true);
     try {
       let url = `/api/search?q=${encodeURIComponent(
@@ -106,6 +112,7 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
+        signal: controller.signal,
       });
 
       if (!response.ok) {
@@ -113,17 +120,23 @@ const SearchModal = ({ isOpen, onClose, dict, lang }) => {
       }
 
       const data = await response.json();
-      setSearchResults(data);
+      // Bu istek hâlâ güncel mi? (yeni bir istek başlatılmadı mı?)
+      if (abortRef.current === controller) {
+        setSearchResults(data);
+      }
     } catch (error) {
+      if (error.name === "AbortError") return; // iptal edildi, sessiz geç
       console.error("Search error:", error);
-      setSearchResults({
-        posts: [],
-        authors: [],
-        teamMembers: [],
-        totalCount: 0,
-      });
+      if (abortRef.current === controller) {
+        setSearchResults({
+          posts: [],
+          authors: [],
+          teamMembers: [],
+          totalCount: 0,
+        });
+      }
     } finally {
-      setIsLoading(false);
+      if (abortRef.current === controller) setIsLoading(false);
     }
   };
 
