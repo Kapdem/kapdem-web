@@ -26,15 +26,31 @@ const ResearchCard = async ({
   const displayExcerpt = langData?.excerpt || excerpt;
   const displaySlug = langData?.slug || slug;
 
-  const calculateReadTime = (content) => {
-    const wordsPerMinute = 200;
-    if (!content || !content.text) return 3; // fallback 3 dakika
+  const normalizeText = (value) => {
+    if (typeof value === "string") return value;
 
-    const words = content.text
+    if (value && typeof value === "object") {
+      if (typeof value.text === "string") return value.text;
+      if (typeof value.html === "string")
+        return value.html.replace(/<[^>]+>/g, " ");
+      if (typeof value.content === "string") return value.content;
+    }
+
+    return "";
+  };
+
+  const calculateReadTime = (content, fallbackText = "") => {
+    const wordsPerMinute = 200;
+    const text = normalizeText(content) || normalizeText(fallbackText);
+
+    if (!text) return 1;
+
+    const words = text
+      .replace(/<[^>]+>/g, " ")
       .split(/\s+/)
       .filter((word) => word.length > 0).length;
-    const readTime = Math.ceil(words / wordsPerMinute);
-    return Math.max(readTime, 1); // minimum 1 dakika
+
+    return Math.max(Math.ceil(words / wordsPerMinute), 1);
   };
 
   const formattedDate = (dateString) => {
@@ -68,7 +84,7 @@ const ResearchCard = async ({
         <div className="absolute top-4 right-4">
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-black/20 text-white backdrop-blur-sm">
             <Clock className="w-3 h-3 mr-1" />
-            {calculateReadTime(displayContent)} dk
+            {calculateReadTime(displayContent, displayExcerpt)} dk
           </span>
         </div>
 
