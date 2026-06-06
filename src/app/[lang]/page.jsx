@@ -103,7 +103,9 @@ async function EventsSection({ lang }) {
     getDictionary(lang),
     getUpcomingEvents(),
   ]);
-  return <Events dict={dict} eventsData={upcomingEvents?.data || []} />;
+  return (
+    <Events dict={dict} eventsData={upcomingEvents?.data || []} lang={lang} />
+  );
 }
 
 async function VideoSectionWrapper({ lang }) {

@@ -11,7 +11,15 @@ import Image from "next/image";
 import Link from "next/link";
 import SectionHeader from "./SectionHeader";
 
-function EventCard({ event, dict }) {
+function EventCard({ event, dict, lang = "tr" }) {
+  const L = lang === "en" ? "en" : "tr";
+  // İstenen dile göre çeviriyi çöz; yoksa tr → en fallback.
+  const t =
+    event.translations?.[L] ||
+    event.translations?.tr ||
+    event.translations?.en ||
+    {};
+
   const imageSrc =
     event.coverImage && event.coverImage.trim() !== ""
       ? event.coverImage
@@ -24,10 +32,15 @@ function EventCard({ event, dict }) {
       month: "long",
       day: "numeric",
     };
-    return new Date(dateString).toLocaleDateString("tr-TR", options);
+    return new Date(dateString).toLocaleDateString(
+      L === "en" ? "en-US" : "tr-TR",
+      options,
+    );
   };
 
-  const eventSlug = event.translations?.tr.slug || event.id || event._id;
+  // slug tr-kanonik tutulur ki linkler/detay sayfası bozulmasın.
+  const eventSlug =
+    event.translations?.tr?.slug || t.slug || event.id || event._id;
   const eventHref = event.href || `/etkinlikler/${eventSlug}`;
 
   return (
@@ -70,9 +83,9 @@ function EventCard({ event, dict }) {
           <Link
             href={eventHref}
             className="text-2xl md:text-lg font-bold text-black"
-            aria-label={`${event.translations?.tr?.title} etkinliğini görüntüle`}
+            aria-label={`${t.title} ${L === "en" ? "view event" : "etkinliğini görüntüle"}`}
           >
-            {event.translations?.tr?.title}
+            {t.title}
           </Link>
           {/* Fallback for event title */}
           {event.date && (
@@ -108,9 +121,9 @@ function EventCard({ event, dict }) {
 
         {/* Description */}
         <div className="mb-4 flex-grow">
-          {event.translations?.tr?.excerpt || event.description ? (
+          {t.excerpt || event.description ? (
             <p className="text-slate-600 text-sm leading-relaxed line-clamp-3">
-              {event.translations.tr.excerpt}
+              {t.excerpt || event.description}
             </p>
           ) : (
             <div className="flex items-center gap-2 text-slate-400 text-sm">
@@ -154,7 +167,7 @@ function EventCard({ event, dict }) {
   );
 }
 
-export default function Events({ eventsData = [], dict }) {
+export default function Events({ eventsData = [], dict, lang = "tr" }) {
   // Tarihe göre sıralama (en yeni önce)
   const sortedEvents = Array.isArray(eventsData)
     ? [...eventsData].sort((a, b) => {
@@ -183,6 +196,7 @@ export default function Events({ eventsData = [], dict }) {
               key={event.id || event._id || index}
               event={event}
               dict={dict}
+              lang={lang}
             />
           ))}
         </div>

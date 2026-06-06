@@ -2,38 +2,82 @@
 
 import React, { useState } from "react";
 
+interface EventTranslation {
+  title: string;
+  description: string;
+  slug: string;
+}
+
 interface EventData {
   _id: string;
   coverImage: string;
   startDate: string;
   location: string;
   translations: {
-    tr: {
-      title: string;
-      description: string;
-      slug: string;
-    };
+    tr?: EventTranslation;
+    en?: EventTranslation;
   };
 }
 
-const formatDate = (dateStr: string) => {
+type Lang = "tr" | "en";
+
+const LABELS: Record<Lang, {
+  heading: string;
+  upcoming: string;
+  past: string;
+  empty: string;
+  seeAll: string;
+}> = {
+  tr: {
+    heading: "Etkinlikler",
+    upcoming: "Gelecek",
+    past: "Geçmiş",
+    empty: "Kayıt Bulunamadı",
+    seeAll: "Tümünü Gör",
+  },
+  en: {
+    heading: "Events",
+    upcoming: "Upcoming",
+    past: "Past",
+    empty: "No Records Found",
+    seeAll: "See All",
+  },
+};
+
+const formatDate = (dateStr: string, lang: Lang) => {
   if (!dateStr) return "";
   const d = new Date(dateStr);
   if (isNaN(d.getTime())) return dateStr;
-  return d.toLocaleDateString("tr-TR", {
+  return d.toLocaleDateString(lang === "en" ? "en-US" : "tr-TR", {
     day: "numeric",
     month: "numeric",
     year: "numeric",
   });
 };
 
+// İstenen dile göre çeviriyi çöz; yoksa tr → en fallback.
+const resolveEventTranslation = (
+  event: EventData,
+  lang: Lang,
+): EventTranslation => {
+  return (
+    event.translations?.[lang] ||
+    event.translations?.tr ||
+    event.translations?.en || { title: "", description: "", slug: "" }
+  );
+};
+
 export default function EventsList({
   events,
   pastEvents,
+  lang = "tr",
 }: {
   events: EventData[];
   pastEvents: EventData[];
+  lang?: string;
 }) {
+  const L: Lang = lang === "en" ? "en" : "tr";
+  const labels = LABELS[L];
   const hasUpcoming = events.length > 0;
   const [activeTab, setActiveTab] = useState<"upcoming" | "past">(
     hasUpcoming ? "upcoming" : "past",
@@ -51,7 +95,7 @@ export default function EventsList({
       {/* Başlık ve Tablar */}
       <div className="shrink-0 mb-6 border-b border-slate-100 pb-3">
         <h2 className="text-sm font-black tracking-widest text-black uppercase mb-3">
-          Etkinlikler
+          {labels.heading}
         </h2>
         <div className="flex gap-5 text-[10px] font-bold uppercase">
           {hasUpcoming && (
@@ -59,14 +103,14 @@ export default function EventsList({
               onClick={() => setActiveTab("upcoming")}
               className={`pb-1 transition-all ${effectiveTab === "upcoming" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
             >
-              Gelecek
+              {labels.upcoming}
             </button>
           )}
           <button
             onClick={() => setActiveTab("past")}
             className={`pb-1 transition-all ${effectiveTab === "past" ? "text-black border-b-2 border-black" : "text-slate-400"}`}
           >
-            Geçmiş
+            {labels.past}
           </button>
         </div>
       </div>
@@ -80,10 +124,14 @@ export default function EventsList({
             const isMedium = count === 2; // 2 veri: Orta dikey
             const isSmall = count >= 3; // 3-4 veri: Kompakt yatay
 
+            const t = resolveEventTranslation(event, L);
+            // slug tr-kanonik tutulur ki linkler/detay sayfası bozulmasın.
+            const slug = event.translations?.tr?.slug || t.slug;
+
             return (
               <a
                 key={event._id}
-                href={`/etkinlikler/${event.translations.tr.slug}`}
+                href={`/etkinlikler/${slug}`}
                 className={`group flex rounded-2xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 overflow-hidden
                   ${isSmall ? "flex-row items-center p-3 flex-1" : "flex-col flex-1"}`}
               >
@@ -101,7 +149,7 @@ export default function EventsList({
                   />
                   {!isSmall && (
                     <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] whitespace-nowrap font-black shadow-sm">
-                      {formatDate(event.startDate)}
+                      {formatDate(event.startDate, L)}
                     </div>
                   )}
                 </div>
@@ -114,7 +162,7 @@ export default function EventsList({
                 >
                   <div className="flex items-center gap-2 text-[10px] font-bold text-blue-600 uppercase mb-1 whitespace-nowrap">
                     <span className="truncate">{event.location}</span>
-                    {isSmall && <span>• {formatDate(event.startDate)}</span>}
+                    {isSmall && <span>• {formatDate(event.startDate, L)}</span>}
                   </div>
 
                   <h3
@@ -122,7 +170,7 @@ export default function EventsList({
                     ${isLarge ? "text-2xl mb-3" : "text-base mb-1"}
                     ${isSmall ? "text-[13px]" : ""}`}
                   >
-                    {event.translations.tr.title}
+                    {t.title}
                   </h3>
 
                   {!isSmall && (
@@ -130,10 +178,7 @@ export default function EventsList({
                       className={`text-slate-500 font-medium leading-relaxed
                       ${isLarge ? "text-sm line-clamp-4" : "text-xs line-clamp-2"}`}
                     >
-                      {event.translations.tr.description.replace(
-                        /<[^>]*>?/gm,
-                        "",
-                      )}
+                      {(t.description || "").replace(/<[^>]*>?/gm, "")}
                     </p>
                   )}
                 </div>
@@ -143,7 +188,7 @@ export default function EventsList({
         ) : (
           <div className="flex-1 flex flex-col items-center justify-center border-2 border-dashed border-slate-100 rounded-3xl text-slate-400">
             <span className="text-xs font-bold uppercase tracking-widest opacity-50">
-              Kayıt Bulunamadı
+              {labels.empty}
             </span>
           </div>
         )}
@@ -155,7 +200,7 @@ export default function EventsList({
           href="/etkinlikler"
           className="flex items-center justify-center w-full py-4 bg-slate-50 text-[10px] font-black uppercase tracking-[0.2em] border border-slate-200 rounded-xl hover:bg-black hover:text-white transition-all"
         >
-          Tümünü Gör
+          {labels.seeAll}
         </a>
       </div>
     </section>

@@ -94,7 +94,7 @@ export default function EventHomePage({
           className={`bg-slate-50/50 flex flex-col ${hasRes ? "w-full lg:w-[28%]" : "w-full"}`}
         >
           <div className="p-6 md:p-8 flex flex-col h-full">
-            <EventsList events={events} pastEvents={pastEvents} />
+            <EventsList events={events} pastEvents={pastEvents} lang={lang} />
           </div>
         </aside>
       </div>
