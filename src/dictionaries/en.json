@@ -538,7 +538,9 @@
     "figureLabel": "Fig.",
     "embeddedProof": "Embedded Proof",
     "accessLevel": "Access Authorization Level:",
-    "disclaimer": "This document is for authorized personnel only. Unauthorized sharing is prohibited."
+    "disclaimer": "This document is for authorized personnel only. Unauthorized sharing is prohibited.",
+    "accessRestricted": "You need to upgrade your membership to access this content",
+    "accessRestrictedDescription": "Upgrade your membership to access this special file."
   },
   "specialFiles": {
     "warningModal": {

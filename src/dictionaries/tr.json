@@ -535,7 +535,9 @@
     "figureLabel": "Fig.",
     "embeddedProof": "Yerleşik Kanıt",
     "accessLevel": "Erişim Yetki Seviyesi:",
-    "disclaimer": "Bu döküman sadece yetkili personel içindir. İzinsiz paylaşılması yasaktır."
+    "disclaimer": "Bu döküman sadece yetkili personel içindir. İzinsiz paylaşılması yasaktır.",
+    "accessRestricted": "Bu içeriğe erişim için üyelik yükseltmesi gerekiyor",
+    "accessRestrictedDescription": "Üyeliğinizi yükselterek bu özel dosyaya erişebilirsiniz."
   },
   "specialFiles": {
     "warningModal": {
