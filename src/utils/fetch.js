@@ -157,9 +157,23 @@ export const fetchInstance = async (url, options = {}) => {
           url,
           errorText.slice(0, 200),
         );
+
+        // Backend genellikle { message, error, statusCode } JSON döndürür.
+        // Gerçek/detaylı hata mesajını kullanıcıya gösterebilmek için çıkar.
+        let backendMessage;
+        try {
+          const parsed = JSON.parse(errorText);
+          backendMessage = Array.isArray(parsed?.message)
+            ? parsed.message.join(" ")
+            : parsed?.message;
+        } catch {
+          // JSON değilse (HTML hata sayfası vb.) sessizce geç.
+        }
+
         return {
           success: false,
-          message: `API hatası oluştu (Status: ${response.status})`,
+          message:
+            backendMessage || `API hatası oluştu (Status: ${response.status})`,
           statusCode: response.status,
           rawError: errorText.slice(0, 500),
         };

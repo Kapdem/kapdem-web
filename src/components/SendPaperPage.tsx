@@ -143,8 +143,8 @@ export default function SendPaperPage({ dict }: SendPaperPageProps) {
         setShowWelcomeModal(true); // Başarı sonrası hoş geldin modalını göster
       } else {
         toast.error(
-          dict?.toast?.sendPaper?.error ||
-            (result && result.message) ||
+          (result && result.message) ||
+            dict?.toast?.sendPaper?.error ||
             "Yazı gönderilirken bir hata oluştu. Lütfen tekrar deneyin."
         );
       }
