@@ -67,7 +67,8 @@ export default function CategoryView({ params, dict }: Props) {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-      const res = await getPostByCategory(category, limit, page);
+      // lang gönderilmeli, aksi halde /en rotasında içerik Türkçe gelir
+      const res = await getPostByCategory(category, limit, page, lang);
 
       if (Array.isArray(res)) {
         setArticles(res);
@@ -79,7 +80,7 @@ export default function CategoryView({ params, dict }: Props) {
       setLoading(false);
     };
     fetchData();
-  }, [category, limit, page]);
+  }, [category, limit, page, lang]);
 
   const categoryTitles: Record<string, string> = {
     "gorus-yazilari": `${dict.category.opinionPieces} ${dict.category.category}`,

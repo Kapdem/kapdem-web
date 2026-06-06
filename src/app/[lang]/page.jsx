@@ -110,7 +110,7 @@ async function EventsSection({ lang }) {
 
 async function VideoSectionWrapper({ lang }) {
   const dict = await getDictionary(lang);
-  return <VideoSection dict={dict} />;
+  return <VideoSection dict={dict} lang={lang} />;
 }
 
 async function NewsLetterSection({ lang }) {

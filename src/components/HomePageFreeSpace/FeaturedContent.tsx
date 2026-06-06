@@ -87,7 +87,7 @@ const normalizeCategoryLabel = (category: unknown, lang: string) => {
           ""
         : "";
 
-  if (!rawCategory) return "Gundem";
+  if (!rawCategory) return lang === "en" ? "Agenda" : "Gündem";
 
   const categoryMap = lang === "en" ? categoryMapEN : categoryMapTR;
 
@@ -102,6 +102,19 @@ const normalizeCategoryLabel = (category: unknown, lang: string) => {
     .join(" ");
 };
 
+const UI_LABELS = {
+  tr: {
+    featured: "Öne Çıkarılanlar",
+    kicker: "Öne Çıkan",
+    author: "Yazar:",
+  },
+  en: {
+    featured: "Featured",
+    kicker: "Featured",
+    author: "Author:",
+  },
+};
+
 export default function FeaturedContent({
   lang,
   heroData,
@@ -110,13 +123,15 @@ export default function FeaturedContent({
   getColor,
   setHeroIndex,
 }: FeaturedContentProps) {
+  const labels = lang === "en" ? UI_LABELS.en : UI_LABELS.tr;
+
   return (
     <div>
       <div className="w-full max-w-full px-4 sm:px-6 lg:px-8 py-8 md:py-12 flex-1 flex flex-col">
         {/* Üst Başlık - Mobilde daha kompakt */}
         <div className="flex items-center mb-8 md:mb-12 border-b border-slate-100 pb-4">
           <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.2em] text-black border-b-2 border-black pb-4 -mb-[18px]">
-            Öne Çıkarılanlar
+            {labels.featured}
           </span>
         </div>
 
@@ -151,7 +166,7 @@ export default function FeaturedContent({
                       <div className="flex items-center gap-2 md:gap-3">
                         <span className="w-8 md:w-12 h-[1px] md:h-[2px] bg-white/40" />
                         <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/90">
-                          {heroData.kicker || "Öne Çıkan"}
+                          {heroData.kicker || labels.kicker}
                         </span>
                       </div>
                       <span className="text-4xl md:text-7xl font-black italic text-white/10 group-hover:text-white/20 transition-colors select-none">
@@ -166,7 +181,7 @@ export default function FeaturedContent({
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2 md:gap-4">
                           <span className="px-3 md:px-5 py-1.5 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-widest backdrop-blur-md bg-white/10 border border-white/20">
-                            Yazar: {heroData.author?.firstName || ""}{" "}
+                            {labels.author} {heroData.author?.firstName || ""}{" "}
                             {heroData.author?.lastName || ""}
                           </span>
                         </div>
@@ -219,7 +234,7 @@ export default function FeaturedContent({
                         {card.title}
                       </h3>
                       <span className="text-[10px] md:text-[11px] text-slate-400 font-medium italic line-clamp-1">
-                        Yazar: {card.author?.firstName || ""}{" "}
+                        {labels.author} {card.author?.firstName || ""}{" "}
                         {card.author?.lastName || ""}
                       </span>
                       <span className="text-[10px] md:text-[11px] text-slate-400 font-medium italic line-clamp-1">

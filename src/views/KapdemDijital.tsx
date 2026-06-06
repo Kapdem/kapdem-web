@@ -4,7 +4,27 @@ import Link from "next/link";
 import PostContent from "../components/PostContent";
 import { useState } from "react";
 
-export default function KapdemDijital({ podcasts, videos }) {
+const LABELS = {
+  tr: {
+    videos: "Videolar",
+    allVideos: "Tüm Videoları Gör",
+    podcasts: "Podcastler",
+    allPodcasts: "Tüm Podcastleri Gör",
+    watchOnYoutube: "YouTube'da İzle",
+  },
+  en: {
+    videos: "Videos",
+    allVideos: "See All Videos",
+    podcasts: "Podcasts",
+    allPodcasts: "See All Podcasts",
+    watchOnYoutube: "Watch on YouTube",
+  },
+};
+
+export default function KapdemDijital({ podcasts, videos, lang = "tr" }) {
+  const L = lang === "en" ? "en" : "tr";
+  const labels = LABELS[L];
+  const dateLocale = L === "en" ? "en-US" : "tr-TR";
   const [embedError, setEmbedError] = useState({});
   return (
     <div className="min-h-screen bg-gray-50 mt-28">
@@ -14,13 +34,13 @@ export default function KapdemDijital({ podcasts, videos }) {
         {/* Videolar */}
         <section>
           <SectionHeader
-            title="Videolar"
-            linkLabel="Tüm Videoları Gör"
-            link={"/category/videolar"}
+            title={labels.videos}
+            linkLabel={labels.allVideos}
+            link={`/${lang}/category/videolar`}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((item) => (
-              <Link href={`/${item.slug}`} key={item._id}>
+              <Link href={`/${lang}/${item.slug}`} key={item._id}>
                 <article className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 group cursor-pointer flex flex-col h-full">
                   <div className="flex-1 flex flex-col p-8">
                     <div className="flex-1 flex flex-col">
@@ -34,7 +54,7 @@ export default function KapdemDijital({ podcasts, videos }) {
                         <span className="mx-2">·</span>
                         <span>
                           {new Date(item.publishedAt).toLocaleDateString(
-                            "tr-TR"
+                            dateLocale
                           )}
                         </span>
                       </div>
@@ -73,7 +93,7 @@ export default function KapdemDijital({ podcasts, videos }) {
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition-colors mt-2"
                               >
-                                YouTube'da İzle
+                                {labels.watchOnYoutube}
                               </Link>
                             );
                           }
@@ -113,13 +133,13 @@ export default function KapdemDijital({ podcasts, videos }) {
 
         <section className="mt-16">
           <SectionHeader
-            title="Podcastler"
-            linkLabel="Tüm Podcastler Gör"
-            link={"/category/podcastler"}
+            title={labels.podcasts}
+            linkLabel={labels.allPodcasts}
+            link={`/${lang}/category/podcastler`}
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {podcasts.map((item) => (
-              <Link key={item._id} href={`/${item.slug}`}>
+              <Link key={item._id} href={`/${lang}/${item.slug}`}>
                 <article
                   key={item._id}
                   className="bg-white rounded-lg overflow-hidden hover:shadow-xl transition-all duration-500 border border-gray-100 group cursor-pointer flex flex-col h-full"
@@ -136,7 +156,7 @@ export default function KapdemDijital({ podcasts, videos }) {
                         <span className="mx-2">·</span>
                         <span>
                           {new Date(item.publishedAt).toLocaleDateString(
-                            "tr-TR"
+                            dateLocale
                           )}
                         </span>
                       </div>

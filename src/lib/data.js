@@ -81,16 +81,18 @@ export const getAuthorById = async (id) => {
   }
 };
 
-export const getAllSpecialFile = async () => {
-  const res = await fetchInstance("/special-files", {
+export const getAllSpecialFile = async (lang) => {
+  const langParam = lang === "en" ? "en" : "tr";
+  const res = await fetchInstance(`/special-files?lang=${langParam}`, {
     method: "GET",
   });
 
   return res.specialFiles;
 };
 
-export const getSpecialFileById = async (id) => {
-  const res = await fetchInstance(`/special-files/${id}`, {
+export const getSpecialFileById = async (id, lang) => {
+  const langParam = lang === "en" ? "en" : "tr";
+  const res = await fetchInstance(`/special-files/${id}?lang=${langParam}`, {
     method: "GET",
   });
 

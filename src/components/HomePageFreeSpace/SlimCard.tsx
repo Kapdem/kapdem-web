@@ -5,6 +5,7 @@ import Link from "next/link";
 
 type Props = {
   slimCards: any[];
+  lang?: string;
 };
 
 const containerVariants = {
@@ -50,14 +51,53 @@ const categoryLabels: Record<string, string> = {
   "one-cikan": "Öne Çıkan",
 };
 
-export default function SlimCard({ slimCards }: Props) {
+const categoryLabelsEN: Record<string, string> = {
+  uncategorized: "Uncategorized",
+  "gorus-yazilari": "Opinion Articles",
+  yayinlar: "Publications",
+  "kuresel-politika-ve-uluslararasi-iliskiler":
+    "Global Politics and International Relations",
+  "kamu-politikalari": "Public Policy",
+  "yonetim-tasarimi": "Governance Design",
+  "ekonomi-ve-kalkinma": "Economy and Development",
+  "teknoloji-ve-inovasyon": "Technology and Innovation",
+  goc: "Migration",
+  tarih: "History",
+  "savunma-ve-guvenlik": "Defense and Security",
+  "kultur-ve-sanat": "Culture and Arts",
+  "kitap-incelemeleri": "Book Reviews",
+  roportajlar: "Interviews",
+  etkinlikler: "Events",
+  "dijital-perspektif": "Digital Perspective",
+  podcastler: "Podcasts",
+  videolar: "Videos",
+  webinarlar: "Webinars",
+  "ceviri-makaleler": "Translated Articles",
+  "siyasi-anilar": "Political Memoirs",
+  "editorun-sectikleri": "Editor's Picks",
+  duyurular: "Announcements",
+  "gecmis-etkinlikler": "Past Events",
+  "gelecek-etkinlikler": "Upcoming Events",
+  "one-cikan": "Featured",
+};
+
+const UI_LABELS = {
+  tr: { heading: "Editörün Seçtikleri", general: "Genel" },
+  en: { heading: "Editor's Picks", general: "General" },
+};
+
+export default function SlimCard({ slimCards, lang = "tr" }: Props) {
+  const L = lang === "en" ? "en" : "tr";
+  const labels = UI_LABELS[L];
+  const categoryMap = L === "en" ? categoryLabelsEN : categoryLabels;
+
   return (
     <div className="w-full max-w-full mx-auto px-4 py-8 md:py-12">
       {/* Başlık Alanı */}
       <div className="flex items-center justify-between mb-6 md:mb-10 group/header">
         <div className="flex flex-col">
           <h2 className="text-2xl md:text-3xl font-black text-slate-500 tracking-tight">
-            Editörün <span className="text-slate-500">Seçtikleri</span>
+            {labels.heading}
           </h2>
         </div>
         <div className="h-[2px] flex-1 bg-slate-800 ml-8 hidden md:block relative overflow-hidden">
@@ -97,9 +137,9 @@ export default function SlimCard({ slimCards }: Props) {
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[9px] font-bold uppercase tracking-wider border border-blue-500/20">
                     {item.categories && item.categories.length > 0
-                      ? categoryLabels[item.categories[0]] ||
+                      ? categoryMap[item.categories[0]] ||
                         item.categories[0].replace(/-/g, " ")
-                      : "Genel"}
+                      : labels.general}
                   </span>
                 </div>
 
@@ -112,11 +152,14 @@ export default function SlimCard({ slimCards }: Props) {
                   <p className="text-[9px] md:text-[11px] font-medium text-slate-400 tracking-wider md:uppercase md:tracking-widest">
                     {item.author?.firstName} {item.author?.lastName}
                     <span> {" | "}</span>
-                    {new Date(item.publishedAt).toLocaleDateString("tr-TR", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric",
-                    })}
+                    {new Date(item.publishedAt).toLocaleDateString(
+                      L === "en" ? "en-US" : "tr-TR",
+                      {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      },
+                    )}
                   </p>
                 </div>
               </div>

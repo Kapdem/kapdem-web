@@ -10,9 +10,30 @@ import { getPostByCategory } from "@/lib/posts/data";
 
 type Props = {
   dict: any;
+  lang?: string;
 };
 
-export default function VideoSection({ dict }: Props) {
+const LABELS = {
+  tr: {
+    title: "Videolar",
+    loading: "Videolar yükleniyor...",
+    error: "Videolar yüklenirken bir hata oluştu",
+    empty: "Henüz video bulunmuyor",
+    notFound: "Video bulunamadı",
+  },
+  en: {
+    title: "Videos",
+    loading: "Loading videos...",
+    error: "An error occurred while loading videos",
+    empty: "No videos yet",
+    notFound: "Video not found",
+  },
+};
+
+export default function VideoSection({ dict, lang = "tr" }: Props) {
+  const L: "tr" | "en" = lang === "en" ? "en" : "tr";
+  const labels = LABELS[L];
+
   const [videos, setVideos] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,18 +54,18 @@ export default function VideoSection({ dict }: Props) {
     const fetchVideos = async () => {
       try {
         setLoading(true);
-        const res = await getPostByCategory("videolar");
+        const res = await getPostByCategory("videolar", 100, 1, L);
         setVideos(Array.isArray(res) ? res : []);
       } catch (error) {
         console.error("Error fetching videos:", error);
-        setError("Videolar yüklenirken bir hata oluştu");
+        setError(labels.error);
       } finally {
         setLoading(false);
       }
     };
 
     fetchVideos();
-  }, []);
+  }, [L, labels.error]);
 
   // Sadece coverImage olanları göster
   const videoItems = Array.isArray(videos)
@@ -58,13 +79,13 @@ export default function VideoSection({ dict }: Props) {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              {dict?.videos?.title || "Videolar"}
+              {dict?.videos?.title || labels.title}
             </h2>
             <div className="w-20 h-1 bg-blue-600 rounded"></div>
           </div>
           <div className="flex items-center justify-center py-12">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-            <span className="ml-3 text-gray-600">Videolar yükleniyor...</span>
+            <span className="ml-3 text-gray-600">{labels.loading}</span>
           </div>
         </div>
       </div>
@@ -78,7 +99,7 @@ export default function VideoSection({ dict }: Props) {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              {dict?.videos?.title || "Videolar"}
+              {dict?.videos?.title || labels.title}
             </h2>
             <div className="w-20 h-1 bg-blue-600 rounded"></div>
           </div>
@@ -114,7 +135,7 @@ export default function VideoSection({ dict }: Props) {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              {dict?.videos?.title || "Videolar"}
+              {dict?.videos?.title || labels.title}
             </h2>
             <div className="w-20 h-1 bg-blue-600 rounded"></div>
           </div>
@@ -135,7 +156,7 @@ export default function VideoSection({ dict }: Props) {
                   />
                 </svg>
               </div>
-              <p className="text-gray-600">Henüz video bulunmuyor</p>
+              <p className="text-gray-600">{labels.empty}</p>
             </div>
           </div>
         </div>
@@ -149,7 +170,7 @@ export default function VideoSection({ dict }: Props) {
         {/* Section Header */}
         <div className="mb-10">
           <h2 className="text-3xl font-bold text-white mb-3">
-            {dict?.videos?.title || "Videolar"}
+            {dict?.videos?.title || labels.title}
           </h2>
           <div className="w-20 h-1 bg-blue-600 rounded"></div>
         </div>
@@ -266,7 +287,7 @@ export default function VideoSection({ dict }: Props) {
                                 d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                               />
                             </svg>
-                            <p className="text-gray-500">Video bulunamadı</p>
+                            <p className="text-gray-500">{labels.notFound}</p>
                           </div>
                         </div>
                       )}

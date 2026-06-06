@@ -37,7 +37,7 @@ export async function generateMetadata({
   params: Promise<{ id: string; lang: string }>;
 }): Promise<Metadata> {
   const awaitedParams = await params;
-  const res = await getSpecialFileById(awaitedParams.id);
+  const res = await getSpecialFileById(awaitedParams.id, awaitedParams.lang);
 
   const title = res?.title || "Özel Dosya";
   const description =
@@ -83,7 +83,7 @@ export default async function page({
 }) {
   const awaitedParams = await params;
   const dict = await getDictionary(awaitedParams.lang);
-  const res = await getSpecialFileById(awaitedParams.id);
+  const res = await getSpecialFileById(awaitedParams.id, awaitedParams.lang);
 
   if (!res) {
     return (
@@ -158,11 +158,14 @@ export default async function page({
                   <Calendar className="w-4 h-4" />
                 </div>
                 <span>
-                  {new Date(res.publishedAt).toLocaleDateString("tr-TR", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  })}
+                  {new Date(res.publishedAt).toLocaleDateString(
+                    awaitedParams.lang === "en" ? "en-US" : "tr-TR",
+                    {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    },
+                  )}
                 </span>
               </div>
               <div className="flex items-center gap-2.5 ml-auto opacity-50 hidden md:flex">

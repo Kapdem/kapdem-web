@@ -102,7 +102,7 @@ export default function EventHomePage({
       {/* Alt Bölüm */}
       {editorsPicks && editorsPicks.length > 0 && (
         <div className="px-4 w-full md:px-6 py-10">
-          <SlimCard slimCards={editorsPicks} />
+          <SlimCard slimCards={editorsPicks} lang={lang} />
         </div>
       )}
     </main>
