@@ -17,7 +17,7 @@ import { getUpcomingEvents } from "@/lib/data";
 async function HeroSection({ lang }) {
   const [dict, rawLatestPosts] = await Promise.all([
     getDictionary(lang),
-    getPosts(),
+    getPosts(lang),
   ]);
 
   const latestPosts = Array.isArray(rawLatestPosts)
@@ -30,11 +30,11 @@ async function HeroSection({ lang }) {
 }
 
 async function EditorSection({ lang }) {
-  const res = await getFeaturedPosts();
+  const res = await getFeaturedPosts(lang);
   const events = await getUpcomingEvents();
   const pastEvents = await findPastEvents();
   const slicePastEvents = pastEvents.slice(0, 4);
-  const editorsPicks = await getEditorsPicks();
+  const editorsPicks = await getEditorsPicks(lang);
 
   return (
     <div className="w-full max-w-full space-y-12 mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,7 +69,7 @@ async function MainCardsSection({ lang }) {
 
   const categoryResults = await Promise.allSettled(
     categoryRequests.map((item) =>
-      getPostByCategory(item.category, item.limit),
+      getPostByCategory(item.category, item.limit, 1, lang),
     ),
   );
 

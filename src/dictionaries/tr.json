@@ -717,11 +717,17 @@
     },
     "categories": {
       "select": "Kategori seçin",
-      "politik": "Politik",
-      "ekonomi": "Ekonomi",
-      "sosyal": "Sosyal",
-      "guvenlik": "Güvenlik",
-      "egitim": "Eğitim",
+      "politik": "Kamu Politikası",
+      "ekonomi": "Ekonomi ve Kalkınma",
+      "sosyal": "Küresel Politika ve Uluslararası İlişkiler",
+      "guvenlik": "Yönetim Tasarımı Reformu",
+      "egitim": "Teknoloji ve İnovasyon",
+      "goc": "Göç",
+      "savunma": "Savunma ve Güvenlik",
+      "kultur": "Kültür Sanat",
+      "gorus": "Görüş Yazıları",
+      "roportaj": "Röportajlar",
+      "kitap": "Kitap İncelemeleri",
       "diger": "Diğer"
     },
     "buttons": {

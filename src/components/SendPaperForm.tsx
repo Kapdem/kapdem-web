@@ -176,6 +176,26 @@ const SendPaperForm: React.FC<SendPaperFormProps> = ({
                 <option value="egitim">
                   {dict?.sendPaperForm?.categories?.egitim || "Eğitim"}
                 </option>
+                <option value="kultur">
+                  {dict?.sendPaperForm?.categories?.kultur || "Kültür"}
+                </option>
+                <option value="goc">
+                  {dict?.sendPaperForm?.categories?.goc || "Göç"}
+                </option>
+                <option value="savunma">
+                  {dict?.sendPaperForm?.categories?.savunma ||
+                    "Savunma ve Güvenlik"}
+                </option>
+                <option value="gorus">
+                  {dict?.sendPaperForm?.categories?.gorus || "Görüş Yazıları"}
+                </option>
+                <option value="roportaj">
+                  {dict?.sendPaperForm?.categories?.roportaj || "Röportajlar"}
+                </option>
+                <option value="kitap">
+                  {dict?.sendPaperForm?.categories?.kitap ||
+                    "Kitap İncelemeleri"}
+                </option>
                 <option value="diger">
                   {dict?.sendPaperForm?.categories?.diger || "Diğer"}
                 </option>

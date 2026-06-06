@@ -4,9 +4,12 @@ import { fetchInstance } from "../../utils/fetch";
 
 const S3_URL = process.env.NEXT_PUBLIC_S3_URL || "";
 
-export const getPosts = cache(async (query) => {
+// Dil parametresini normalize et: sadece "tr" | "en"
+const normalizeLang = (lang) => (lang === "en" ? "en" : "tr");
+
+export const getPosts = cache(async (lang) => {
   try {
-    const res = await fetchInstance(`/posts?limit=5`, {
+    const res = await fetchInstance(`/posts?limit=5&lang=${normalizeLang(lang)}`, {
       method: "GET",
       next: { revalidate: 300, tags: ["posts"] }, // 5 dakika cache + tag
     });
@@ -100,10 +103,15 @@ export const getEventDetails = async (slug) => {
   }
 };
 
-export const getPostByCategory = async (category, limit = 100, page = 1) => {
+export const getPostByCategory = async (
+  category,
+  limit = 100,
+  page = 1,
+  lang,
+) => {
   try {
     const res = await fetchInstance(
-      `/posts/category/${category}?page=${page}&limit=${limit}`,
+      `/posts/category/${category}?page=${page}&limit=${limit}&lang=${normalizeLang(lang)}`,
       {
         method: "GET",
         next: { revalidate: 300, tags: ["posts", `category-${category}`] },
@@ -282,9 +290,9 @@ export const getPostByUsername = async (username) => {
   }
 };
 
-export const getFeaturedPosts = async () => {
+export const getFeaturedPosts = async (lang) => {
   try {
-    const res = await fetchInstance(`/posts/featured`, {
+    const res = await fetchInstance(`/posts/featured?lang=${normalizeLang(lang)}`, {
       method: "GET",
       next: { revalidate: 300, tags: ["featured-posts"] },
     });
@@ -313,9 +321,9 @@ export const getFeaturedPosts = async () => {
   }
 };
 
-export const getEditorsPicks = async () => {
+export const getEditorsPicks = async (lang) => {
   try {
-    const res = await fetchInstance(`/posts/editor-picks`, {
+    const res = await fetchInstance(`/posts/editor-picks?lang=${normalizeLang(lang)}`, {
       method: "GET",
       next: { revalidate: 300, tags: ["editors-picks"] },
     });

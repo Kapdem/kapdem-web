@@ -720,11 +720,17 @@
     },
     "categories": {
       "select": "Select category",
-      "politik": "Politics",
-      "ekonomi": "Economy",
-      "sosyal": "Social",
-      "guvenlik": "Security",
-      "egitim": "Education",
+      "politik": "Public Policy",
+      "ekonomi": "Economy and Development",
+      "sosyal": "Global Policy and International Relations",
+      "guvenlik": "Management Design Reform",
+      "egitim": "Technology and Innovation",
+      "goc": "Migration",
+      "savunma": "Defense and Security",
+      "kultur": "Culture and Arts",
+      "gorus": "Opinion Articles",
+      "roportaj": "Interviews",
+      "kitap": "Book Reviews",
       "diger": "Other"
     },
     "buttons": {
