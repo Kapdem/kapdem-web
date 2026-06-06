@@ -18,6 +18,7 @@ const ResearchCard = async ({
   accessTier,
   href,
   translations,
+  readingTime,
 }) => {
   // Dil desteğine göre içeriği al
   const langData = translations?.[lang] || translations?.tr || {};
@@ -30,7 +31,9 @@ const ResearchCard = async ({
     if (typeof value === "string") return value;
 
     if (value && typeof value === "object") {
-      if (typeof value.text === "string") return value.text;
+      // text boş string olabilir; bu durumda html'e düş.
+      if (typeof value.text === "string" && value.text.trim())
+        return value.text;
       if (typeof value.html === "string")
         return value.html.replace(/<[^>]+>/g, " ");
       if (typeof value.content === "string") return value.content;
@@ -52,6 +55,13 @@ const ResearchCard = async ({
 
     return Math.max(Math.ceil(words / wordsPerMinute), 1);
   };
+
+  // Okuma süresi: backend dakikada 200 kelimeden hesaplayıp gönderir
+  // (kilitli/premium kartlarda da doğru). Yoksa içerikten yerel hesapla.
+  const readMinutes =
+    typeof readingTime === "number" && readingTime > 0
+      ? readingTime
+      : calculateReadTime(displayContent, displayExcerpt);
 
   const formattedDate = (dateString) => {
     const options = {
@@ -84,7 +94,7 @@ const ResearchCard = async ({
         <div className="absolute top-4 right-4">
           <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-black/20 text-white backdrop-blur-sm">
             <Clock className="w-3 h-3 mr-1" />
-            {calculateReadTime(displayContent, displayExcerpt)} dk
+            {readMinutes} dk
           </span>
         </div>
 

@@ -9,10 +9,13 @@ const normalizeLang = (lang) => (lang === "en" ? "en" : "tr");
 
 export const getPosts = cache(async (lang) => {
   try {
-    const res = await fetchInstance(`/posts?limit=5&lang=${normalizeLang(lang)}`, {
-      method: "GET",
-      next: { revalidate: 300, tags: ["posts"] }, // 5 dakika cache + tag
-    });
+    const res = await fetchInstance(
+      `/posts?limit=5&lang=${normalizeLang(lang)}`,
+      {
+        method: "GET",
+        next: { revalidate: 300, tags: ["posts"] }, // 5 dakika cache + tag
+      },
+    );
 
     const s3Prefix = "https://kapdem.s3.eu-central-1.amazonaws.com/";
 
@@ -23,7 +26,10 @@ export const getPosts = cache(async (lang) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
+          return {
+            ...post,
+            coverImage: s3Prefix + post.coverImage.replace(/^\/+/, ""),
+          };
         }
         return post;
       });
@@ -180,7 +186,10 @@ export const getPostByAuthorPosts = async (authorId) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
+          return {
+            ...post,
+            coverImage: s3Prefix + post.coverImage.replace(/^\/+/, ""),
+          };
         }
         return post;
       });
@@ -212,7 +221,10 @@ export const findPastEvents = async () => {
           !event.coverImage.startsWith(s3Prefix) &&
           !event.coverImage.startsWith("http")
         ) {
-          return { ...event, coverImage: s3Prefix + event.coverImage.replace(/^\/+/, '') };
+          return {
+            ...event,
+            coverImage: s3Prefix + event.coverImage.replace(/^\/+/, ""),
+          };
         }
         return event;
       });
@@ -246,7 +258,10 @@ export const findUpcomingEvents = async () => {
           !event.coverImage.startsWith(s3Prefix) &&
           !event.coverImage.startsWith("http")
         ) {
-          return { ...event, coverImage: s3Prefix + event.coverImage.replace(/^\/+/, '') };
+          return {
+            ...event,
+            coverImage: s3Prefix + event.coverImage.replace(/^\/+/, ""),
+          };
         }
         return event;
       });
@@ -276,7 +291,10 @@ export const getPostByUsername = async (username) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
+          return {
+            ...post,
+            coverImage: s3Prefix + post.coverImage.replace(/^\/+/, ""),
+          };
         }
         return post;
       });
@@ -292,10 +310,13 @@ export const getPostByUsername = async (username) => {
 
 export const getFeaturedPosts = async (lang) => {
   try {
-    const res = await fetchInstance(`/posts/featured?lang=${normalizeLang(lang)}`, {
-      method: "GET",
-      next: { revalidate: 300, tags: ["featured-posts"] },
-    });
+    const res = await fetchInstance(
+      `/posts/featured?lang=${normalizeLang(lang)}`,
+      {
+        method: "GET",
+        next: { revalidate: 300, tags: ["featured-posts"] },
+      },
+    );
 
     const s3Prefix = "https://kapdem.s3.eu-central-1.amazonaws.com/";
 
@@ -306,7 +327,10 @@ export const getFeaturedPosts = async (lang) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
+          return {
+            ...post,
+            coverImage: s3Prefix + post.coverImage.replace(/^\/+/, ""),
+          };
         }
         return post;
       });
@@ -323,10 +347,13 @@ export const getFeaturedPosts = async (lang) => {
 
 export const getEditorsPicks = async (lang) => {
   try {
-    const res = await fetchInstance(`/posts/editor-picks?lang=${normalizeLang(lang)}`, {
-      method: "GET",
-      next: { revalidate: 300, tags: ["editors-picks"] },
-    });
+    const res = await fetchInstance(
+      `/posts/editor-picks?lang=${normalizeLang(lang)}`,
+      {
+        method: "GET",
+        next: { revalidate: 300, tags: ["editors-picks"] },
+      },
+    );
 
     const s3Prefix = "https://kapdem.s3.eu-central-1.amazonaws.com/";
 
@@ -337,7 +364,10 @@ export const getEditorsPicks = async (lang) => {
           !post.coverImage.startsWith(s3Prefix) &&
           !post.coverImage.startsWith("http")
         ) {
-          return { ...post, coverImage: s3Prefix + post.coverImage.replace(/^\/+/, '') };
+          return {
+            ...post,
+            coverImage: s3Prefix + post.coverImage.replace(/^\/+/, ""),
+          };
         }
         return post;
       });
