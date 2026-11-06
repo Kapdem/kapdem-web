@@ -189,3 +189,9 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Netlify free-tier "Powered by Netlify" badge (injected by /.netlify/scripts/hud) */
+#nl-badge-frame,
+#nl-hud-frame {
+  display: none !important;
+}
